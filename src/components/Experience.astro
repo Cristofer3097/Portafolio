@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCIE = [
+
+    {
+        date: 'Dic 2022 - PRESENTE',
+        company:'FIME - LABORATORIO DE REALIDAD VIRTUAL INMERSIVA',
+        title:'Developer / Project Management',
+        description:[
+        '- Creación de entornos en Realidad Virtual(Unity) (Simulador de Montacargas, Python Horror, Recorrido FIME Unity/Web).',
+        '- Administración de proyectos basados en metodologías ágiles (especializado en Scrum).',
+    ],
+    link: '#',
+},
+{
+    date: 'Ene 2015 - Jul 2015',
+    company:'SAT: SERVICIO DE ADMINISTRACION TRIBUTARIA ',
+        title:'Ayudante general',
+        description:[
+        '- Mantenimiento de computadoras.',
+        '- Generación de informes con SAP y manipulación de tablas dinámicas.',
+    ],
+        link: '#',
+    },
+
+]
+---s
+<ol class="relative border-s border-gray-200 dark:border-gray-700">              
+    {
+    EXPERIENCIE.map((Experience) => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...Experience} />
+        </li>
+    ))
+    }    
+    
+</ol>

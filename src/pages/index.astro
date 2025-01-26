@@ -1,11 +1,61 @@
 ---
+import Badge from '../components/Badge.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import LinkedInIcon from "../icons/LinkedIn.astro"
+import SocialPill from '../icons/SocialPill.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import MailIcon from '../icons/Mail.astro';
+import Experience from '../components/Experience.astro';
+import ExperienceIcon from '../icons/Experience.astro';
+import Sectionclass from '../components/Section.astro';
+import ProjectsIcon from '../icons/Projects.astro';
+import Projects from '../components/Projects.astro';
+import Footer from '../components/Footer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Abel Cristofer Portafolio - Developer con 2 años de experiencia" description="Desarrollador Web / Realidad Virtual y tecnologías modernas">
+	<main class="px-4">
+		<Sectionclass class="py-44 pb-34">
+		<h1 class="text-white text-2xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, soy Abel Cristofer
+			<div class="flex justify-center items-center"><a
+			href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/"
+			target="_blank"
+			rel="noopener"
+			class="flex justify-center items center">
+			<Badge>Disponible para trabajar</Badge></a></div></h1>
+		<h2 class="text-xl lg;text-2xl opacity-80 text-wrap max-w-[700px]">+2 años de experiencia. <span class="text-purple-400">Desarrollador en app Realidad Aumentada.</span>De Nuevo Leon,Mexico. 
+			Me especializo en crear aplicaciones, mejorando y manteniendo sistemas robustos, escalables, eficientes y unicas  </h2>
+		<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/">
+					<LinkedInIcon class="size-4 md:size-4" />
+				LinkedIn
+			</SocialPill>
+			<SocialPill href="https://github.com/Cristofer3097">
+				<GitHubIcon class="size-4 md:size-4" />
+				GitHub
+			</SocialPill>
+			<SocialPill href="mailto:cristofer3097@gmail.com">
+				<MailIcon class="size-4 md:size-5" />
+				cristofer3097@gmail.com
+			</SocialPill>
+			</nav>
+		</Sectionclass>
+		<Sectionclass id="experience">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 itmes-center">Experiencia Laboral
+				<ExperienceIcon class="size-6" />
+			</h2>
+			<Experience />
+		</Sectionclass>
+		<Sectionclass id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">Proyectos
+				<ProjectsIcon class="size-6" />
+			</h2>
+			<Projects />
+		</Sectionclass>
+		<Footer />
+	</main>
 </Layout>

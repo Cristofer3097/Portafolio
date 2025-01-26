@@ -1,0 +1,64 @@
+---
+import JSIcon from "../icons/JSIcon.astro"
+import AFrameIcon from "../icons/Aframe.astro"
+const TAGS = {
+    JS: {
+        name: "JavaScript",
+        class: "bg-[#28292d] text-[#f7df1e]",
+        icon: JSIcon,
+    },
+    Aframe: {
+        name: "JavaScript",
+        class: "bg-[#00cbff] text-[#00000]",
+        icon: AFrameIcon,
+    },
+}
+const PROJECTS = [
+    {
+        title: "FIME Virtual Tour",
+        description: 
+        "Navega por las instalaciones de la Facultad de Ingeniería, conoce los departamentos y hazte una idea del ambiente académico desde la comodidad de tu pantalla.",
+        image: "assets/RecorridoWeb.webp",
+        link: "https://recorridovirtual.congresointernacionalpiv.com",
+        tags: [TAGS.Aframe, TAGS.JS],
+    },
+    {
+        title: "Project 2",
+        description: "This is a project description",
+        image: "/images/project2.jpg",
+        link: "/project2",
+        tags: ["React", "TailwindCSS"]
+    },
+   
+]
+---
+
+{
+    PROJECTS.map(({title,description, image, tags}) => (
+    <article>
+        <h3 class="text-2xl font-semibold text-purple-500 mb-2"> 
+            {title}</h3>
+        <p class="text-lg mb-4 text-pretty">{description}</p>
+        <ul class="flex gap-x-4 flex-row mb-2">
+            {tags.map((tag) => (
+                <li>
+                    {typeof tag === 'object' ? (
+                        <><span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                        </>
+                    ) : (
+                        tag
+                    )}
+                </li>
+            ))}
+        </ul>
+        <img 
+        class="rounded shadow-2xl shadow-white/10"
+        src={image} 
+        alt={`Captura ${image}`} />
+    </article>
+
+    ))
+}
