@@ -1,8 +1,7 @@
 ---
 import Badge from '../components/Badge.astro';
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-import LinkedInIcon from "../icons/LinkedIn.astro"
+import LinkedInIcon from "../icons/LinkedIn.astro";
 import SocialPill from '../icons/SocialPill.astro';
 import GitHubIcon from '../icons/GitHub.astro';
 import MailIcon from '../icons/Mail.astro';
@@ -12,6 +11,7 @@ import Sectionclass from '../components/Section.astro';
 import ProjectsIcon from '../icons/Projects.astro';
 import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
+import Contact from '../components/Contact.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -30,31 +30,45 @@ import Footer from '../components/Footer.astro';
 		<h2 class="text-xl lg;text-2xl opacity-80 text-wrap max-w-[700px]">+2 años de experiencia. <span class="text-purple-400">Desarrollador en app Realidad Aumentada.</span>De Nuevo Leon,Mexico. 
 			Me especializo en crear aplicaciones, mejorando y manteniendo sistemas robustos, escalables, eficientes y unicas  </h2>
 		<nav class="flex gap-4 mt-8 flex-wrap">
-				<SocialPill href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/">
-					<LinkedInIcon class="size-4 md:size-4" />
+				<SocialPill href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" title="LinkedIn">
+					<LinkedInIcon class="size-4 md:size-4" 
+					 />
 				LinkedIn
 			</SocialPill>
-			<SocialPill href="https://github.com/Cristofer3097">
-				<GitHubIcon class="size-4 md:size-4" />
+			<SocialPill href="https://github.com/Cristofer3097" 
+			title="GitHub">
+				<GitHubIcon class="size-4 md:size-4"
+				
+				/>
 				GitHub
 			</SocialPill>
-			<SocialPill href="mailto:cristofer3097@gmail.com">
+			<SocialPill href="mailto:cristofer3097@gmail.com" title="Email">
 				<MailIcon class="size-4 md:size-5" />
 				cristofer3097@gmail.com
 			</SocialPill>
-			</nav>
+			<SocialPill href="../assets/Abel-Cristofer-Hernandez-Bustos-cv.pdf" title="Descargar" download class="button">CV</a>
+			</SocialPill>
+		</nav>
+
 		</Sectionclass>
-		<Sectionclass id="experience">
+		<Sectionclass id="experience" class="scroll-mt-24">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 itmes-center">Experiencia Laboral
 				<ExperienceIcon class="size-6" />
 			</h2>
 			<Experience />
 		</Sectionclass>
-		<Sectionclass id="proyectos">
+		<Sectionclass id="proyectos" class="scroll-mt-24">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">Proyectos
 				<ProjectsIcon class="size-6" />
 			</h2>
 			<Projects />
+		</Sectionclass>
+
+		<Sectionclass id="contactos" class="scroll-mt-24">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">Contacto
+				<MailIcon class="size-6" />
+			</h2>
+			<Contact />
 		</Sectionclass>
 		<Footer />
 	</main>
