@@ -12,8 +12,8 @@ const {title,company,description,link,date} = Astro.props
 <h2 class="text-lg font-semibold text-gray-100 dark:text-white">{company}</h2>
 <time class="mb-1 text-sm font-normal leading-none text-blue-200 dark:text-blue-500">{date}</time>
 <h3 class="text-lg font-semibold text-purple-300 dark:text-purple">{title}</h3>
-<p class="mb-4 text-base font-normal text-gray-600 dark:text-gray-400">{Array.isArray(description) ? (
-    <ul>
+<p class="mb-4 text-base font-normal ">{Array.isArray(description) ? (
+    <ul class="text-gray-200 dark:text-gray-400">
       {description.map((item) => (
         <li>{item}</li>
       ))}
