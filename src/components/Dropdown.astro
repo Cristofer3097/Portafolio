@@ -1,0 +1,41 @@
+---
+import ResumeIcon from '../icons/Resume.astro';
+---
+<button id="dropdownDefaultButton" data-dropdown-toggle="dropdowndelay" class="text-white bg-blue-800 hover:bg-blue-900/50 
+focus:ring-4 focus:outline-none focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex 
+items-center flex gap-x-1" type="button">Curriculum
+<ResumeIcon class="size-5" />
+<svg class="w-2.5 h-2.5 ms-3 arrow-icon transition-transform duration-300 rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+    </svg>
+    </button>
+    
+    <!-- Dropdown menu -->
+    <div id="dropdowndelay" class="z-10 hidden bg-blue-700 divide-y divide-gray-100 rounded-lg shadow-sm w-44 ">
+        <ul class="py-2 text-sm text-white dark:text-white" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="../assets/Abel-Cristofer-Hernandez-Bustos-cv.pdf" title="Descargar" download
+            class="block px-4 py-2 hover:bg-blue-900 dark:hover:bg-blue-800 dark:hover:text-white-800 text-center">Versión en Español</a>
+          </li>
+          <li>
+            <a href="../assets/Abel-Cristofer-Hernandez-Bustos-cv.pdf" title="Download" download
+             class="block px-4 py-2 hover:bg-blue-900 dark:hover:bg-blue-600 dark:hover:text-white-800 text-center">English Version</a>
+          </li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const dropdownButton = document.getElementById("dropdownDefaultButton");
+            const dropdownMenu = document.getElementById("dropdowndelay");
+            const arrowIcon = dropdownButton.querySelector(".arrow-icon");
+    
+            dropdownButton.addEventListener("click", () => {
+                // Toggle la visibilidad del menú
+                dropdownMenu.classList.toggle("hidden");
+    
+                // Agrega o quita la clase para girar la flecha
+                arrowIcon.classList.toggle("rotate-180");
+            });
+        });
+    </script>
+    

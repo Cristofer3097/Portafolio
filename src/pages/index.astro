@@ -8,10 +8,11 @@ import MailIcon from '../icons/Mail.astro';
 import Experience from '../components/Experience.astro';
 import ExperienceIcon from '../icons/Experience.astro';
 import Sectionclass from '../components/Section.astro';
-import ProjectsIcon from '../icons/Projects.astro';
+import ProjectsIcon from '../icons/DeviceCode.astro';
 import Projects from '../components/Projects.astro';
 import Footer from '../components/Footer.astro';
 import Contact from '../components/Contact.astro';
+import Dropdown from '../components/Dropdown.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -19,38 +20,55 @@ import Contact from '../components/Contact.astro';
 
 <Layout title="Abel Cristofer Portafolio - Developer con 2 años de experiencia" description="Desarrollador Web / Realidad Virtual y tecnologías modernas">
 	<main class="px-4">
-		<Sectionclass class="py-44 pb-34">
-		<h1 class="text-white text-2xl lg:text-5xl md:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hey, soy Abel Cristofer
+
+		<Sectionclass class="relative py-32 pb-40 flex flex-col lg:flex-row items-center justify-between lg:my-0">
+			<div class="w-full lg:w-1/2 xl:w-2/5 flex flex-col items-center p-6" >
+				<img 
+				src="assets/1644039.jpg"  
+				alt="Foto de Abel Cristofer" 
+				class="w-full sm:w-1/2 lg:w-3/4 rounded-full aspect-[7/8] object-cover mb-4 border-2 border-slate-600 dark:border-slate-200">
+				
+					<nav class="flex gap-4 mt-8 flex-wrap justify-center">
+						<SocialPill href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" title="LinkedIn">
+							<LinkedInIcon class="size-4 md:size-4" 
+							 />
+						LinkedIn
+					</SocialPill>
+					<SocialPill href="https://github.com/Cristofer3097" 
+					title="GitHub">
+						<GitHubIcon class="size-4 md:size-4"
+						
+						/>
+						GitHub
+					</SocialPill>
+					<div class="flex space-x-1 lg:space-x-2">
+					<SocialPill href="mailto:cristofer3097@gmail.com" title="Email">
+						<MailIcon class="size-4 md:size-5" />
+						cristofer3097@gmail.com
+					</SocialPill>
+				</div>
+					
+				</nav>
+			</div>	
+			<div  class=" top-10 right-10 lg:relative lg:top-[-50px] lg:right-auto w-full lg:w-1/2 flex flex-col  space-y-6 justify-start " >
+		<h1 class="text-white text-3xl lg:text-4xl font-bold flex flex-row gap-x-2 pb-2 lg:pb-4">Hey,👋  soy Abel Cristofer
+			
 			<div class="flex justify-center items-center"><a
 			href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/"
 			target="_blank"
-			rel="noopener"
+			rel="noopener noreferrer"
 			class="flex justify-center items center">
 			<Badge>Disponible para trabajar</Badge></a></div></h1>
-		<h2 class="text-xl lg;text-2xl opacity-80 text-wrap max-w-[700px]">+2 años de experiencia. <span class="text-purple-400">Desarrollador en app Realidad Aumentada.</span>De Nuevo Leon,Mexico. 
-			Me especializo en crear aplicaciones, mejorando y manteniendo sistemas robustos, escalables, eficientes y unicas  </h2>
-		<nav class="flex gap-4 mt-8 flex-wrap">
-				<SocialPill href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" title="LinkedIn">
-					<LinkedInIcon class="size-4 md:size-4" 
-					 />
-				LinkedIn
-			</SocialPill>
-			<SocialPill href="https://github.com/Cristofer3097" 
-			title="GitHub">
-				<GitHubIcon class="size-4 md:size-4"
-				
-				/>
-				GitHub
-			</SocialPill>
-			<SocialPill href="mailto:cristofer3097@gmail.com" title="Email">
-				<MailIcon class="size-4 md:size-5" />
-				cristofer3097@gmail.com
-			</SocialPill>
-			<SocialPill href="../assets/Abel-Cristofer-Hernandez-Bustos-cv.pdf" title="Descargar" download class="button">CV</a>
-			</SocialPill>
-		</nav>
-
-		</Sectionclass>
+			
+		<h2 class="text-lg lg;text-xl opacity-80 text-wrap max-w-[700px]">+2 años de experiencia. 
+			<span class="text-purple-400">Desarrollador en app Realidad Aumentada.</span>De Nuevo Leon, Mexico. 
+			Disfruto enfrentar nuevos retos, trabajar en proyectos multidisciplinarios para aportar valor a
+			través de la tecnología y aportar soluciones creativas que no solo resuelvan problemas de manera eficiente,
+			sino que también generen valor estratégico a largo plazo. </h2>
+			<div class="flex justify-center items-center">
+			<Dropdown /></div>
+		</div></Sectionclass>
+		
 		<Sectionclass id="experience" class="scroll-mt-24">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 itmes-center">Experiencia Laboral
 				<ExperienceIcon class="size-6" />
