@@ -1,13 +1,46 @@
-<header class="header-animate left-0 flex justify-between backdrop-blur-[15px] md:backdrop-blur-10 
-items-center py-5 w-full mb-10 xl:w-[1120px] mx-auto sticky top-0 overflow-visible z-[99999]">
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-5 py-4 backdrop-blur-[15px]  text-white z-50">
+    <h1 class="text-2xl font-bold">Portafolio</h1>
 
-    <h1 class="lg:text-3xl text-2xl sm:text-1xl font-bold"> Portafolio </h1>
-    <nav class="flex flex-row gap-x-10 opacity-85 text-gray-100">
+    <nav class="flex hidden sm:block
+     flex-row gap-x-10 opacity-85 text-gray-100">
         <a href="#top">Inicio</a>
         <a href="#experience" >Experiencia</a>
         <a href="#sobremi">Sobre mi</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#contactos">Contactos</a>
     </nav>
-
-</header>
+  
+    <!-- Botón para abrir el menú -->
+    <button id="menu-toggle" class="block sm:hidden text-white focus:outline-none">
+      <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  
+    <!-- Menú lateral -->
+    <nav id="nav-menu" class="fixed top-0 right-0 h-full w-1/2 h-full bg-gray-900 text-white flex flex-col 
+    items-start p-5 transform translate-x-full transition-transform duration-300">
+      <button id="close-menu" class="self-end text-white text-3xl">&times;</button>
+      <a href="#inicio" class="mt-5 block text-lg">Inicio</a>
+      <a href="#proyectos" class="mt-5 block text-lg">Proyectos</a>
+      <a href="#habilidades" class="mt-5 block text-lg">Habilidades</a>
+      <a href="#estudios" class="mt-5 block text-lg">Estudios</a>
+      <a href="#sobremi" class="mt-5 block text-lg">Sobre mí</a>
+      <a href="#contacto" class="mt-5 block text-lg">Contacto</a>
+    </nav>
+  </header>
+  
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const closeMenu = document.getElementById('close-menu');
+  
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.remove('translate-x-full');
+    });
+  
+    closeMenu.addEventListener('click', () => {
+      navMenu.classList.add('translate-x-full');
+    });
+  </script>
+  
