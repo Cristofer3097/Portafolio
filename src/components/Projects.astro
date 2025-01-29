@@ -3,6 +3,7 @@ import JSIcon from "../icons/JSIcon.astro"
 import AFrameIcon from "../icons/Aframe.astro"
 import ProjectsIcon from "../icons/Projects.astro"
 import DeviceIcon from "../icons/Device.astro"
+import WordP from "../icons/Wordpress.astro"
 
 const TAGS = {
     JS: {
@@ -15,6 +16,11 @@ const TAGS = {
         name: "A-Frame",
         class: "bg-[#00cbff] text-[#000]",
         icon: AFrameIcon,
+    },
+    Wordpress: {
+        name: "Wordpress",
+        class: "bg-[#dbeff7] text-[#00769d]",
+        icon: WordP,
     },
 }
 
@@ -29,12 +35,12 @@ const PROJECTS = [
         tags: [TAGS.Aframe, TAGS.JS],
     },
     {
-        title: "Project 2",
-        description: "This is a project description",
-        image: "/images/project2.jpg",
+        title: "Symtto",
+        description: "Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc.",
+        image: "assets/symtto.webp",
         link: "https://symtto.com",
-        repository: "https://github.com/user/project-2",
-        tags: ["React", "TailwindCSS"],
+        repository: "",
+        tags: [TAGS.JS, TAGS.Wordpress],
     },
     
 ]
@@ -55,31 +61,37 @@ const PROJECTS = [
             bg-black/70 transition-opacity duration-300 px-4 text-center "
           >
             <h3 class="text-lg font-bold text-white mb-2">{title}</h3>
-            <p class="text-sm text-gray-250 mb-4">{description}</p>
-            <div class="flex gap-x-1 mb-2">
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Proyecto"
-                class="flex text-sm text-blue-100 hover:underline
-                mt-1 p-1 rounded-lg bg-purple-500/90 font-semibold gap-x-1"
-              >
-                <DeviceIcon class="size-4" />
-                Ver Proyecto
-              </a>
-              <a
-                href={repository}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Repositorio"
-                class="flex text-sm text-blue-100 hover:underline
-                mt-1 p-1 rounded-lg bg-purple-500/90 font-semibold gap-x-1 "
-              >
-                <ProjectsIcon class="size-4" />
-                Ver Código
-              </a>
+            <p class="text-sm text-gray-250 mb-4 justify-center">{description}</p>
+
+            <div class={`flex gap-x-2 mb-2 py-2 ${!repository || !link ? "justify-center" : ""}`}>
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Proyecto"
+                  class="flex text-sm text-blue-100 hover:underline
+                  mt-1 p-2 rounded-lg bg-purple-500/90 font-semibold gap-x-1"
+                >
+                  <DeviceIcon class="size-4" />
+                  Ver Proyecto
+                </a>
+              )}
+              {repository && (
+                <a
+                  href={repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Repositorio"
+                  class="flex text-sm text-blue-100 hover:underline
+                  mt-1 p-2 rounded-lg bg-purple-500/90 font-semibold gap-x-1"
+                >
+                  <ProjectsIcon class="size-4" />
+                  Ver Código
+                </a>
+              )}
             </div>
+
             <ul class="flex flex-wrap justify-center gap-2">
               {tags.map((tag) => (
                 <li>
