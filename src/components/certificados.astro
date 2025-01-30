@@ -1,0 +1,108 @@
+<section class="overflow-hidden w-[120%] h-full mx-auto mb-12 relative">
+  <div class="flex gap-x-20 animate-carousel" id="carouselTrack">      
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="IA" src="/assets/ia.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="Python" src="/assets/python.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="Criptografia" src="/assets/certificado cripto.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="C++" src="/assets/c.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="MySQL" src="/assets/sql.PNG" onclick="openModal(this)">
+
+         <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="IA" src="/assets/ia.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="Python" src="/assets/python.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="Criptografia" src="/assets/certificado cripto.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="C++" src="/assets/c.PNG" onclick="openModal(this)">
+    <img class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105" 
+         alt="MySQL" src="/assets/sql.PNG" onclick="openModal(this)">
+  </div>
+</section>
+
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-50" onclick="closeModal()">
+  <div class="relative max-w-[90vw] max-h-[90vh]" onclick="event.stopPropagation()">
+
+    <button onclick="closeModal()" class="absolute -top-4 -right-4 bg-black bg-opacity-80 text-white text-3xl font-bold cursor-pointer p-2 rounded-full z-50">
+      &times;
+    </button>
+
+    <img id="modalImage" class="rounded-lg shadow-lg transform scale-75 opacity-0 transition-all duration-300">
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .animate-carousel {
+    display: flex;
+    width: 200%;
+    animation: scroll 15s linear infinite;
+  }
+
+  .carousel-image {
+    width: 10%;
+    flex-shrink: 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carouselTrack = document.getElementById("carouselTrack");
+    let isPaused = false;
+
+    function openModal(imgElement) {
+      const modal = document.getElementById("modal");
+      const modalImage = document.getElementById("modalImage");
+
+      modalImage.src = imgElement.src;
+      modal.classList.remove("hidden");
+
+      setTimeout(() => {
+        modalImage.classList.remove("scale-75", "opacity-0");
+        modalImage.classList.add("scale-100", "opacity-100");
+      }, 50);
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("modal");
+      const modalImage = document.getElementById("modalImage");
+
+      modalImage.classList.remove("scale-100", "opacity-100");
+      modalImage.classList.add("scale-75", "opacity-0");
+
+      setTimeout(() => {
+        modal.classList.add("hidden");
+      }, 300);
+    }
+
+    function pauseCarousel() {
+      if (!isPaused) {
+        carouselTrack.style.animationPlayState = "paused";
+        isPaused = true;
+      }
+    }
+
+    function resumeCarousel() {
+      if (isPaused) {
+        carouselTrack.style.animationPlayState = "running";
+        isPaused = false;
+      }
+    }
+
+    document.querySelectorAll(".carousel-image").forEach(img => {
+      img.addEventListener("mouseenter", pauseCarousel);
+      img.addEventListener("mouseleave", resumeCarousel);
+    });
+
+    window.openModal = openModal;
+    window.closeModal = closeModal;
+  });
+</script>

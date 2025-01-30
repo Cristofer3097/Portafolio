@@ -14,6 +14,7 @@ import Footer from '../components/Footer.astro';
 import Contact from '../components/Contact.astro';
 import Dropdown from '../components/Dropdown.astro';
 import MapIcon from '../icons/map.astro';
+import Certificados from '../components/certificados.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -86,6 +87,14 @@ import MapIcon from '../icons/map.astro';
 			</h2>
 			<Experience />
 		</Sectionclass>
+
+		<Sectionclass id="sobre mi" class="scroll-mt-24">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Sobre mi
+				<ProjectsIcon class="size-6" />
+			</h2>
+			<Certificados />
+		</Sectionclass>
+
 		<Sectionclass id="proyectos" class="scroll-mt-24">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Proyectos
 				<ProjectsIcon class="size-6" />
