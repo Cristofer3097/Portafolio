@@ -1,9 +1,12 @@
 ---
+
 import JSIcon from "../icons/JSIcon.astro"
 import AFrameIcon from "../icons/Aframe.astro"
 import ProjectsIcon from "../icons/Projects.astro"
 import DeviceIcon from "../icons/Device.astro"
 import WordP from "../icons/Wordpress.astro"
+import UnityIcon from "../icons/unity.astro"
+import CIcon from "../icons/C.astro"
 
 const TAGS = {
     JS: {
@@ -22,6 +25,16 @@ const TAGS = {
         class: "bg-[#dbeff7] text-[#00769d]",
         icon: WordP,
     },
+    Unity: {
+        name: "Unity",
+        class: "bg-[#222222] text-[#c3c3c3]",
+        icon: UnityIcon,
+    },
+    CIcon: {
+        name: "C++",
+        class: "bg-[#f8f9fa] text-[#00589d]",
+        icon: CIcon,
+    },
 }
 
 const PROJECTS = [
@@ -39,77 +52,127 @@ const PROJECTS = [
         description: "Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc.",
         image: "assets/symtto.webp",
         link: "https://symtto.com",
-        repository: "",
+        
         tags: [TAGS.JS, TAGS.Wordpress],
+    },
+    {
+        title: "Forklift Simulator",
+        description: "Simulador de montacargas en Unity, con el objetivo de enseñar a los operadores a manejar un montacargas de manera segura, completamente funcional con volante, pedales, palanca de cambios y VR.",
+        image: "assets/forklift.gif",
+        repository: "",
+        video: "assets/forklift.mp4",
+        tags: [TAGS.CIcon, TAGS.Unity],
     },
     
 ]
 ---
 
 <article class="max-w-screen-xl mx-auto px-1 sm:px-1 lg:px-2 py-4">
-  
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-      {PROJECTS.map(({ title, description, image, link, repository, tags }) => (
-        <div class="relative group overflow-hidden rounded-lg shadow-lg bg-gray-800 ">
-          <img
-            src={image}
-            alt={`Captura de ${title}`}
-            class="object-cover w-full h-64 transition-opacity duration-300 group-hover:opacity-30"
-          />
-          <div
-            class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 
-            bg-black/70 transition-opacity duration-300 px-4 text-center "
-          >
-            <h3 class="text-lg font-bold text-white mb-2">{title}</h3>
-            <p class="text-sm text-gray-250 mb-4 justify-center">{description}</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      {PROJECTS.map(({ title, description, image, link, repository, tags, video }) => (
+          <div class="relative group overflow-hidden rounded-lg shadow-lg bg-gray-800">
+              <img
+                  src={image}
+                  alt={`Captura de ${title}`}
+                  class="object-cover w-full h-64 transition-opacity duration-300 group-hover:opacity-30"
+              />
+              <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 
+                  bg-black/70 transition-opacity duration-300 px-4 text-center">
+                  <h3 class="text-lg font-bold text-white mb-2">{title}</h3>
+                  <p class="text-sm text-gray-250 mb-4">{description}</p>
 
-            <div class={`flex gap-x-2 mb-2 py-2 ${!repository || !link ? "justify-center" : ""}`}>
-              {link && (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Proyecto"
-                  class="flex text-sm text-blue-100 hover:underline
-                  mt-1 p-2 rounded-lg bg-purple-500/90 font-semibold gap-x-1"
-                >
-                  <DeviceIcon class="size-4" />
-                  Ver Proyecto
-                </a>
-              )}
-              {repository && (
-                <a
-                  href={repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Repositorio"
-                  class="flex text-sm text-blue-100 hover:underline
-                  mt-1 p-2 rounded-lg bg-purple-500/90 font-semibold gap-x-1"
-                >
-                  <ProjectsIcon class="size-4" />
-                  Ver Código
-                </a>
-              )}
-            </div>
+                  <div class={`flex gap-x-2 mb-2 py-2 ${!repository || !link || !video ? "justify-center" : ""}`}>
+                      {link && (
+                          <a href={link} target="_blank" rel="noopener noreferrer" title="Proyecto"
+                             class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-purple-500/90 font-semibold gap-x-1">
+                              <DeviceIcon class="size-4" />
+                              Ver Proyecto
+                          </a>
+                      )}
+                      {repository && (
+                          <a href={repository} target="_blank" rel="noopener noreferrer" title="Repositorio"
+                             class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-purple-500/90 font-semibold gap-x-1">
+                              <ProjectsIcon class="size-4" />
+                              Ver Código
+                          </a>
+                      )}
+                      {video && (
+                          <button onclick={`openVideoModal('${video}')`}
+                                  class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-purple-500/90 font-semibold gap-x-1">
+                              <ProjectsIcon class="size-4" />
+                              Ver Video
+                          </button>
+                      )}
+                  </div>
 
-            <ul class="flex flex-wrap justify-center gap-2">
-              {tags.map((tag) => (
-                <li>
-                  {typeof tag === "object" ? (
-                    <span
-                      class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-2`}
-                    >
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  ) : (
-                    <span class="bg-gray-600 text-white py-1 px-2 rounded-full text-xs">{tag}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
+                  <ul class="flex flex-wrap justify-center gap-2">
+                      {tags.map((tag) => (
+                          <li>
+                              {typeof tag === "object" ? (
+                                  <span class={`flex gap-x-2 items-center rounded-full text-xs ${tag.class} py-1 px-2`}>
+                                      <tag.icon class="size-4" />
+                                      {tag.name}
+                                  </span>
+                              ) : (
+                                  <span class="bg-gray-600 text-white py-1 px-2 rounded-full text-xs">{tag}</span>
+                              )}
+                          </li>
+                      ))}
+                  </ul>
+              </div>
           </div>
-        </div>
       ))}
-    </div>
+  </div>
 </article>
+
+<!-- MODAL PARA VIDEO (FUERA DEL MAP PARA NO REPETIRLO) -->
+<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-50" onclick="closeVideoModal()">
+  <div class="relative max-w-[90vw] max-h-[90vh]" onclick="event.stopPropagation()">
+
+      <!-- BOTÓN DE CIERRE "X" -->
+      <button onclick="closeVideoModal()" 
+          class="absolute top-14 right-4 bg-black bg-opacity-80 text-white text-3xl font-bold cursor-pointer p-2 rounded-full z-50">
+          &times;
+      </button>
+
+      <!-- CONTENEDOR DEL VIDEO -->
+      <video id="modalVideo" class="w-[80vw] h-[45vw] max-w-[1100px] max-h-[706px] rounded-lg shadow-lg transform scale-75 opacity-0 transition-all duration-300" 
+          controls>
+      </video>
+
+  </div>
+</div>
+
+<script>
+  function openVideoModal(videoUrl) {
+      const modal = document.getElementById("videoModal");
+      const modalVideo = document.getElementById("modalVideo");
+
+      modalVideo.src = videoUrl; // Asigna la URL del video
+      modal.classList.remove("hidden");
+
+      setTimeout(() => {
+          modalVideo.classList.remove("scale-75", "opacity-0");
+          modalVideo.classList.add("scale-100", "opacity-100");
+          modalVideo.play(); // Reproduce automáticamente el video
+      }, 50);
+  }
+
+  function closeVideoModal() {
+      const modal = document.getElementById("videoModal");
+      const modalVideo = document.getElementById("modalVideo");
+
+      modalVideo.pause(); // Pausa el video al cerrar
+      modalVideo.classList.remove("scale-100", "opacity-100");
+      modalVideo.classList.add("scale-75", "opacity-0");
+
+      setTimeout(() => {
+          modal.classList.add("hidden");
+          modalVideo.src = ""; // Limpia el src para detener el video
+      }, 300);
+  }
+
+  // Attach functions to window object to make them accessible from inline event handlers
+  window.openVideoModal = openVideoModal;
+  window.closeVideoModal = closeVideoModal;
+</script>
