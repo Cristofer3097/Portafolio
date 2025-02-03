@@ -1,0 +1,50 @@
+---
+// filepath: /c:/Users/abel_/portafolio/src/components/Menu.astro
+---
+<div class="hidden lg:flex fixed top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-l-lg text-white z-50">
+  <nav class="w-64 p-6">
+    <ul class="space-y-4 flex flex-col items-center p-4 gap-1">
+      <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#top" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block">Inicio</a>
+      </li>
+      <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#experience" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block">Experiencia</a>
+      </li>
+      <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#sobremi" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block">Sobre mí</a>
+      </li>
+      <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#proyectos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block">Proyectos</a>
+      </li>
+      <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#contactos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block">Contacto</a>
+      </li>
+      
+    </ul>
+  </nav>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Resaltar el menú en el botón donde está la sección actualmente
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('bg-violet-950');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('bg-violet-950');
+        }
+      });
+    });
+  });
+</script>

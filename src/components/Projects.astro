@@ -7,6 +7,10 @@ import DeviceIcon from "../icons/Device.astro"
 import WordP from "../icons/Wordpress.astro"
 import UnityIcon from "../icons/unity.astro"
 import CIcon from "../icons/C.astro"
+import PhpIcon from "../icons/Php.astro"
+import MySQLIcon from "../icons/Mysql.astro"
+import FlutterIcon from "../icons/Flutter.astro"
+import DartIcon from "../icons/Dart.astro"
 
 const TAGS = {
     JS: {
@@ -34,6 +38,26 @@ const TAGS = {
         name: "C++",
         class: "bg-[#f8f9fa] text-[#00589d]",
         icon: CIcon,
+    },
+    PhpIcon: {
+        name: "PHP",
+        class: "bg-[#4f5b93] text-[#748cb9]",
+        icon: PhpIcon,
+    },
+        MySQLIcon: {
+        name: "MySQL",
+        class: "bg-[#ffffff] text-[#02769b]",
+        icon: MySQLIcon,
+    },
+    FlutterIcon: {
+        name: "Flutter",
+        class: "bg-[#ffffff] text-[#757575]",
+        icon: FlutterIcon,
+    },
+    DartIcon: {
+        name: "Dart",
+        class: "bg-[#1c2834] text-[#8c949c]",
+        icon: DartIcon,
     },
 }
 
@@ -63,14 +87,36 @@ const PROJECTS = [
         video: "assets/forklift.mp4",
         tags: [TAGS.CIcon, TAGS.Unity],
     },
-    
+    {
+        title: "Gestion Nomina",
+        description: "Sistema de gestion de nomina, controlar los empleados por medio de una base de datos, crear, borrar, sus asistencias, con calculo de horas extras, bonos, descuentos, etc y al final del mes generar sus nominas.",
+        image: "assets/Nomina.webp",
+        repository: "https://github.com/Cristofer3097/Gestion-Nomina",
+        tags: [TAGS.PhpIcon, TAGS.MySQLIcon],
+    },
+    {
+        title: "Ultimate Invasion",
+        description: "Juego de naves en 2D, inspírado en el videojuego Space Invaders con la posibilidad de elegir entre 4 niveles de dificultad, con Score y vidas.",
+        image: "assets/Invasion.gif",
+        repository: "https://github.com/Cristofer3097/Ultimate-Invasion",
+        video: "assets/Invasion.mp4",
+        tags: [TAGS.CIcon, TAGS.Unity],
+    },
+    {
+        title: "Tonos de pared",
+        description: "Aplicacion movil creada en Android Studios para escanear paredes y obtener el color de la misma, con la posibilidad de guardar los colores, foto y verlos en la galeria.",
+        image: "assets/Tonos.webp",
+        repository: "https://github.com/Jair-Rodriguez007/PIADispMoviles",
+        video: "assets/Tonos.mp4",
+        tags: [TAGS.FlutterIcon, TAGS.DartIcon],
+    },
 ]
 ---
 
-<article class="max-w-screen-xl mx-auto px-1 sm:px-1 lg:px-2 py-4">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+<article class="max-w-screen-xl mx-auto px-1 sm:px-1 lg:px-2 py-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 ">
       {PROJECTS.map(({ title, description, image, link, repository, tags, video }) => (
-          <div class="relative group overflow-hidden rounded-lg shadow-lg bg-gray-800">
+          <div class="relative group overflow-hidden rounded-lg shadow-lg bg-gray-800 hidden-on-scroll ">
               <img
                   src={image}
                   alt={`Captura de ${title}`}
@@ -144,6 +190,7 @@ const PROJECTS = [
 </div>
 
 <script>
+    
   function openVideoModal(videoUrl) {
       const modal = document.getElementById("videoModal");
       const modalVideo = document.getElementById("modalVideo");
@@ -175,4 +222,34 @@ const PROJECTS = [
   // Attach functions to window object to make them accessible from inline event handlers
   window.openVideoModal = openVideoModal;
   window.closeVideoModal = closeVideoModal;
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".hidden-on-scroll");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible-on-scroll");
+            } else {
+                entry.target.classList.remove("visible-on-scroll");
+            }
+        });
+    }, { threshold: 0.3 }); // Se activa cuando el 30% del div es visible
+
+    elements.forEach(el => observer.observe(el));
+});
 </script>
+<style>
+    /* Ocultar elementos inicialmente */
+    .hidden-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    /* Cuando el elemento es visible */
+    .visible-on-scroll {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    </style>
+    

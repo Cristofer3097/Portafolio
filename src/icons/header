@@ -1,0 +1,69 @@
+---
+// filepath: /c:/Users/abel_/portafolio/src/components/header.astro
+---
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-5 py-4 backdrop-blur-[15px] text-white z-50">
+  <h1 class="text-2xl font-bold">Portafolio</h1>
+
+  <nav class="hidden sm:flex flex-row gap-x-10 opacity-85 text-gray-100  p-2 rounded-lg">
+    <a href="#top" class="lg:px-4 md:px-2 sm:px-1 hover:text-purple-800">Inicio</a>
+    <a href="#experience" class="lg:px-4 md:px-2 sm:px-1 hover:text-purple-800">Experiencia</a>
+    <a href="#sobremi" class="lg:px-4 md:px-2 sm:px-1 hover:text-purple-800">Sobre mí</a>
+    <a href="#proyectos" class="lg:px-4 md:px-2 sm:px-1 hover:text-purple-800">Proyectos</a>
+    <a href="#contactos" class="lg:px-4 md:px-2 sm:px-1 hover:text-purple-800">Contactos</a>
+  </nav>
+
+  <!-- Botón para abrir el menú -->
+  <button id="menu-toggle" class="block sm:hidden text-white focus:outline-none">
+    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
+
+  <!-- Menú lateral -->
+  <nav id="nav-menu" class="fixed top-0 right-0 w-2/3 h-screen bg-black text-white flex flex-col items-start p-5 transform translate-x-full transition-transform duration-500 ease-in-out z-50">
+    <button id="close-menu" class="self-end text-white text-3xl">&times;</button>
+    <a href="#top" class="mt-5 block text-lg ">Inicio</a>
+    <a href="#experience" class="mt-5 block text-lg">Experiencia</a>
+    <a href="#sobremi" class="mt-5 block text-lg">Sobre mí</a>
+    <a href="#proyectos" class="mt-5 block text-lg">Proyectos</a>
+    <a href="#contactos" class="mt-5 block text-lg">Contactos</a>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const navLinks = document.querySelectorAll('nav a');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.remove('translate-x-full');
+      navMenu.classList.add('translate-x-0');
+    });
+
+    closeMenu.addEventListener('click', () => {
+      navMenu.classList.remove('translate-x-0');
+      navMenu.classList.add('translate-x-full');
+    });
+
+    // Resaltar el menú en el botón donde está la sección actualmente
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-purple-600');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('text-purple-600');
+        }
+      });
+    });
+  });
+</script>
