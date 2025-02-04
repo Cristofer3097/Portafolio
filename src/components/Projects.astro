@@ -222,6 +222,7 @@ const PROJECTS = [
   // Attach functions to window object to make them accessible from inline event handlers
   window.openVideoModal = openVideoModal;
   window.closeVideoModal = closeVideoModal;
+  
   document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll(".hidden-on-scroll");
 
@@ -243,7 +244,7 @@ const PROJECTS = [
     .hidden-on-scroll {
         opacity: 0;
         transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        transition: opacity 0.8s ease-out, transform 1.0s ease-out;
     }
     
     /* Cuando el elemento es visible */

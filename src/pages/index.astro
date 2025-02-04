@@ -14,11 +14,13 @@ import Footer from '../components/Footer.astro';
 import Contact from '../components/Contact.astro';
 import Dropdown from '../components/Dropdown.astro';
 import MapIcon from '../icons/map.astro';
-import Certificados from '../components/certificados.astro';
+import Certificate from '../components/Certificate.astro';
 import Education from '../components/Education.astro';
 import AboutmeIcon from '../icons/About.astro';
 import Menu from '../components/Menu.astro';
-
+import Info from '../components/Info.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
 ---
 
 <Layout title="Abel Cristofer Portafolio - Developer con 2 años de experiencia" description="Desarrollador Web / Realidad Virtual y tecnologías modernas">
@@ -92,20 +94,25 @@ import Menu from '../components/Menu.astro';
 			<Experience />
 		</Sectionclass>
 
-		<Sectionclass id="sobremi" class="scroll-mt-24">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Sobre mi
-				<AboutmeIcon class="size-6" />
-			</h2>
-			<Education />
-			<Certificados />
-		</Sectionclass>
-
 		<Sectionclass id="proyectos" class="scroll-mt-24">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Proyectos
 				<ProjectsIcon class="size-6" />
 			</h2>
 			<Projects />
 		</Sectionclass>
+
+		<Sectionclass id="sobremi" class="scroll-mt-24">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Sobre mi
+				<AboutmeIcon class="size-6" />
+			</h2>
+			<About />
+			<Education />
+			<Certificate />
+			<Info />
+			<Skills />
+		</Sectionclass>
+
+		
 
 		<Sectionclass id="contactos" class="scroll-mt-20">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Contacto

@@ -1,4 +1,7 @@
 ---
+import CalendarIcon from '../icons/Calendar.astro';
+import BuildingsIcon from '../icons/Buildings.astro';
+
 export interface Props{
     title: string
     company: string
@@ -8,11 +11,11 @@ export interface Props{
 }
 const {title,company,description,link,date} = Astro.props
 ---
-<div class="absolute w-3 h-3 bg-gray-800 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"  ></div>
-<div class="bg-gray-800 rounded-lg p-4 border border-violet-700/50 dark:border-gray-900 dark:bg-gray-700">
-<h2 class="text-lg font-semibold text-gray-100 dark:text-white ">{company}</h2>
-<time class="mb-1 text-sm font-normal leading-none text-indigo-200 dark:text-blue-500">{date}</time>
-<h3 class="text-lg font-semibold text-violet-400 dark:text-purple">{title}</h3>
+<div class="absolute w-3 h-3 bg-gray-800 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700 hidden-on-scroll"  ></div>
+<div class="bg-gray-900 rounded-lg p-4 border border-violet-700/50 dark:border-gray-900 dark:bg-gray-700 hidden-on-scroll">
+<h2 class="flex gap-x-1 text-lg font-semibold text-gray-100 dark:text-white "><BuildingsIcon class="size-6" />{company}</h2>
+<time class="flex gap-x-3 mb-1 text-sm font-normal leading-none text-indigo-200 dark:text-blue-500"><CalendarIcon  class="size-4"/>{date}</time>
+<h3 class="flex gap-x-1 text-lg font-semibold text-violet-400 dark:text-purple">{title}</h3>
 <p class="mb-4 text-base font-normal ">{Array.isArray(description) ? (
     <ul class="text-gray-200 dark:text-gray-400">
       {description.map((item) => (
@@ -34,3 +37,35 @@ const {title,company,description,link,date} = Astro.props
 }--->
 
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".hidden-on-scroll");
+  
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add("visible-on-scroll");
+              } else {
+                  entry.target.classList.remove("visible-on-scroll");
+              }
+          });
+      }, { threshold: 0.3 }); // Se activa cuando el 30% del div es visible
+  
+      elements.forEach(el => observer.observe(el));
+  });
+  </script>
+  <style>
+      /* Ocultar elementos inicialmente */
+      .hidden-on-scroll {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease-out, transform 1.0s ease-out;
+      }
+      
+      /* Cuando el elemento es visible */
+      .visible-on-scroll {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      </style>

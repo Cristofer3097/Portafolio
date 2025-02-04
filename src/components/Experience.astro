@@ -26,7 +26,7 @@ const EXPERIENCIE = [
 
 ]
 ---s
-<ol class="relative border-s border-gray-200 dark:border-gray-700 hidden-on-scroll">              
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ">              
     {
     EXPERIENCIE.map((Experience) => (
         <li class="mb-10 ms-4">
@@ -36,34 +36,3 @@ const EXPERIENCIE = [
     }    
     
 </ol>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".hidden-on-scroll");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible-on-scroll");
-            } else {
-                entry.target.classList.remove("visible-on-scroll");
-            }
-        });
-    }, { threshold: 0.3 }); // Se activa cuando el 30% del div es visible
-
-    elements.forEach(el => observer.observe(el));
-});
-</script>
-<style>
-    /* Ocultar elementos inicialmente */
-    .hidden-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    /* Cuando el elemento es visible */
-    .visible-on-scroll {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    </style>
