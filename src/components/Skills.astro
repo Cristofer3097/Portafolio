@@ -1,42 +1,80 @@
-
-
-<div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <ul class="flex flex-wrap text-sm font-medium text-center text-violet-500 border-b border-gray-200 rounded-t-lg bg-indigo-200 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-        <li class="me-2">
-            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300">Lenguajes de Programación</button>
-        </li>
-        <li class="me-2">
-            <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300">Frameworks</button>
-        </li>
-        <li class="me-2">
-            <button id="statistics-tab" data-tabs-target="#statistics" type="button" role="tab" aria-controls="statistics" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300">Herramientas</button>
-        </li>
+---
+// filepath: /c:/Users/abel_/portafolio/src/components/Skills.astro
+---
+<div class="w-full bg-white border border-violet-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <ul class="flex flex-wrap text-sm font-medium text-center text-violet-500 border-b border-gray-200 rounded-t-lg bg-violet-800 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+      <li class="me-2">
+        <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300 tab-button">Lenguajes de Programación</button>
+      </li>
+      <li class="me-2">
+        <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300 tab-button">Frameworks</button>
+      </li>
+      <li class="me-2">
+        <button id="statistics-tab" data-tabs-target="#statistics" type="button" role="tab" aria-controls="statistics" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300 tab-button">Herramientas</button>
+      </li>
     </ul>
     <div id="defaultTabContent">
-        <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-         
-            <p class="mb-9 text-white-500 dark:text-gray-400">Empower Developers, IT Ops, and business teams to collaborate at high velocity. Respond to changes and deliver great customer and employee service experiences fast.</p>
-            
-        </div>
-        <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
-            <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-white-900 dark:text-white">We invest in the world’s potential</h2>
-            <!-- List -->
-            <ul role="list" class="space-y-4 text-white-500 dark:text-gray-400">
-                <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span class="leading-tight">Dynamic reports and dashboards</span>
-                </li>
-                
-            </ul>
-        </div>
-        <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
-            <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-white-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
-                <div class="flex flex-col">
-                    <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
-                </div>
-            </dl>
-        </div>
+      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
+        <p class="mb-9 text-gray-500 dark:text-gray-400">Empower Developers, IT Ops, and business teams to collaborate at high velocity. Respond to changes and deliver great customer and employee service experiences fast.</p>
+      </div>
+      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
+        <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2>
+        <!-- List -->
+        <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
+          <li class="flex space-x-2 rtl:space-x-reverse items-center">
+            <svg class="shrink-0 w-3.5 h-3.5 text-violet-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+            </svg>
+            <span class="leading-tight">Dynamic reports and dashboards</span>
+          </li>
+        </ul>
+      </div>
+      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
+        <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
+          <div class="flex flex-col">
+            <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
+          </div>
+        </dl>
+      </div>
     </div>
-</div>
+  </div>
+  
+  <style>
+    .tab-button[aria-selected="true"] {
+        color: #ffffff; /* Color blanco para la pestaña activa */
+        background-color: #1f2535; /* Color morado para el fondo de la pestaña activa */
+    }
+    .tab-button[aria-selected="false"] {
+        color: #d8d9db; /* Color gris para las pestañas inactivas */
+        background-color: transparent; /* Fondo transparente para las pestañas inactivas */
+    }
+    .tab-button[aria-selected="false"]:hover {
+      background-color: #343e58; /* Color de fondo al pasar el ratón sobre las pestañas inactivas */
+    }
+    .tab-button:hover {
+        color: #ffffff; /* Color morado más oscuro al pasar el ratón */
+    }
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('[role="tab"]');
+      const tabContents = document.querySelectorAll('[role="tabpanel"]');
+  
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => {
+            btn.setAttribute('aria-selected', 'false');
+            btn.classList.remove('active-tab');
+          });
+          button.setAttribute('aria-selected', 'true');
+          button.classList.add('active-tab');
+  
+          tabContents.forEach(content => content.classList.add('hidden'));
+          const target = document.querySelector(button.getAttribute('data-tabs-target'));
+          target.classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+  
