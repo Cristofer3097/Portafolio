@@ -1,0 +1,59 @@
+---
+import PhpIcon from '../icons/Php.astro';
+import JavaSIcon from '../icons/JSIcon.astro';
+import HtmlIcon from '../icons/Html.astro';
+
+const languages = [
+
+{ name: 'PHP', 
+  icon: PhpIcon, 
+  hoverColor: 'hover:text-purple-500' 
+},
+  { 
+    name: 'JavaScript', 
+  icon: JavaSIcon, 
+  hoverColor: 'hover:text-yellow-500' 
+},
+{ name: 'HTML', 
+  icon: HtmlIcon, 
+  hoverColor: 'hover:text-orange-500' 
+},
+  { name: 'Python', 
+  icon: '', 
+  hoverColor: 'hover:text-blue-500' 
+},
+  { name: 'Java', 
+  icon: '', 
+  hoverColor: 'hover:text-orange-500' 
+},
+  { name: 'C++', 
+  icon: '', 
+  hoverColor: 'hover:text-blue-500' 
+},
+  
+  { name: 'CSS', 
+  icon: '', 
+  hoverColor: 'hover:text-blue-500' 
+}
+];
+---
+
+<ul class="list-disc list-inside gap-2 ">
+  {languages.map(language => (
+    <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+      {language.icon && <language.icon class="icon transition size-6 duration-300" />}
+      <span class="ml-2">{language.name}</span>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .icon {
+    filter: grayscale(100%);
+    transition: filter 0.3s, color 0.3s;
+  }
+  .group:hover .icon {
+    filter: grayscale(0%);
+  }
+  
+</style>
