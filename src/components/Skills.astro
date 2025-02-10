@@ -1,58 +1,58 @@
 ---
 import LanguagesContent from "./Languages.astro"
+import FrameworksContent from "./Frameworks.astro"
+import ToolsTecContent from "./ToolsTec.astro"
+import PersonalSkillsContent from "./PersonalSkills.astro"
+import ToolsIcon from '../icons/Tools.astro';
 ---
+
+<h2 class="flex gap-x-2 text-2xl font-bold mb-7" id="educationTitle">Habilidades <ToolsIcon class="size-6" /></h2>
+
 <div class="w-full bg-white border border-violet-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <ul class="flex flex-wrap text-sm font-medium text-center text-violet-500 border-b border-gray-200 rounded-t-lg bg-violet-900 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
       <li class="me-2">
-        <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300 tab-button">Lenguajes de Programación</button>
+        <button id="languages-tab" data-tabs-target="#languages" type="button" role="tab" aria-controls="languages" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-300 tab-button">Lenguajes de Programación</button>
       </li>
       <li class="me-2">
-        <button id="services-tab" data-tabs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300 tab-button">Frameworks</button>
+        <button id="frameworks-tab" data-tabs-target="#frameworks" type="button" role="tab" aria-controls="frameworks" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300 tab-button">Frameworks</button>
       </li>
       <li class="me-2">
-        <button id="statistics-tab" data-tabs-target="#statistics" type="button" role="tab" aria-controls="statistics" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300 tab-button">Herramientas</button>
+        <button id="toolsTec-tab" data-tabs-target="#toolstec" type="button" role="tab" aria-controls="toolstec" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300 tab-button">Herramientas Tecnicas</button>
+      </li>
+      <li class="me-2">
+        <button id="personalskills-tab" data-tabs-target="#personalskills" type="button" role="tab" aria-controls="personalskills" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-300 tab-button">Habilidades personales</button>
       </li>
     </ul>
     <div id="defaultTabContent">
-      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-        <p class="mb-2 text-white-500 dark:text-gray-400"><LanguagesContent /></p>
+      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="languages" role="tabpanel" aria-labelledby="languages-tab">
+        <p class=" text-white-500 dark:text-gray-400"><LanguagesContent /></p>
       </div>
-      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
-        <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2>
-        <!-- List -->
-        <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
-          <li class="flex space-x-2 rtl:space-x-reverse items-center">
-            <svg class="shrink-0 w-3.5 h-3.5 text-violet-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-            </svg>
-            <span class="leading-tight">Dynamic reports and dashboards</span>
-          </li>
-        </ul>
+      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="frameworks" role="tabpanel" aria-labelledby="frameworks-tab">
+        <p class=" text-white-500 dark:text-gray-400"><FrameworksContent /></p>
       </div>
-      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
-        <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
-          <div class="flex flex-col">
-            <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
-          </div>
-        </dl>
+      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="toolstec" role="tabpanel" aria-labelledby="toolstec-tab">
+            <p class="text-white-500 dark:text-gray-400"><ToolsTecContent /></p>
       </div>
+      <div class="hidden p-4 bg-gray-900 rounded-lg md:p-8 dark:bg-gray-800" id="personalskills" role="tabpanel" aria-labelledby="personalskills-tab">
+        <p class="text-white-500 dark:text-gray-400"><PersonalSkillsContent /></p>
+  </div>
     </div>
   </div>
   
   <style>
     .tab-button[aria-selected="true"] {
-        color: #ffffff; /* Color blanco para la pestaña activa */
-        background-color: #1f2535; /* Color morado para el fondo de la pestaña activa */
+        color: #ffffff; 
+        background-color: #1f2535; 
     }
     .tab-button[aria-selected="false"] {
-        color: #d8d9db; /* Color gris para las pestañas inactivas */
-        background-color: transparent; /* Fondo transparente para las pestañas inactivas */
+        color: #d8d9db; 
+        background-color: transparent; 
     }
     .tab-button[aria-selected="false"]:hover {
-      background-color: #343e58; /* Color de fondo al pasar el ratón sobre las pestañas inactivas */
+      background-color: #343e58; 
     }
     .tab-button:hover {
-        color: #ffffff; /* Color morado más oscuro al pasar el ratón */
+        color: #ffffff;
     }
   </style>
   

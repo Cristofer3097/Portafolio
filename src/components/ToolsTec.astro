@@ -1,0 +1,116 @@
+---
+import GitIcon from '../icons/Git.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import CodeIcon from '../icons/Code.astro';
+import UnityIcon from '../icons/unity.astro';
+import FigmaIcon from '../icons/Figma.astro';
+import WordpressIcon from '../icons/Wordpress.astro';
+import ShopifyIcon from '../icons/Shopify.astro';
+import MServerIcon from '../icons/MServer.astro';
+import AndroidSIcon from '../icons/AndroidS.astro';
+import AzureIcon from '../icons/Azure.astro';
+import UnrealEIcon from '../icons/UnrealE.astro';
+
+const languages = [
+{
+name: 'Git',
+icon: GitIcon,
+hoverColor: 'hover:text-[#da4b33]'
+},
+{
+name: 'GitHub',
+icon: GitHubIcon,
+hoverColor: 'hover:text-[#d7d7d7]'
+},
+{
+name: 'Visual Studios Code',
+icon: CodeIcon,
+hoverColor: 'hover:text-[#1ca2ec]'
+},
+{
+name: 'Figma',
+icon: FigmaIcon,
+hoverColor: 'hover:text-[#c3c3c3]'
+},
+{
+name: 'Wordpress',
+icon: WordpressIcon,
+hoverColor: 'hover:text-[#00769d]'
+},
+{
+name: 'Shopify',
+icon: ShopifyIcon,
+hoverColor: 'hover:text-[#9cc055]'
+},
+{
+name: 'Microsoft Server',
+icon: MServerIcon,
+hoverColor: 'hover:text-[#2596be]'
+},
+{
+name: 'Azure',
+icon: AzureIcon,
+hoverColor: 'hover:text-[#32afe9]'
+},
+{
+name: 'Android Studio',
+icon: AndroidSIcon,
+hoverColor: 'hover:text-[#34ac54]'
+},
+{
+name: 'Unity',
+icon: UnityIcon,
+hoverColor: 'hover:text-[#c3c3c3]'
+},
+{ name: 'Unreal Engine',  
+icon: UnrealEIcon,
+hoverColor: 'hover:text-[#c3c3c3]'
+},
+
+
+
+
+];
+
+
+
+
+
+const firstListEndIndex = 6; 
+---
+<div class="w-full flex flex-col items-center p-4">
+  <h2 class="text-2xl font-bold mb-4 text-center">Herramientas Tecnicas</h2>
+  <div class="w-full flex flex-wrap">
+    <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
+      <ul class="grid gap-4 list-inside">
+        {languages.slice(0, firstListEndIndex).map(language => (
+          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+            {language.icon && <language.icon class="icon transition size-6 duration-300" />}
+            <span class="ml-2">{language.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
+      <ul class="grid gap-4 list-inside">
+        {languages.slice(firstListEndIndex).map(language => (
+          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+            {language.icon && <language.icon class="icon transition size-6 duration-300" />}
+            <span class="ml-2">{language.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .icon {
+    filter: grayscale(100%);
+    transition: filter 0.3s, color 0.3s;
+  }
+  .group:hover .icon {
+    filter: grayscale(0%);
+  }
+</style>

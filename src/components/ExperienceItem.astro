@@ -50,20 +50,20 @@ const {title,company,description,link,date} = Astro.props
                   entry.target.classList.remove("visible-on-scroll");
               }
           });
-      }, { threshold: 0.3 }); // Se activa cuando el 30% del div es visible
+      }, { threshold: 0.3 }); 
   
       elements.forEach(el => observer.observe(el));
   });
   </script>
   <style>
-      /* Ocultar elementos inicialmente */
+
       .hidden-on-scroll {
           opacity: 0;
           transform: translateY(30px);
           transition: opacity 0.8s ease-out, transform 1.0s ease-out;
       }
       
-      /* Cuando el elemento es visible */
+
       .visible-on-scroll {
           opacity: 1;
           transform: translateY(0);

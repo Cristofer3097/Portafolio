@@ -1,6 +1,7 @@
 ---
 import CertificateIcon from '../icons/Certificate.astro';
 
+
 const certificados = [
   { name: 'IA', image: '/assets/ia.PNG' },
   { name: 'Python', image: '/assets/python.PNG' },
@@ -13,7 +14,7 @@ const certificados = [
 <section class="overflow-hidden w-full mx-auto py-24 relative">
   <h2 class="flex gap-x-2 text-2xl font-bold mb-7" id="educationTitle">Certificados <CertificateIcon class="size-6" /></h2>
   <div class="flex gap-x-20 animate-carousel" id="carouselTrack">
-    {/* Renderiza los elementos originales */}
+
     {certificados.map((certificado, index) => (
       <div class="carousel-item" key={`original-${index}`}>
         <h2 class="text-lg font-semibold text-gray-100 dark:text-white text-center mb-2">{certificado.name}</h2>
@@ -25,7 +26,7 @@ const certificados = [
         />
       </div>
     ))}
-    {/* Clona los elementos al final para una transición suave */}
+
     {certificados.map((certificado, index) => (
       <div class="carousel-item" key={`clone-${index}`}>
         <h2 class="text-lg font-semibold text-gray-100 dark:text-white text-center mb-2">{certificado.name}</h2>
@@ -57,7 +58,7 @@ const certificados = [
 
   .animate-carousel {
     display: flex;
-    width: 200%; /* Ajusta el ancho para que coincida con el doble de elementos */
+    width: 200%; 
     animation: scroll 15s linear infinite;
   }
 
@@ -68,7 +69,7 @@ const certificados = [
   .carousel-image {
     width: 150px;
     height: 120px;
-    max-width: 100%; /* Asegura que no se desborde */
+    max-width: 100%; 
   }
 </style>
 

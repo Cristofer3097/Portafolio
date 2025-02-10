@@ -1,0 +1,118 @@
+---
+
+import ReactIcon from '../icons/React.astro';
+import TaiwindIcon from '../icons/Taiwind.astro';
+import AstroIcon from '../icons/Astro.astro';
+import DjangoIcon from '../icons/Django.astro';
+import FlutterIcon from '../icons/Flutter.astro';
+import AFrameIcon from "../icons/Aframe.astro"
+import TypeScriptIcon from '../icons/TypeScript.astro';
+import NodeIcon from '../icons/Nodejs.astro';
+import MysqlIcon from '../icons/Mysql.astro';
+import MongoIcon from '../icons/MongoDB.astro';
+import NetIcon from '../icons/Net.astro';
+import Bootstrap from '../icons/Bootstrap.astro';
+import FlowbiteIcon from '../icons/Flowbite.astro';
+
+const languages = [
+{
+name: 'Taiwind CSS',
+icon: TaiwindIcon,
+hoverColor: 'hover:text-[#38bdf8]'
+},
+{
+name: 'TypeScript',
+icon: TypeScriptIcon,
+hoverColor: 'hover:text-[#337bc3]'
+},
+{ name: 'React', 
+  icon: ReactIcon, 
+  hoverColor: 'hover:text-[#58c4dc]' 
+},
+{
+name: 'Flowbite',
+icon: FlowbiteIcon,
+hoverColor: 'hover:text-[#1657e2]'
+},
+{
+name: 'Astro',
+icon: AstroIcon,
+hoverColor: 'hover:text-[#ed5705]'
+},
+{ name: 'Django', 
+  icon: DjangoIcon, 
+  hoverColor: 'hover:text-[#43b28a]' 
+},
+{ name: 'Flutter', 
+  icon: FlutterIcon, 
+  hoverColor: 'hover:text-[#757575]' 
+},
+{
+name: 'AFrame',
+icon: AFrameIcon,
+hoverColor: 'hover:text-[#e72c60]'
+},
+{ name: 'Node.js', 
+  icon: NodeIcon, 
+  hoverColor: 'hover:text-[#529e41]' 
+},
+{ name: 'MySQL', 
+  icon: MysqlIcon, 
+  hoverColor: 'hover:text-[#02769b]' 
+},
+{
+name: 'MongoDB',
+icon: MongoIcon,
+hoverColor: 'hover:text-[#04e862]'
+},
+{ name: '.NET', 
+  icon: NetIcon, 
+  hoverColor: 'hover:text-[#7c1ca4]' 
+},
+{ name: 'Bootstrap', 
+  icon: Bootstrap, 
+  hoverColor: 'hover:text-[#7b14f9]' 
+},
+
+];
+
+
+
+const firstListEndIndex = 7; 
+---
+<div class="w-full flex flex-col items-center p-4">
+  <h2 class="text-2xl font-bold mb-4 text-center">Frameworks</h2>
+  <div class="w-full flex flex-wrap">
+    <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
+      <ul class="grid gap-4 list-inside">
+        {languages.slice(0, firstListEndIndex).map(language => (
+          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+            {language.icon && <language.icon class="icon transition size-6 duration-300" />}
+            <span class="ml-2">{language.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
+      <ul class="grid gap-4 list-inside">
+        {languages.slice(firstListEndIndex).map(language => (
+          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+            {language.icon && <language.icon class="icon transition size-6 duration-300" />}
+            <span class="ml-2">{language.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .icon {
+    filter: grayscale(100%);
+    transition: filter 0.3s, color 0.3s;
+  }
+  .group:hover .icon {
+    filter: grayscale(0%);
+  }
+</style>

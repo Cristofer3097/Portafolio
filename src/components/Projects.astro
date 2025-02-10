@@ -6,7 +6,7 @@ import ProjectsIcon from "../icons/Projects.astro"
 import DeviceIcon from "../icons/Device.astro"
 import WordP from "../icons/Wordpress.astro"
 import UnityIcon from "../icons/unity.astro"
-import CIcon from "../icons/C.astro"
+import CIcon from "../icons/C++.astro"
 import PhpIcon from "../icons/Php.astro"
 import MySQLIcon from "../icons/Mysql.astro"
 import FlutterIcon from "../icons/Flutter.astro"
@@ -21,7 +21,7 @@ const TAGS = {
     },
     Aframe: {
         name: "A-Frame",
-        class: "bg-[#00cbff] text-[#000]",
+        class: "bg-[#00cbff] text-[#e72c60]",
         icon: AFrameIcon,
     },
     Wordpress: {
@@ -35,8 +35,8 @@ const TAGS = {
         icon: UnityIcon,
     },
     CIcon: {
-        name: "C++",
-        class: "bg-[#edeef2] text-[#00589d]",
+        name: "C#",
+        class: "bg-[#1c1c1c] text-[#c072d7]",
         icon: CIcon,
     },
     PhpIcon: {
@@ -171,17 +171,15 @@ const PROJECTS = [
   </div>
 </article>
 
-<!-- MODAL PARA VIDEO (FUERA DEL MAP PARA NO REPETIRLO) -->
+
 <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-50" onclick="closeVideoModal()">
   <div class="relative max-w-[90vw] max-h-[90vh]" onclick="event.stopPropagation()">
 
-      <!-- BOTÓN DE CIERRE "X" -->
       <button onclick="closeVideoModal()" 
           class="absolute top-14 right-4 bg-black bg-opacity-80 text-white text-3xl font-bold cursor-pointer p-2 rounded-full z-50">
           &times;
       </button>
 
-      <!-- CONTENEDOR DEL VIDEO -->
       <video id="modalVideo" class="w-[80vw] h-[45vw] max-w-[1100px] max-h-[706px] rounded-lg shadow-lg transform scale-75 opacity-0 transition-all duration-300" 
           controls>
       </video>
@@ -195,13 +193,13 @@ const PROJECTS = [
       const modal = document.getElementById("videoModal");
       const modalVideo = document.getElementById("modalVideo");
 
-      modalVideo.src = videoUrl; // Asigna la URL del video
+      modalVideo.src = videoUrl; 
       modal.classList.remove("hidden");
 
       setTimeout(() => {
           modalVideo.classList.remove("scale-75", "opacity-0");
           modalVideo.classList.add("scale-100", "opacity-100");
-          modalVideo.play(); // Reproduce automáticamente el video
+          modalVideo.play(); 
       }, 50);
   }
 
@@ -209,17 +207,16 @@ const PROJECTS = [
       const modal = document.getElementById("videoModal");
       const modalVideo = document.getElementById("modalVideo");
 
-      modalVideo.pause(); // Pausa el video al cerrar
+      modalVideo.pause(); 
       modalVideo.classList.remove("scale-100", "opacity-100");
       modalVideo.classList.add("scale-75", "opacity-0");
 
       setTimeout(() => {
           modal.classList.add("hidden");
-          modalVideo.src = ""; // Limpia el src para detener el video
+          modalVideo.src = ""; 
       }, 300);
   }
 
-  // Attach functions to window object to make them accessible from inline event handlers
   window.openVideoModal = openVideoModal;
   window.closeVideoModal = closeVideoModal;
   
@@ -234,20 +231,20 @@ const PROJECTS = [
                 entry.target.classList.remove("visible-on-scroll");
             }
         });
-    }, { threshold: 0.3 }); // Se activa cuando el 30% del div es visible
+    }, { threshold: 0.3 }); 
 
     elements.forEach(el => observer.observe(el));
 });
 </script>
 <style>
-    /* Ocultar elementos inicialmente */
+
     .hidden-on-scroll {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.8s ease-out, transform 1.0s ease-out;
     }
     
-    /* Cuando el elemento es visible */
+
     .visible-on-scroll {
         opacity: 1;
         transform: translateY(0);

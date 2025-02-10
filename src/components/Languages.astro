@@ -1,7 +1,15 @@
 ---
+
 import PhpIcon from '../icons/Php.astro';
 import JavaSIcon from '../icons/JSIcon.astro';
 import HtmlIcon from '../icons/Html.astro';
+import CssIcon from '../icons/CSS.astro';
+import DartIcon from '../icons/Dart.astro';
+import PythonIcon from '../icons/Python.astro';
+import JavaIcon from '../icons/Java.astro';
+import CppIcon from '../icons/C++.astro';
+import CSIcon from '../icons/CSharp.astro';
+import CIcon from '../icons/C.astro';
 
 const languages = [
 
@@ -14,38 +22,71 @@ const languages = [
   icon: JavaSIcon, 
   hoverColor: 'hover:text-yellow-500' 
 },
+{ name: 'CSS', 
+  icon: CssIcon, 
+  hoverColor: 'hover:text-blue-600' 
+},
 { name: 'HTML', 
   icon: HtmlIcon, 
   hoverColor: 'hover:text-orange-500' 
 },
+{ name: 'Dart', 
+  icon: DartIcon, 
+  hoverColor: 'hover:text-sky-400' 
+},
   { name: 'Python', 
-  icon: '', 
-  hoverColor: 'hover:text-blue-500' 
+  icon: PythonIcon, 
+  hoverColor: 'hover:text-yellow-300' 
 },
   { name: 'Java', 
-  icon: '', 
-  hoverColor: 'hover:text-orange-500' 
+  icon: JavaIcon, 
+  hoverColor: 'hover:text-sky-700' 
 },
   { name: 'C++', 
-  icon: '', 
-  hoverColor: 'hover:text-blue-500' 
+  icon: CppIcon, 
+  hoverColor: 'hover:text-sky-700' 
+},
+{
+  name: 'C Sharp',
+  icon: CSIcon,
+  hoverColor: 'hover:text-purple-400'
+},
+{
+  name: 'C',
+  icon: CIcon,
+  hoverColor: 'hover:text-[#659cd3]'
 },
   
-  { name: 'CSS', 
-  icon: '', 
-  hoverColor: 'hover:text-blue-500' 
-}
 ];
----
 
-<ul class="list-disc list-inside gap-2 ">
-  {languages.map(language => (
-    <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
-      {language.icon && <language.icon class="icon transition size-6 duration-300" />}
-      <span class="ml-2">{language.name}</span>
-    </li>
-  ))}
-</ul>
+const firstListEndIndex = 5; 
+---
+<div class="w-full flex flex-col items-center p-4">
+  <h2 class="text-2xl font-bold mb-4 text-center">Languages</h2>
+  <div class="w-full flex flex-wrap">
+    <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
+      <ul class="grid gap-4 list-inside">
+        {languages.slice(0, firstListEndIndex).map(language => (
+          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+            {language.icon && <language.icon class="icon transition size-6 duration-300" />}
+            <span class="ml-2">{language.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
+      <ul class="grid gap-4 list-inside">
+        {languages.slice(firstListEndIndex).map(language => (
+          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+            {language.icon && <language.icon class="icon transition size-6 duration-300" />}
+            <span class="ml-2">{language.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
 
 <style>
   .icon {
@@ -55,5 +96,4 @@ const languages = [
   .group:hover .icon {
     filter: grayscale(0%);
   }
-  
 </style>

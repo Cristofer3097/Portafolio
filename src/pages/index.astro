@@ -1,4 +1,5 @@
 ---
+// filepath: /c:/Users/abel_/portafolio/src/pages/index.astro
 import Badge from '../components/Badge.astro';
 import Layout from '../layouts/Layout.astro';
 import LinkedInIcon from "../icons/LinkedIn.astro";
@@ -18,110 +19,100 @@ import Certificate from '../components/Certificate.astro';
 import Education from '../components/Education.astro';
 import AboutmeIcon from '../icons/About.astro';
 import Menu from '../components/Menu.astro';
-import Info from '../components/Info.astro';
 import About from '../components/About.astro';
 import Skills from '../components/Skills.astro';
+
+
+
+
+
 ---
 
 <Layout title="Abel Cristofer Portafolio - Developer con 2 años de experiencia" description="Desarrollador Web / Realidad Virtual y tecnologías modernas">
 <Menu />
-		<main class="px-4">
-		
-		<Sectionclass id="top" class="relative py-40 pb-60 flex flex-col lg:flex-row items-center justify-between lg:my-0 lg:w-[800px] ">
-			
-			<div class="w-full lg:w-1/2 xl:w-2/5 flex flex-col items-center p-4" >
-				<img 
-				src="assets/1644039.jpg"  
-				alt="Foto de Abel Cristofer" 
-				class="w-full sm:w-1/4 lg:w-3/4 rounded-full  aspect-[7/8] object-cover mb-4 border-2 border-slate-600 dark:border-slate-200">
-				
-					<nav class="flex gap-4 mt-8 flex-wrap justify-center">
-						<SocialPill href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" title="LinkedIn">
-							<LinkedInIcon class="size-4 md:size-4" 
-							 />
-						LinkedIn
-					</SocialPill>
-					<SocialPill href="https://github.com/Cristofer3097" 
-					title="GitHub">
-						<GitHubIcon class="size-4 md:size-4"
-						
-						/>
-						GitHub
-					</SocialPill>
-					<div class="flex space-x-1 lg:space-x-2">
-					<SocialPill href="mailto:cristofer3097@gmail.com" title="Email">
-						<MailIcon class="size-4 md:size-5" />
-						cristofer3097@gmail.com
-					</SocialPill>
-				</div>
-					
-				</nav>
-			</div>	
-			<div class=" top-10 lg:relative lg:top-10  w-full lg:w-3/4  ml-10 flex flex-col justify-start  " >
-		<h1 class=" text-2xl text-wrap lg:text-3xl font-bold flex flex-row gap-x-5 pb-2 text-violet-600">
-			Abel Cristofer
-			<div class="flex justify-center items-center"><a
-					href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="flex justify-center items center">
-					<Badge /></a></div>	
-			 </h1>
-			 <h1 class="text-gray-200 text-2xl text-wrap lg:text-3xl font-bold flex flex-row gap-x-2  ">
-				Desarrollador
-				
-				 </h1>
-				 <h1 class="text-gray-500  text-wrap lg:text-1xl font-bold flex flex-row gap-x-2 pb-2 lg:pb-5 ">
-					<MapIcon class="2" />Nuevo Leon Mexico 
-					
-					 </h1>
+    <main class="px-4">
+    
+    <Sectionclass id="top" class="relative py-40 pb-60 flex flex-col lg:flex-row items-center justify-between lg:my-0 lg:w-[800px] ">
+        
+        <div class="w-full lg:w-1/2 xl:w-2/5 flex flex-col items-center p-4" >
+            <img 
+            src="assets/1644039.jpg"  
+            alt="Foto de Abel Cristofer" 
+            class="w-full sm:w-1/4 lg:w-3/4 rounded-full  aspect-[7/8] object-cover mb-4 border-2 border-slate-600 dark:border-slate-200">
+            
+                <nav class="flex gap-4 mt-8 flex-wrap justify-center">
+                    <SocialPill href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" title="LinkedIn">
+                        <LinkedInIcon class="size-4 md:size-4" />
+                        LinkedIn
+                    </SocialPill>
+                    <SocialPill href="https://github.com/Cristofer3097" title="GitHub">
+                        <GitHubIcon class="size-4 md:size-4" />
+                        GitHub
+                    </SocialPill>
+                    <div class="flex space-x-1 lg:space-x-2">
+                        <SocialPill href="mailto:cristofer3097@gmail.com" title="Email">
+                            <MailIcon class="size-4 md:size-5" />
+                            cristofer3097@gmail.com
+                        </SocialPill>
+                    </div>
+                </nav>
+        </div>    
+        <div class="top-10 lg:relative lg:top-10 w-full lg:w-3/4 ml-10 flex flex-col justify-start">
+            <h1 class="text-2xl text-wrap lg:text-3xl font-bold flex flex-row gap-x-5 pb-2 text-violet-600">
+                Abel Cristofer
+                <div class="flex justify-center items-center">
+                    <a href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center">
+                        <Badge />
+                    </a>
+                </div>    
+            </h1>
+            <h1 class="text-gray-200 text-2xl text-wrap lg:text-3xl font-bold flex flex-row gap-x-2">
+                Desarrollador
+            </h1>
+            <h1 class="text-gray-500 text-wrap lg:text-1xl font-bold flex flex-row gap-x-2 pb-2 lg:pb-5">
+                <MapIcon class="2" />Nuevo Leon Mexico 
+            </h1>
+            <h2 class="text-lg lg:text-xl opacity-80 text-white text-wrap">
+                Con más de 2 años de experiencia. 
+                <span class="text-violet-500">Desarrollador en app Realidad Aumentada.</span> 
+                Disfruto enfrentar nuevos retos, trabajar en proyectos multidisciplinarios para aportar valor a través de la tecnología y aportar soluciones creativas que no solo resuelvan problemas de manera eficiente, sino que también generen valor estratégico a largo plazo.
+            </h2>
+            <div class="flex justify-center items-center py-4 lg:py-8">
+                <Dropdown />
+            </div>
+        </div>
+    </Sectionclass>
+    
+    <Sectionclass id="experience" class="scroll-mt-24 mt-28">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Experiencia Laboral
+            <ExperienceIcon class="size-6" />
+        </h2>
+        <Experience />
+    </Sectionclass>
 
-			
+    <Sectionclass id="proyectos" class="scroll-mt-24">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Proyectos
+            <ProjectsIcon class="size-6" />
+        </h2>
+        <Projects />
+    </Sectionclass>
 
-		<h2 class="text-lg lg;text-xl opacity-80 text-white text-wrap ">Con más de 2 años de experiencia. 
-			<span class="text-violet-500">Desarrollador en app Realidad Aumentada.</span> 
-			Disfruto enfrentar nuevos retos, trabajar en proyectos multidisciplinarios para aportar valor a
-			través de la tecnología y aportar soluciones creativas que no solo resuelvan problemas de manera eficiente,
-			sino que también generen valor estratégico a largo plazo. </h2>
-			<div class="flex justify-center items-center py-4 lg:py-8">
-			<Dropdown /></div>
-		</div></Sectionclass>
-		
-		<Sectionclass id="experience" class="mt-28  ">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 itmes-center text-white">Experiencia Laboral
-				<ExperienceIcon class="size-6 " />
-			</h2>
-			<Experience />
-		</Sectionclass>
+    <Sectionclass id="sobremi" class="scroll-mt-24">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Sobre mi
+            <AboutmeIcon class="size-6" />
+        </h2>
+        <About />
+        <Education id="education" />
+        <Certificate id="certificate" />
+        <Skills id="skills" />
+    </Sectionclass>
 
-		<Sectionclass id="proyectos" class="scroll-mt-24">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Proyectos
-				<ProjectsIcon class="size-6" />
-			</h2>
-			<Projects />
-		</Sectionclass>
-
-		<Sectionclass id="sobremi" class="scroll-mt-24">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Sobre mi
-				<AboutmeIcon class="size-6" />
-			</h2>
-			<About />
-			<Education />
-			<Certificate />
-			<Info />
-			<Skills />
-		</Sectionclass>
-
-		
-
-		<Sectionclass id="contactos" class="scroll-mt-20">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Contacto
-				<MailIcon class="size-6" />
-			</h2>
-			<Contact />
-		</Sectionclass>
-		<Footer />
-	</main>
+    <Sectionclass id="contactos" class="scroll-mt-20">
+        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Contacto
+            <MailIcon class="size-6" />
+        </h2>
+        <Contact />
+    </Sectionclass>
+    <Footer />
+</main>
 </Layout>
-
-	

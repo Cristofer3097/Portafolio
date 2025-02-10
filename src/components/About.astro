@@ -1,15 +1,12 @@
 ---
-// filepath: /c:/Users/abel_/portafolio/src/components/About.astro
+import Header from '../components/Header.astro';
 ---
+<main>
+  <Header />
+</main>
 <article class="info relative isolate py-8 flex flex-col lg:flex-row items-center lg:items-start">
     <div class="prose dark:prose-invert lg:w-2/3">
-        <div class="bg-gray-900 rounded-lg p-4 mb-3 dark:bg-gray-700 
-        hover:shadow-violet-800 hover:shadow-lg md:hover:scale-105  hover:shadow-violet-800 hover:shadow-lg transition-all duration-300">
-            <p class=" text-base font-normal ">Disfruto del los videojuegos (en un futuro crear mi propio videojuego), cocinar y hacer ejercicio.</p>
-            </div>
-            <div class=" bg-gray-900 rounded-lg p-4 mb-3  dark:bg-gray-700 hover:shadow-violet-800 hover:shadow-lg transition-all duration-300 md:hover:scale-105 ">
-            <p> Como desarrollador de software, mis conocimientos técnicos se basan en una amplia gama de herramientas, lenguajes y marcos de trabajo que me permiten dar vida a soluciones digitales. </p>
-        </div>
+        
 
       <div class="relative isolate origin-top transition-all duration-75 grid content-start grid-rows-[auto_1fr_auto] text-xl bg-gray-900 dark:bg-gray-700" id="status-container">
         <div class="relative">
@@ -39,13 +36,16 @@
     </div>
     
   
-            </div>
+           
     
-    <div class="avatar mx-auto size-fit overflow-hidden rounded-full lg:ml-8">
-      <svg width="316" xmlns="http://www.w3.org/2000/svg" height="330" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none">
-        <!-- SVG content here -->
-        <circle cx="158" cy="165" r="158" fill="#ddd" />
-      </svg>
+    <div class=" mx-auto size-fit  lg:ml-8">
+      <div class="bg-gray-900 rounded-lg p-4 mb-3 dark:bg-gray-700 
+        hover:shadow-violet-800 hover:shadow-lg md:hover:scale-105  hover:shadow-violet-800 hover:shadow-lg transition-all duration-300">
+            <p class=" text-base font-normal ">Disfruto del los videojuegos (en un futuro crear mi propio videojuego), cocinar y hacer ejercicio.</p>
+            </div>
+            <div class=" bg-gray-900 rounded-lg p-4 mb-3  dark:bg-gray-700 hover:shadow-violet-800 hover:shadow-lg transition-all duration-300 md:hover:scale-105 ">
+            <p> Como desarrollador de software, mis conocimientos técnicos se basan en una amplia gama de herramientas, lenguajes y marcos de trabajo que me permiten dar vida a soluciones digitales. </p>
+        </div>
     </div>
   </article>
   
