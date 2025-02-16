@@ -7,6 +7,8 @@ import Dropdown from '../components/Dropdown.astro';
 import MapIcon from '../icons/map.astro';
 import MailIcon from '../icons/Mail.astro';
 ---
+
+
 <div class="w-full lg:w-1/2 xl:w-2/5 flex flex-col items-center p-4 hidden-on-scroll" >
     <img 
     src="assets/1644039.jpg"  
@@ -34,7 +36,7 @@ import MailIcon from '../icons/Mail.astro';
     <h1 class="text-2xl text-wrap lg:text-3xl font-bold flex flex-row gap-x-5 pb-2 text-violet-600">
         Abel Cristofer
         <div class="flex justify-center items-center">
-            <a href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center">
+            <a href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" title="LinkedIn" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center">
                 <Badge />
             </a>
         </div>    
@@ -100,13 +102,40 @@ import MailIcon from '../icons/Mail.astro';
 
         typeEffect();
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".hidden-on-scroll");
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible-on-scroll");
+                } else {
+                    entry.target.classList.remove("visible-on-scroll");
+                }
+            });
+        }, { threshold: 0.3 }); 
+    
+        elements.forEach(el => observer.observe(el));
+    });
 </script>
 <style>
     .typed-cursor {
-        animation: blink 2s step-end infinite;
+        animation: blink 1s step-end infinite;
     }
 
     @keyframes blink {
         50% { opacity: 0; }
     }
+    .hidden-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 1.0s ease-out;
+        }
+        
+  
+        .visible-on-scroll {
+            opacity: 1;
+            transform: translateY(0);
+        }
 </style>

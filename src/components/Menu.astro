@@ -1,19 +1,19 @@
 <div class="hidden lg:flex fixed top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-l-lg text-white z-50">
     <nav class="w-64 p-6">
       <ul class="space-y-4 flex flex-col items-center p-4 gap-1">
-        <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border hover:shadow-gray-800 hover:shadow-lg">
+        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border hover:shadow-gray-800 hover:shadow-lg">
           <a href="#top" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Inicio</a>
         </li>
-        <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
           <a href="#experience" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Experiencia</a>
         </li>
-        <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
           <a href="#proyectos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Proyectos</a>
         </li>
-        <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
           <a href="#sobremi" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Sobre mí</a>
         </li>
-        <li class="w-full hover:bg-gray-800 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
           <a href="#contactos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Contacto</a>
         </li>
       </ul>
@@ -43,9 +43,9 @@
         }
   
         navLinks.forEach(link => {
-          link.classList.remove('bg-violet-950');
+          link.classList.remove('bg-violet-900/50');
           if (link.getAttribute('href').includes(current)) {
-            link.classList.add('bg-violet-950');
+            link.classList.add('bg-violet-900/50');
           }
         });
       });

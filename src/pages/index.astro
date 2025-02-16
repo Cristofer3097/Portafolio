@@ -1,6 +1,4 @@
 ---
-// filepath: /c:/Users/abel_/portafolio/src/pages/index.astro
-
 import Layout from '../layouts/Layout.astro';
 import IntroContent from '../components/Intro.astro';
 import MailIcon from '../icons/Mail.astro';
@@ -18,17 +16,19 @@ import Menu from '../components/Menu.astro';
 import About from '../components/About.astro';
 import Skills from '../components/Skills.astro';
 
+
+
 ---
 
 <Layout title="Abel Cristofer Portafolio - Developer con 2 años de experiencia" description="Desarrollador Web / Realidad Virtual y tecnologías modernas">
 <Menu />
     <main class="px-4">
-    
-    <Sectionclass id="top" class="relative py-40 pb-60 flex flex-col lg:flex-row items-center justify-between lg:my-0 lg:w-[800px] ">
+    <Sectionclass  id="top" class="relative py-40 pb-56 flex flex-col lg:flex-row items-center justify-between lg:my-0 lg:w-[800px] ">
+
         <IntroContent />
     </Sectionclass>
     
-    <Sectionclass id="experience" class="scroll-mt-24 mt-28">
+    <Sectionclass id="experience" class="scroll-mt-24 mt-4  opacity-0 translate-y-10 transition-all duration-700 ease-in-out">
         <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white">Experiencia Laboral
             <ExperienceIcon class="size-6" />
         </h2>
@@ -61,4 +61,24 @@ import Skills from '../components/Skills.astro';
     <Footer />
 </main>
 </Layout>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const experienceSection = document.getElementById("experience");
+    
+        if (experienceSection) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            experienceSection.classList.remove("opacity-0", "translate-y-10");
+                        }
+                    });
+                },
+                { threshold: 0.2 } // Se activa cuando el 20% de la sección es visible
+            );
+    
+            observer.observe(experienceSection);
+        }
+    });
+    </script>
+    
