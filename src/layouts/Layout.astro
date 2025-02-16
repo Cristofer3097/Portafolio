@@ -11,42 +11,76 @@ const { description, title} = Astro.props
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="assets/favicon.png" href="assets/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-	</head>
-	<body>
-		<div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div>
-		<Header />
-		<slot />
-		<script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js" />
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content={description} />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+</head>
+<body>
+	<div class="relative h-full w-full bg-slate-950">
+		<div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+		<div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+	</div>
+
+	<Header />
+	<slot />
+
+	<!-- Flowbite Script -->
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+
+	<!-- Script del menú desplegable -->
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const menuToggle = document.getElementById('menu-toggle');
+		const navMenu = document.getElementById('nav-menu');
+		const closeMenu = document.getElementById('close-menu');
+		const navLinks = document.querySelectorAll('#nav-menu a');
+
+		if (menuToggle && navMenu && closeMenu) {
+			menuToggle.addEventListener('click', () => {
+				navMenu.classList.toggle('translate-x-full');
+				navMenu.classList.toggle('translate-x-0');
+			});
+
+			closeMenu.addEventListener('click', () => {
+				navMenu.classList.add('translate-x-full');
+				navMenu.classList.remove('translate-x-0');
+			});
+
+			// Cerrar menú al hacer clic en un enlace
+			navLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					navMenu.classList.add('translate-x-full');
+					navMenu.classList.remove('translate-x-0');
+				});
+			});
+		}
+	});
+	</script>
+</body>
 </html>
 
 <style is:global>
 	:root {
-	color-scheme: light dark;
+		color-scheme: light dark;
 	}
 	html {
 		font-family: 'Onest Variable', system-ui, sans-serif;
 		scroll-behavior: smooth;
-
 	}
 	body {
 		background: #070013;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		overflow-x: hidden;
 	}
-	
-	@media (prefers-reducved-motion: reduce){
-	html{
-	scroll-behavior: auto;}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>

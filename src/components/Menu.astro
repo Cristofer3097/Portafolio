@@ -1,53 +1,53 @@
-<div class="hidden lg:flex fixed top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-l-lg text-white z-50">
-    <nav class="w-64 p-6">
-      <ul class="space-y-4 flex flex-col items-center p-4 gap-1">
-        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border hover:shadow-gray-800 hover:shadow-lg">
-          <a href="#top" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Inicio</a>
-        </li>
-        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
-          <a href="#experience" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Experiencia</a>
-        </li>
-        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
-          <a href="#proyectos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Proyectos</a>
-        </li>
-        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
-          <a href="#sobremi" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Sobre mí</a>
-        </li>
-        <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
-          <a href="#contactos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Contacto</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const navLinks = document.querySelectorAll('nav a');
-  
-      window.addEventListener('scroll', () => {
-        let current = '';
-        const sections = document.querySelectorAll('section');
-        const scrollPosition = window.pageYOffset + window.innerHeight / 2;
-  
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-          }
-        });
-  
-        // Check if the current section is a subsection of "Sobre mí"
-        if (['skills', 'education', 'certificate'].includes(current)) {
-          current = 'sobremi';
-        }
-  
-        navLinks.forEach(link => {
-          link.classList.remove('bg-violet-900/50');
-          if (link.getAttribute('href').includes(current)) {
-            link.classList.add('bg-violet-900/50');
-          }
-        });
-      });
+<div id="side-menu" class="hidden lg:flex fixed top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-l-lg text-white z-50">
+  <nav class="w-64 p-6">
+    <ul class="space-y-4 flex flex-col items-center p-4 gap-1">
+      <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border hover:shadow-gray-800 hover:shadow-lg">
+        <a href="#top" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Inicio</a>
+      </li>
+      <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#experience" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Experiencia</a>
+      </li>
+      <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#proyectos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Proyectos</a>
+      </li>
+      <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#sobremi" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Sobre mí</a>
+      </li>
+      <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
+        <a href="#contactos" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sideNav = document.getElementById('side-menu'); 
+  const navLinks = sideNav.querySelectorAll('a'); // Solo selecciona los enlaces de este menú
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section');
+    const scrollPosition = window.pageYOffset + window.innerHeight / 2;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
     });
-  </script>
+
+    if (['skills', 'education', 'certificate'].includes(current)) {
+      current = 'sobremi';
+    }
+
+    navLinks.forEach(link => {
+      link.classList.remove('bg-violet-900/50');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('bg-violet-900/50');
+      }
+    });
+  });
+});
+</script>
