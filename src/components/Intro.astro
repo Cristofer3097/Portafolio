@@ -41,7 +41,7 @@ import MailIcon from '../icons/Mail.astro';
             </a>
         </div>    
     </h1>
-    <h1 class="text-gray-200 text-2xl text-wrap lg:text-3xl font-bold flex flex-row gap-x-2">
+    <h1 class="text-gray-200 text-2xl text-wrap lg:text-3xl font-bold flex flex-row gap-x-2" >
         Desarrollador <span id="changing-text" class="text-violet-600"></span><span id="typed-cursor" class="typed-cursor">|</span>
 
     </h1>
@@ -61,7 +61,7 @@ import MailIcon from '../icons/Mail.astro';
     document.addEventListener("DOMContentLoaded", () => {
         const textElement = document.getElementById("changing-text");
         const cursorElement = document.getElementById("typed-cursor");
-        const words = ["Full-Stack","Frontend", "Backend", "Apps AR", "Web", "Apps Móviles"];
+        const words = ["Full-Stack","Frontend", "Backend", "Apps AR", "Web"];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;

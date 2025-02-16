@@ -1,0 +1,23 @@
+{
+  "header": {
+    "title": "Portfolio",
+    "home": "Home",
+    "experience": "Experience",
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "status": {
+    "title": "Status",
+    "content": "Currently seeking challenging opportunities to continue expanding my skills, committed to learning new technologies and frameworks."
+  },
+  "hobbies": {
+    "content": "I enjoy video games (in the future, creating my own video game), cooking, and exercising."
+  },
+  "skills": {
+    "content": "As a software developer, my technical knowledge is based on a wide range of tools, languages, and frameworks that allow me to bring digital solutions to life."
+  },
+  "intro":{
+  "developer":"Developer"
+  }
+}

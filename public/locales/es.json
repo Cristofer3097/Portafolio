@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "Portafolio",
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "status": {
+    "title": "Estatus",
+    "content": "Actualmente en busca de oportunidades desafiantes para continuar expandiendo mis habilidades, comprometido con el aprendizaje de nuevas tecnologías y marcos."
+  },
+  "hobbies": {
+    "content": "Disfruto de los videojuegos (en un futuro crear mi propio videojuego), cocinar y hacer ejercicio."
+  },
+  "skills": {
+    "content": "Como desarrollador de software, mis conocimientos técnicos se basan en una amplia gama de herramientas, lenguajes y marcos de trabajo que me permiten dar vida a soluciones digitales."
+  }
+}

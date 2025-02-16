@@ -1,46 +1,42 @@
-
-<article class="info relative isolate py-8 flex flex-col lg:flex-row  lg:items-start">
+<article class="info relative isolate py-8 flex flex-col lg:flex-row lg:items-start">
   <div class="prose dark:prose-invert lg:w-2/3 py-4 ml-4">
-        
-
-      <div class="relative isolate origin-top transition-all duration-75 grid content-start grid-rows-[auto_1fr_auto] text-xl bg-gray-900 dark:bg-gray-700" id="status-container">
-        <div class="relative">
-          <button class="absolute -left-[.9em] h-full transition duration-75" id="toggle-button">
-            <span class="sr-only">Toggle open and close code block</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/50 hover:text-muted-foreground arrow-icon rotate-0">
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </button>
-          <span class="font-mono text-muted-foreground/70">&lt;</span>
-          <span class="font-mono font-semibold text-accent text-violet-500">Estatus</span>
-          <span class="font-mono text-muted-foreground/70">&gt;</span>
-        </div>
-        <div id="status-content" class="border-l-2 border-muted-foreground/50 pl-8 text-base overflow-hidden hover:border-muted-foreground hidden">
-          <div class="py-4 font-mono">
-            <p class="m-0 p-0 text-muted-foreground">
-                Actualmente en busca de oportunidades desafiantes para continuar expandio mis habilidades, comprometido con el aprendizaje de nuevas tecnologías y marcos.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="text-xl ">
-        <span class="font-mono text-muted-foreground/70">&lt;/</span>
-        <span class="font-mono font-semibold text-accent text-violet-500">Estatus</span>
+    <div class="relative isolate origin-top transition-all duration-75 grid content-start grid-rows-[auto_1fr_auto] text-xl bg-gray-900 dark:bg-gray-700" id="status-container">
+      <div class="relative">
+        <button class="absolute -left-[.9em] h-full transition duration-75" id="toggle-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground/50 hover:text-muted-foreground arrow-icon rotate-0">
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </button>
+        <span class="font-mono text-muted-foreground/70">&lt;</span>
+        <span class="font-mono font-semibold text-accent text-violet-500" id="status-title">Estatus</span>
         <span class="font-mono text-muted-foreground/70">&gt;</span>
       </div>
-    </div>
-    
-  
-           
-    
-    <div class=" mx-auto size-fit  lg:ml-8">
-      <div class="bg-gray-900 rounded-lg p-4 mb-3 dark:bg-gray-700 
-        hover:shadow-violet-800 hover:shadow-lg md:hover:scale-105  hover:shadow-violet-800 hover:shadow-lg transition-all duration-300">
-            <p class=" text-base font-normal ">Disfruto del los videojuegos (en un futuro crear mi propio videojuego), cocinar y hacer ejercicio.</p>
-            </div>
-            <div class=" bg-gray-900 rounded-lg p-4 mb-3  dark:bg-gray-700 hover:shadow-violet-800 hover:shadow-lg transition-all duration-300 md:hover:scale-105 ">
-            <p> Como desarrollador de software, mis conocimientos técnicos se basan en una amplia gama de herramientas, lenguajes y marcos de trabajo que me permiten dar vida a soluciones digitales. </p>
+      <div id="status-content" class="border-l-2 border-muted-foreground/50 pl-8 text-base overflow-hidden hover:border-muted-foreground hidden">
+        <div class="py-4 font-mono">
+          <p class="m-0 p-0 text-muted-foreground" id="status-text">
+            Actualmente en busca de oportunidades desafiantes para continuar expandiendo mis habilidades, comprometido con el aprendizaje de nuevas tecnologías y marcos.
+          </p>
         </div>
+      </div>
+    </div>
+    <div class="text-xl">
+      <span class="font-mono text-muted-foreground/70">&lt;/</span>
+      <span class="font-mono font-semibold text-accent text-violet-500" id="status-title-close">Estatus</span>
+      <span class="font-mono text-muted-foreground/70">&gt;</span>
+    </div>
+  </div>
+
+  <div class="mx-auto size-fit lg:ml-8">
+    <div class="bg-gray-900 rounded-lg p-4 mb-3 dark:bg-gray-700 hover:shadow-violet-800 hover:shadow-lg md:hover:scale-105 transition-all duration-300">
+      <p class="text-base font-normal" id="hobbies-text">
+        Disfruto de los videojuegos y en un futuro crear mi propio videojuego, cocinar y hacer ejercicio.
+      </p>
+    </div>
+    <div class="bg-gray-900 rounded-lg p-4 mb-3 dark:bg-gray-700 hover:shadow-violet-800 hover:shadow-lg transition-all duration-300 md:hover:scale-105">
+      <p id="skills-text">
+        Como desarrollador de software, mis conocimientos técnicos se basan en una amplia gama de herramientas, lenguajes y marcos de trabajo que me permiten dar vida a soluciones digitales.
+      </p>
+    </div>
     </div>
   </article>
   
