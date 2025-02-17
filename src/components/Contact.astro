@@ -6,15 +6,36 @@
     <input type="hidden" name="_email" value="cristofer3097@gmail.com" />
        <div class="mb-6">
           <label for="email" class="block mb-2 text-sm font-medium text-white">Tu correo</label>
-          <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="nombre@compañia.com" required />
+          <input type="email" 
+          id="email" 
+          name="email"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+          placeholder="nombre@compañia.com" required />
        </div>
+
+       <div class="mb-6">
+         <label for="subject" class="block mb-2 text-sm font-medium text-white">Nombre</label>
+         <input type="text" 
+         id="name" 
+         name="name"
+         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="¿Cual es tu nombre?" required />
+      </div>
+       
        <div class="mb-6">
           <label for="subject" class="block mb-2 text-sm font-medium text-white">Asunto</label>
-          <input type="text" id="subject" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="¿De que quieres hablar?" required />
+          <input type="text" 
+          id="subject" 
+          name="subject"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="¿De que quieres hablar?" required />
        </div>
+
        <div class="mb-6">
-          <label for="message" class="block mb-2 text-sm font-medium text-text-white">Tu mensaje</label>
-          <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu mensaje..."></textarea>
+          <label for="comments" 
+          class="block mb-2 text-sm font-medium text-text-white">Tu mensaje</label>
+          <textarea id="message"
+          name="comments" 
+          rows="4" 
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu mensaje..."></textarea>
        </div>
        <button type="submit" title="Email" class="text-white bg-blue-900  hover:bg-blue-900/50  w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block">Enviar mensaje</button>
     </form>

@@ -62,12 +62,12 @@ const languages = [
 const firstListEndIndex = 5; 
 ---
 <div class="w-full flex flex-col items-center p-4">
-  <h2 class="text-2xl font-bold mb-4 text-center">Languages</h2>
+  <h2 class="text-2xl font-bold mb-4 text-center text-white">Languages</h2>
   <div class="w-full flex flex-wrap">
     <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
       <ul class="grid gap-4 list-inside">
         {languages.slice(0, firstListEndIndex).map(language => (
-          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+          <li class={`flex items-center group mb-2 text-gray-400 ${language.hoverColor}`} key={language.name}>
             {language.icon && <language.icon class="icon transition size-6 duration-300" />}
             <span class="ml-2">{language.name}</span>
           </li>
@@ -78,7 +78,7 @@ const firstListEndIndex = 5;
     <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
       <ul class="grid gap-4 list-inside">
         {languages.slice(firstListEndIndex).map(language => (
-          <li class={`flex items-center group mb-2 ${language.hoverColor}`} key={language.name}>
+          <li class={`flex items-center group mb-2 text-gray-400 ${language.hoverColor}`} key={language.name}>
             {language.icon && <language.icon class="icon transition size-6 duration-300" />}
             <span class="ml-2">{language.name}</span>
           </li>
