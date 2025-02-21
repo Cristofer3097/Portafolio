@@ -5,46 +5,58 @@
     >
     <input type="hidden" name="_email" value="cristofer3097@gmail.com" />
        <div class="mb-6">
-          <label for="email" class="block mb-2 text-sm font-medium text-white">Tu correo</label>
+          <label for="email" class="block mb-2 text-sm font-medium text-white" id="contact-email" data-translate="contact.email">Tu correo electrico</label>
           <input type="email" 
           id="email" 
           name="email"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-          placeholder="nombre@compañia.com" required />
+          placeholder="nombre@compañia.com" 
+          data-translate-placeholder="contact.placeholderemail"
+          required />
        </div>
 
        <div class="mb-6">
-         <label for="subject" class="block mb-2 text-sm font-medium text-white">Nombre</label>
+         <label for="subject" class="block mb-2 text-sm font-medium text-white" id="contact-name" data-translate="contact.name">Nombre</label>
          <input type="text" 
          id="name" 
          name="name"
-         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="¿Cual es tu nombre?" required />
+         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+         placeholder="¿Cual es tu nombre?" 
+         data-translate-placeholder="contact.placeholdername"
+         required />
       </div>
        
        <div class="mb-6">
-          <label for="subject" class="block mb-2 text-sm font-medium text-white">Asunto</label>
-          <input type="text" 
+          <label for="subject" class="block mb-2 text-sm font-medium text-white" id="contact-subject" data-translate="contact.subject">Asunto</label>
+          <input 
+          type="text" 
           id="subject" 
           name="subject"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="¿De que quieres hablar?" required />
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+          placeholder="¿De qué se trata tu mensaje?" 
+          data-translate-placeholder="contact.placeholdersubject"
+          required />
        </div>
 
        <div class="mb-6">
           <label for="comments" 
-          class="block mb-2 text-sm font-medium text-text-white">Tu mensaje</label>
+          class="block mb-2 text-sm font-medium text-text-white" id="contact-message" data-translate="contact.message">Tu mensaje</label>
           <textarea id="message"
           name="comments" 
           rows="4" 
-          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tu mensaje..."></textarea>
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+          placeholder="Escribe tu mensaje aquí"
+          data-translate-placeholder="contact.placeholdermessage"
+          ></textarea>
        </div>
-       <button type="submit" title="Email" class="text-white bg-blue-900  hover:bg-blue-900/50  w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block">Enviar mensaje</button>
+       <button type="submit" title="Email" class="text-white bg-blue-900  hover:bg-blue-900/50  w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block" id="contact-send" data-translate="contact.send">Enviar mensaje</button>
     </form>
     
     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
        <a href="mailto:cristofer3097@gmail.com" title="Email" class="hover:underline">cristofer3097@gmail.com</a>
     </p>
 
-    <div class="mt-4 flex items-center justify-center opacity-80 gap-2 border-t border-foreground/10 pt-4 text-muted-foreground max-md:order-1" >
+    <div class="mt-4 flex items-center justify-center opacity-80 gap-2 border-t border-foreground/10 pt-4 text-muted-foreground max-md:order-1" id="contact-option" data-translate="contact.option">
         O envíeme un mensaje a
         <a rel="noopener noreferrer" target="_blank" title="LinkedIn" href="https://www.linkedin.com/in/abel-cristofer-hernández-bustos-102413128/" role="link" aria-label="Opens in a new tab" 
         class="group flex w-fit items-center justify-between gap-[2px] transition hover:text-accent hover:underline active:scale-95 inline-flex"> 

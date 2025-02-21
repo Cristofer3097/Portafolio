@@ -19,5 +19,25 @@
   },
   "intro":{
   "developer":"Developer"
+  },
+  "badge":{
+    "title":"Available for work"
+  },
+  "certificate":
+  {
+    "title":"Certificates"
+  },
+  "contact":{
+    "email":"Your email address",
+    "placeholderemail":"name@company.com",
+    "name":"Name",
+    "placeholdername":"What is your name?",
+    "subject":"Subject",
+    "placeholdersubject":"What is your message about?",
+    "message":"Your message",
+    "placeholdermessage":"Write your message here",
+    "send":"Send message",
+    "option":"Or send me a message to"
   }
+
 }

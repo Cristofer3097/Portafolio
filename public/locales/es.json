@@ -16,5 +16,27 @@
   },
   "skills": {
     "content": "Como desarrollador de software, mis conocimientos técnicos se basan en una amplia gama de herramientas, lenguajes y marcos de trabajo que me permiten dar vida a soluciones digitales."
+  },
+  "intro":{
+  "developer":"Desarrollador"
+  },
+  "badge":{
+    "title":"Disponible para trabajar"
+  },
+  "certificate":
+  {
+    "title":"Certificados"
+  },
+  "contact":{
+    "email":"Tu correo electrónico",
+    "placeholderemail":"nombre@compañia.com",
+    "name":"Nombre",
+    "placeholdername":"¿Cual es tu nombre?",
+    "subject":"Asunto",
+    "placeholdersubject":"¿De qué se trata tu mensaje?",
+    "message":"Tu mensaje",
+    "placeholdermessage":"Escribe tu mensaje aquí",
+    "send":"Enviar mensaje",
+    "option":"O envíeme un mensaje a"
   }
 }
