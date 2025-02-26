@@ -38,6 +38,38 @@
     "placeholdermessage":"Write your message here",
     "send":"Send message",
     "option":"Or send me a message to"
+  },
+  "dropdown":{
+    "cv":"Resume"
+  },
+  "education":{
+    "title":"Education",
+    "fimedatedip":"January - March 2024",
+    "fimetitledip": "DIPLOMA IN PYTHON IN GRAPHICAL INTERFACES AND ANALYSIS",
+    "fimetitle":"SOFTWARE THE TECHNOLOGY IN ENGINEER (TITLED)",
+    "eiao": "TECHNICAL BACHELOR IN WEB PROGRAMMING"
+  },
+  {
+    "experience": {
+      "fime": {
+        "date": "Dec 2022 - PRESENT",
+        "company": "FIME - IMMERSIVE VIRTUAL REALITY LABORATORY",
+        "title": "Developer / Project Management",
+        "description": [
+          "- Creation of Virtual Reality environments (Unity) (Forklift Simulator, Python Horror, FIME Tour Unity/Web).",
+          "- Project management based on agile methodologies (specialized in Scrum)."
+        ]
+      },
+      "sat": {
+        "date": "Jan 2015 - Jul 2015",
+        "company": "SAT: TAX ADMINISTRATION SERVICE",
+        "title": "General Assistant",
+        "description": [
+          "- Computer maintenance.",
+          "- Report generation with SAP and manipulation of dynamic tables."
+        ]
+      }
+    }
   }
 
 }

@@ -38,5 +38,37 @@
     "placeholdermessage":"Escribe tu mensaje aquí",
     "send":"Enviar mensaje",
     "option":"O envíeme un mensaje a"
+  },
+  "dropdown":{
+    "cv":"Curriculum"
+  },
+  "education":{
+    "title":"Educación",
+    "fimedatedip":"Enero - Marzo 2024",
+    "fimetitledip": "DIPLOMADO EN PYTHON EN INTERFACES GRÁFICAS Y ANÁLISIS",
+    "fimetitle":"INGENIERO EN TECNOLOGÍA DE SOFTWARE (TITULADO)",
+    "eiao": "BACHILLER TÉCNICO EN PROGRAMACIÓN WEB"
+  },
+  {
+    "experience": {
+      "fime": {
+        "date": "Dic 2022 - PRESENTE",
+        "company": "FIME - LABORATORIO DE REALIDAD VIRTUAL INMERSIVA",
+        "title": "Desarrollador / Gestión de Proyectos",
+        "description": [
+          "- Creación de entornos en Realidad Virtual (Unity) (Simulador de Montacargas, Python Horror, Recorrido FIME Unity/Web).",
+          "- Administración de proyectos basados en metodologías ágiles (especializado en Scrum)."
+        ]
+      },
+      "sat": {
+        "date": "Ene 2015 - Jul 2015",
+        "company": "SAT: SERVICIO DE ADMINISTRACIÓN TRIBUTARIA",
+        "title": "Ayudante general",
+        "description": [
+          "- Mantenimiento de computadoras.",
+          "- Generación de informes con SAP y manipulación de tablas dinámicas."
+        ]
+      }
+    }
   }
 }
