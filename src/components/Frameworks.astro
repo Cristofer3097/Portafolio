@@ -98,7 +98,7 @@ const firstListEndIndex = 7;
     <div class="w-full lg:w-1/2 flex flex-col items-center p-4">
       <ul class="grid gap-4 list-inside">
         {languages.slice(firstListEndIndex).map(language => (
-          <li class={`flex items-center group mb-2 text-gray-400${language.hoverColor}`} key={language.name}>
+          <li class={`flex items-center group mb-2 text-gray-400 ${language.hoverColor}`} key={language.name}>
             {language.icon && <language.icon class="icon transition size-6 duration-300" />}
             <span class="ml-2">{language.name}</span>
           </li>

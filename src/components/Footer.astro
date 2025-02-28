@@ -11,11 +11,11 @@ import GitHubicon from "../icons/GitHub.astro"
                 <span class="self-center text-2xl font-semibold whitespace-nowrap text-violet-500/90">Abel Cristofer</span>
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 text-white/80 space-x-6">
-                <li><a href="#top" class="hover:underline">Inicio</a></li>
-                <li><a href="#experience" class="hover:underline">Experiencia</a></li>
-                <li><a href="#proyectos" class="hover:underline">Proyectos</a></li>
-                <li><a href="#sobremi" class="hover:underline">Sobre mí</a></li>
-                <li><a href="#contactos" class="hover:underline">Contacto</a></li>
+                <li><a href="#top" class="hover:underline" data-translate="header.home">Inicio</a></li>
+                <li><a href="#experience" class="hover:underline" data-translate="header.experience">Experiencia</a></li>
+                <li><a href="#proyectos" class="hover:underline" data-translate="header.projects">Proyectos</a></li>
+                <li><a href="#sobremi" class="hover:underline" data-translate="header.about">Sobre mí</a></li>
+                <li><a href="#contactos" class="hover:underline" data-translate="header.contact">Contacto</a></li>
             </ul>
         </div>
         <hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-5" />
@@ -23,14 +23,14 @@ import GitHubicon from "../icons/GitHub.astro"
         <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
             <span class="text-left w-full sm:w-auto pb-2"> © 2025. Abel Cristofer</span>
          
-            <span class="lg:text-center  w-full sm:w-auto pb-2 md:text-left">Esta página fue construida con Astro 
+            <span class="lg:text-center  w-full sm:w-auto pb-2 md:text-left" ><span data-translate="footer.content">Esta página fue construida con Astro </span>
                 <svg class="inline-flex w-5 h-5 text-accent" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M14.972 3.483c.163 .196 .247 .46 .413 .987l3.64 11.53a15.5 15.5 0 0 0 -4.352 -1.42l-2.37 -7.723a.31 .31 0 0 0 -.296 -.213a.31 .31 0 0 0 -.295 .214l-2.342 7.718a15.5 15.5 0 0 0 -4.37 1.422l3.657 -11.53c.168 -.527 .251 -.79 .415 -.986c.144 -.172 .331 -.306 .544 -.388c.242 -.094 .527 -.094 1.099 -.094h2.612c.572 0 .858 0 1.1 .094c.213 .082 .4 .217 .545 .39" />
                     <path d="M9 18c0 1.5 2 3 3 4c1 -1 3 -3 3 -4q -3 1.5 -6 0" />
                 </svg>
             </span>
-            <a href="https://github.com/Cristofer3097/Portafolio" title="GitHub" class="flex gap-x-2 hover:underline text-right w-full sm:w-auto">Codigo fuente <GitHubicon class="size-4"/> </a>
+            <a href="https://github.com/Cristofer3097/Portafolio" title="GitHub" class="flex gap-x-2 hover:underline text-right w-full sm:w-auto" > Codigo fuente <GitHubicon class="size-4"/> </a>
         </div>
     </div>
 

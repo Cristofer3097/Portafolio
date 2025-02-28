@@ -18,7 +18,10 @@
     "content": "Como desarrollador de software, mis conocimientos técnicos se basan en una amplia gama de herramientas, lenguajes y marcos de trabajo que me permiten dar vida a soluciones digitales."
   },
   "intro":{
-  "developer":"Desarrollador"
+  "developer":"Desarrollador",
+  "part1":" Con más de 2 años de experiencia.",
+  "part2":" Desarrollador en Full-Stack, Backend y en Apps Realidad Aumentada.",
+  "part3":" Disfruto enfrentar nuevos retos, trabajar en proyectos multidisciplinarios para aportar valor a través de la tecnología y aportar soluciones creativas que no solo resuelvan problemas de manera eficiente, sino que también generen valor estratégico a largo plazo."
   },
   "badge":{
     "title":"Disponible para trabajar"
@@ -49,26 +52,45 @@
     "fimetitle":"INGENIERO EN TECNOLOGÍA DE SOFTWARE (TITULADO)",
     "eiao": "BACHILLER TÉCNICO EN PROGRAMACIÓN WEB"
   },
-  {
-    "experience": {
-      "fime": {
-        "date": "Dic 2022 - PRESENTE",
-        "company": "FIME - LABORATORIO DE REALIDAD VIRTUAL INMERSIVA",
-        "title": "Desarrollador / Gestión de Proyectos",
-        "description": [
-          "- Creación de entornos en Realidad Virtual (Unity) (Simulador de Montacargas, Python Horror, Recorrido FIME Unity/Web).",
-          "- Administración de proyectos basados en metodologías ágiles (especializado en Scrum)."
-        ]
-      },
-      "sat": {
-        "date": "Ene 2015 - Jul 2015",
-        "company": "SAT: SERVICIO DE ADMINISTRACIÓN TRIBUTARIA",
-        "title": "Ayudante general",
-        "description": [
-          "- Mantenimiento de computadoras.",
-          "- Generación de informes con SAP y manipulación de tablas dinámicas."
-        ]
-      }
+"experience": [
+    {
+      "title": "Desarrollador / Gestión de Proyectos",
+      "date": "Diciembre 2022 - Presente",
+      "description": [
+        "- Creación de entornos en Realidad Virtual(Unity) (Simulador de Montacargas, Python Horror, Recorrido FIME Unity/Web).",
+        "- Administración de proyectos basados en metodologías ágiles (especializado en Scrum)."
+      ]
+    },
+    {
+      "title": "Ayudante General",
+      "date":"Diciembre 2014 - Julio 2015",
+      "description": [
+         "- Mantenimiento de computadoras. ",
+         "- Generación de informes con SAP y manipulación de tablas dinámicas. "
+      ]
     }
+  ],
+  
+    "footer": {
+      "content": "Esta página fue construida con Astro",
+      "source": " Codigo Fuente"
+  },
+  "languages": {
+    "languages": "Lenguajes"
+  },
+  "personalskills": {
+    "title": "Habilidades Personales",
+    "time": "Gestión del Tiempo",
+    "timecontent": "Capacidad para organizar y priorizar tareas eficientemente.",
+    "team": "Trabajo en Equipo",
+    "teamcontent": "Habilidad para trabajar en equipo, colaborar y comunicarse efectivamente.",
+    "problem": "Resolución de Problemas",
+    "problemcontent": "Habilidad para identificar y resolver problemas de manera creativa.",
+    "comunication": "Comunicación",
+    "comunicationcontent": "Capacidad para expresar ideas, conceptos de manera clara y efectiva.",
+    "proactive": "Proactividad",
+    "proactivecontent": "Soy proactivo y siempre busco oportunidades para mejorar y contribuir.",
+    "empathy": "Empatía",
+    "empathycontent": "Comprensión de las necesidades y perspectivas de otros."
   }
 }

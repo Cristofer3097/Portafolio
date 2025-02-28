@@ -44,11 +44,11 @@
   <!-- Menú lateral --> 
   <nav id="nav-menu" class="fixed top-0 right-0 w-2/3 h-screen bg-slate-950/90 text-white rounded-lg py-2 w-64 p-6 flex flex-col items-center justify-center p-5 transform translate-x-full transition-transform duration-500 ease-in-out z-50"> 
   <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">&times;</button> 
-  <a href="#top" class="px-2 mt-5 block text-lg text-white rounded-lg py-2" id="header-home" data-translate="header.home">Inicio</a> 
-  <a href="#experience" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg " id="header-experience" data-translate="header.experience">Experiencia</a> 
-  <a href="#sobremi" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg" id="header-about" data-translate="header.about">Sobre mí</a> 
-  <a href="#proyectos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg" id="header-projects" data-translate="header.projects">Proyectos</a> 
-  <a href="#contactos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg" id="header-contact" data-translate="header.contact">Contacto</a> 
+  <a href="#top" class="px-2 mt-5 block text-lg text-white rounded-lg py-2"  data-translate="header.home">Inicio</a> 
+  <a href="#experience" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.experience">Experiencia</a> 
+  <a href="#sobremi" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.about">Sobre mí</a> 
+  <a href="#proyectos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.projects">Proyectos</a> 
+  <a href="#contactos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.contact">Contacto</a> 
   </nav> </header> 
 
   <script>
@@ -102,6 +102,19 @@
       const translationKey = element.getAttribute('data-translate');
       element.textContent = getNestedValue(translations, translationKey);
     });
+
+     // Traducir Experiencia
+  const experienceElements = document.querySelectorAll('[data-translate-experience]');
+  experienceElements.forEach((element, index) => {
+    const experienceData = translations.experience[index];
+    if (experienceData) {
+      element.querySelector('.experience-title').textContent = experienceData.title;
+      element.querySelector('.experience-date').textContent = experienceData.date;
+      element.querySelectorAll('.experience-description').forEach((descElement, i) => {
+        descElement.textContent = experienceData.description[i] || '';
+      });
+    }
+  });
 
     // Selecciona todos los elementos con el atributo data-translate-placeholder
     const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
