@@ -116,7 +116,7 @@ const PROJECTS = [
 <article class="max-w-screen-xl mx-auto px-1 sm:px-1 lg:px-2 py-6">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 ">
       {PROJECTS.map(({ title, description, image, link, repository, tags, video }) => (
-          <div class="relative group overflow-hidden rounded-lg shadow-lg bg-gray-800 hidden-on-scroll ">
+          <div class="relative group overflow-hidden rounded-lg shadow-lg bg-gray-800 hidden-on-scroll " data-translate-project="0">
               <img
                   src={image}
                   alt={`Captura de ${title}`}
@@ -125,28 +125,28 @@ const PROJECTS = [
               <div class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 
                   bg-black/70 transition-opacity duration-300 px-4 text-center">
                   <h3 class="text-lg font-bold text-white mb-2">{title}</h3>
-                  <p class="text-sm text-gray-250 sm:text-white mb-4">{description}</p>
+                  <p class="text-sm text-gray-250 sm:text-white mb-4 project-description">{description}</p>
 
                   <div class={`flex gap-x-2 mb-2 py-2 ${!repository || !link || !video ? "justify-center" : ""}`}>
                       {link && (
                           <a href={link} target="_blank" rel="noopener noreferrer" title="Proyecto"
                              class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 hover:bg-blue-900/50 font-semibold gap-x-1">
                               <DeviceIcon class="size-4" />
-                              Ver Proyecto
+                              <span data-translate="projectinfo.project">Ver Proyecto</span>
                           </a>
                       )}
                       {repository && (
                           <a href={repository} target="_blank" rel="noopener noreferrer" title="Repositorio"
                              class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 hover:bg-blue-900/50 font-semibold gap-x-1">
                               <ProjectsIcon class="size-4" />
-                              Ver Código
+                              <span data-translate="projectinfo.code">Ver Código</span>
                           </a>
                       )}
                       {video && (
                           <button onclick={`openVideoModal('${video}')`}
                                   class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 hover:bg-blue-900/50 font-semibold gap-x-1">
                               <ProjectsIcon class="size-4" />
-                              Ver Video
+                              <span data-translate="projectinfo.video">Ver Video</span>
                           </button>
                       )}
                   </div>

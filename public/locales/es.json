@@ -92,5 +92,55 @@
     "proactivecontent": "Soy proactivo y siempre busco oportunidades para mejorar y contribuir.",
     "empathy": "Empatía",
     "empathycontent": "Comprensión de las necesidades y perspectivas de otros."
+  },
+  
+"project": [
+  {
+    "description": 
+    "Navega por las instalaciones de la Facultad de Ingeniería, conoce los departamentos y hazte una idea del ambiente académico desde la comodidad de tu pantalla."
+  },
+  {
+    "description": 
+"Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc."
+},
+{
+  "description": 
+"Simulador de montacargas en Unity, con el objetivo de enseñar a los operadores a manejar un montacargas de manera segura, completamente funcional con volante, pedales, palanca de cambios y VR."
+},
+{
+  "description": 
+"Sistema de gestion de nomina, controlar los empleados por medio de una base de datos, crear, borrar, sus asistencias, con calculo de horas extras, bonos, descuentos, etc y al final del mes generar sus nominas.",
+},
+{
+  "description": 
+"Juego de naves en 2D, inspírado en el videojuego Space Invaders con la posibilidad de elegir entre 4 niveles de dificultad, con Score y vidas."
+},
+{
+  "description": 
+"Aplicacion movil creada en Android Studios para escanear paredes y obtener el color de la misma, con la posibilidad de guardar los colores, foto y verlos en la galeria."
+}
+],
+
+  "projectinfo":{
+    "project":"Ver proyecto",
+    "code":"Ver código",
+    "video":"Ver video"
+  },
+  "skillsmenu":{
+    "skills":"Habilidades",
+    "languages":"Lenguajes de Programación",
+    "toolstec":"Herramientas Tecnicas",
+    "pskills":"Habilidades personales"
+  },
+  "toolstec": {
+    "toolstec": "Herramientas Tecnicas"
+  },
+  "index":{
+    "experience":"Experiencia Laboral",
+    "project":"Proyectos",
+    "education":"Educación",
+    "about":"Sobre mí",
+    "contact":"Contacto"
   }
 }
+

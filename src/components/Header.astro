@@ -1,20 +1,19 @@
 <header class="fixed top-0 left-0 w-full flex justify-between items-center px-5 py-4 backdrop-blur-[15px] text-white z-50">
   <h1 class="text-2xl font-bold text-white" id="header-title" data-translate="header.title">Portafolio</h1>
-  <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+  <div class="flex items-center md:order-2 space-x-4 md:space-x-6 md:space-x-10 rtl:space-x-reverse"> <!-- Ajustado space-x-3 y md:space-x-4 -->
 
     <!-- Botón de cambio de idioma -->
-
     <button type="button" data-dropdown-toggle="language-dropdown-menu"
-    class="inline-flex items-center font-medium justify-center border border-violet-700/50 px-4 py-2 text-sm text-white-900 dark:text-white rounded-lg cursor-pointer hover:bg-violet-900 dark:hover:bg-gray-700 dark:hover:text-white">
-    <span id="current-language" >Spanish</span>
-  </button>
-    
-    <!-- Menú de idiomas  -->
+      class="inline-flex items-center font-medium justify-center border border-violet-700/50 px-4 py-2 text-sm text-white-900 dark:text-white rounded-lg cursor-pointer hover:bg-violet-900 dark:hover:bg-gray-700 dark:hover:text-white hover:scale-105 hover:shadow-violet-900 hover:shadow-lg transition-all">
+      <span id="current-language">Spanish</span>
+    </button>
+
+    <!-- Menú de idiomas -->
     <div class="z-50 hidden my-4 text-base list-none rounded-full border border-violet-700/50 divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700" id="language-dropdown-menu">
       <ul class="py-2 font-medium" role="none">
         <li>
           <a href="#" class="block px-4 py-2 text-sm text-white-700 hover:bg-violet-900 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem" data-lang="es">
-          <div class="inline-flex items-center">
+            <div class="inline-flex items-center">
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC1ElEQVR4nO2XXVMSURyHz52DelGoN03jgKhjpiMIIgjImy8ou0DZKtr0YRrLZuwjNNXXsKZsymmrK81MBfEiJ1iWt2VZL1J2+TeLmIyCIbJeNP1mntnL53fO2bPnLEL/U0VYn68pgxFm1jWNsxNTWMZFmFmnr0laqXu2g8P9TzhsOsi5pyEzSUBm4h6w41PAjt0FdvQOMCPeAOPwLqSteHvNxBmCaOE8/pcZzM9z2AyUk6dHfJB2eiHt8EDK7smmbPiLjBVrvpSc88yN7ON+msP9UKmcsXuAseHAWDFIWSajjGXCUZ3cOzfD4bMHVcuH3WIBSJjGD5JGF3FB+X1nLeRJkwuSQ+OQMIwexAedtorkrO9B075nNloredIwBonBUUjoHbGI2tzy1wLCl8an/OdGkv90TMMJZIGPDSS/cooP9WT2mPf1JP+uGBnJL8tIYVm2eK4cgkgl7KJsbhdBnlAROwWCRQQKbBexhQCO2Szw/Q+HsIaU5UcfQgsSygE28syfVyAgsVxks/T07yG5EEI5ieUA6ygHG0h+tkAImSSXfyuwjoylXkD8iuTiEztbYBdhVyI/wl16CXauRF5mCTaQXAiinOTyNZSDVXSt9DYMom1J5V/zBUpvQzFCED2SVH7EQ1QuEEBtQgBlJZQfwipSlC0gRlhpWKzkYMnzVkbyb05TR/Kv60j+VYGlE7JLdecfRmLEy2XK4qZKH6lOiOscENfaIaaxQUw9DLE+C9C9ZqB7TBC9bYToLQNQXYNAdeqB6tBBpF0LkbZ+CCvVkb2b3We/gKXCDE/a8zeZWskVml8RhdqKLpKk0UWIN5mayFs1U6iaxPVj9oTeSV1m2i888tMJa63N8X7bc1pty1YqDys12Z8KzbOfNwZq97NCa+0qus/yONpj3i4rV2m3wsr++Wirrg1Jmb1ug5zuNJiorgGMah/AaJVu6Edr73VJpehfzW8mxxZa5nnEGgAAAABJRU5ErkJggg==" 
               alt="" width="20" height="20"> 
               <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/>
@@ -35,21 +34,25 @@
         </li>
       </ul>
     </div>
+
+    <!-- Botón para abrir el menú -->
+    <button id="menu-toggle" class="block lg:hidden text-white focus:outline-none">
+      <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
   </div>
-<!-- Botón para abrir el menú --> 
-<button id="menu-toggle" class="block xl:hidden text-white focus:outline-none"> 
-  <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /> </svg> 
-  </button> 
-  <!-- Menú lateral --> 
-  <nav id="nav-menu" class="fixed top-0 right-0 w-2/3 h-screen bg-slate-950/90 text-white rounded-lg py-2 w-64 p-6 flex flex-col items-center justify-center p-5 transform translate-x-full transition-transform duration-500 ease-in-out z-50"> 
-  <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">&times;</button> 
-  <a href="#top" class="px-2 mt-5 block text-lg text-white rounded-lg py-2"  data-translate="header.home">Inicio</a> 
-  <a href="#experience" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.experience">Experiencia</a> 
-  <a href="#sobremi" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.about">Sobre mí</a> 
-  <a href="#proyectos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.projects">Proyectos</a> 
-  <a href="#contactos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg"  data-translate="header.contact">Contacto</a> 
-  </nav> </header> 
+
+  <!-- Menú lateral -->
+  <nav id="nav-menu" class="fixed top-0 right-0 w-2/3 h-screen bg-slate-950/90 text-white rounded-lg py-2 w-64 p-6 flex flex-col items-center justify-center p-5 transform translate-x-full transition-transform duration-500 ease-in-out z-50">
+    <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+    <a href="#top" class="px-2 mt-5 block text-lg text-white rounded-lg py-2" data-translate="header.home">Inicio</a>
+    <a href="#experience" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg" data-translate="header.experience">Experiencia</a>
+    <a href="#sobremi" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg" data-translate="header.about">Sobre mí</a>
+    <a href="#proyectos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg" data-translate="header.projects">Proyectos</a>
+    <a href="#contactos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg" data-translate="header.contact">Contacto</a>
+  </nav>
+</header>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -78,6 +81,19 @@
                     navMenu.classList.add('translate-x-full');
                 });
             });
+
+            
+        // Cerrar menú al hacer clic fuera del menú
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnMenuToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnMenuToggle) {
+                navMenu.classList.remove('translate-x-0');
+                navMenu.classList.add('translate-x-full');
+            }
+        });
+        
         }
     });
 
@@ -115,6 +131,18 @@
       });
     }
   });
+
+  // Traducir proyectos
+  const projectElements = document.querySelectorAll('[data-translate-project]');
+  projectElements.forEach((element, index) => {
+    const projectData = translations.project[index];
+    if (projectData) {
+      element.querySelector('.project-description').textContent = projectData.description;
+      
+  }
+}
+);
+
 
     // Selecciona todos los elementos con el atributo data-translate-placeholder
     const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');

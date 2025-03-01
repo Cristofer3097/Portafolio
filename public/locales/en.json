@@ -81,6 +81,7 @@
     "languages": "Languages"
   },
   "personalskills": {
+    "title": "Personal Skills",
     "time": "Time Management",
     "timecontent": "Ability to organize and prioritize tasks efficiently", 
     
@@ -94,8 +95,58 @@
     "proactivecontent": "I am proactive and always look for opportunities to improve and contribute.",
     "empathy": "Empathy",
     "empathycontent": "Understanding the needs and perspectives of others."
+  },
+  "project": [
+    {
+      "description": 
+      "Browse the facilities of the Faculty of Engineering, get to know the departments and get a feel for the academic environment from the comfort of your screen."
+    },
+      { 
+        "description": 
+  "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."
+  },
+  {
+    "description": 
+  "Forklift simulator in Unity, aiming to teach operators how to drive a forklift safely, fully functional with steering wheel, pedals, shifter and VR."
+  },
+
+    { 
+      "description": 
+  "Payroll management system, control the employees through a database, create, delete, their attendances, with overtime calculation, bonuses, discounts, etc and at the end of the month generate their payrolls."
+  },
+
+    { 
+      "description": 
+  "2D spaceship game, inspired by the Space Invaders video game with the possibility to choose between 4 levels of difficulty, with Score and lives."
+  },
+ 
+    { 
+      "description": 
+  "Mobile application created in Android Studios to scan walls and get the color of the wall, with the possibility to save the colors, photo and view them in the gallery."
   }
+  ],
   
+    "projectinfo":{
+      "project":"View project",
+      "code":"View code",
+      "video":"View video"
+    },
+    "skillsmenu":{
+      "skills":"Skills",
+      "languages":"Programming Languages",
+    "toolstec":"Technical Tools",
+    "pskills":"Personal skills"
+    },
+    "toolstec": {
+      "toolstec": "Technical Tools"
+    },
+    "index":{
+      "experience": "Work Experience",
+      "project": "Projects",
+      "education": "Education",
+      "about": "About Me",
+      "contact": "Contact"
+}
 }
 
 
