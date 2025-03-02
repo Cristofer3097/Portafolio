@@ -3,9 +3,10 @@ import ResumeIcon from '../icons/Resume.astro';
 ---
 <button id="dropdownDefaultButton" data-dropdown-toggle="dropdowndelay" class="text-white bg-blue-900 hover:bg-blue-900/50 
 focus:ring-4 focus:outline-none focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex 
-items-center flex gap-x-1" type="button"  id="dropdown-cv"><span data-translate="dropdown.cv">Curriculum</span>
+items-center flex gap-x-1" type="button" ><span data-translate="dropdown.cv">Curriculum</span>
 <ResumeIcon class="size-5" />
-<svg class="w-2.5 h-2.5 ms-3 arrow-icon transition-transform duration-300 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+<svg class="w-2.5 h-2.5 ms-3 arrow-icon transition-transform duration-300 " aria-hidden="true" 
+xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
     </svg>
     </button>
@@ -13,15 +14,23 @@ items-center flex gap-x-1" type="button"  id="dropdown-cv"><span data-translate=
 
     <div id="dropdowndelay" class="z-10 hidden bg-blue-900 divide-y divide-gray-100 rounded-lg shadow-sm w-44 ">
         <ul class="py-2 text-sm text-white dark:text-white" aria-labelledby="dropdownDefaultButton">
-          <li>
-            <a href="../assets/Abel-Cristofer-Hernandez-Bustos-cv.pdf" title="Descargar" download
-            class="block px-4 py-2  hover:bg-blue-900/50  dark:hover:bg-blue-800 dark:hover:text-white-800 text-center">Versión en Español</a>
-          </li>
-          <li>
-            <a href="../assets/En Abel-Cristofer-Hernandez-Bustos-cv" title="Download" download
-             class="block px-4 py-2  hover:bg-blue-900/50  dark:hover:bg-blue-600 dark:hover:text-white-800 text-center">English Version</a>
-          </li>
-        </ul>
+  <li class=" dark:hover:bg-blue-800">
+    <a href="../assets/Abel-Cristofer-Hernandez-Bustos-cv.pdf" 
+       title="Descargar" 
+       download
+       class="block px-4 py-2 text-center hover:bg-gray-900/60">
+       Versión en Español
+    </a>
+  </li>
+  <li class=" ">
+    <a href="../assets/En Abel-Cristofer-Hernandez-Bustos-cv.pdf" 
+       title="Download" 
+       download
+       class="block px-4 py-2 text-center hover:bg-gray-900/60 " >
+       English Version
+    </a>
+  </li>
+</ul>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
