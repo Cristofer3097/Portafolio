@@ -55,6 +55,23 @@
   
     "experience": [
       {
+        "title": "Systems Engineer",
+        "date": "March 2025 - Present",
+        "description": [
+          "-Support DMS to end users and concessionaires nationwide.",
+    "-Support to the Systems Department in user creation, permissions modification, assignment.", 
+    "-Ticket tracking."
+        ]
+      },
+      {
+        "title": "Developer / Project Management",
+        "date": "December 2022 - March 2025",
+        "description": [
+          "- Creation of Virtual Reality(Unity) environments (Forklift Simulator, Python Horror, FIME Unity/Web Walkthrough).",
+        "- Project management based on agile methodologies (specializing in Scrum)."
+        ]
+      },
+      {
         "title": "Developer / Project Management",
         "date": "December 2022 - Present",
         "description": [

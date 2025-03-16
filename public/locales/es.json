@@ -53,9 +53,18 @@
     "eiao": "BACHILLER TÉCNICO EN PROGRAMACIÓN WEB"
   },
 "experience": [
+  {
+    "title": "Ingeniero en Sistemas",
+    "date": "Marzo 2025 - Presente",
+    "description": [
+      "-Soporte DMS a usuarios finales y concesionarias a nivel nacional.",
+"-Apoyo al Departamento de Sistemas en creación de usuarios, modificación de permisos, asignación.",
+"-Seguimiento de tickets"
+    ]
+  },
     {
       "title": "Desarrollador / Gestión de Proyectos",
-      "date": "Diciembre 2022 - Presente",
+      "date": "Diciembre 2022 - Marzo 2025",
       "description": [
         "- Creación de entornos en Realidad Virtual(Unity) (Simulador de Montacargas, Python Horror, Recorrido FIME Unity/Web).",
         "- Administración de proyectos basados en metodologías ágiles (especializado en Scrum)."
