@@ -56,141 +56,148 @@
   </nav>
 </header>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        const closeMenu = document.getElementById('close-menu');
-        const navLinks = document.querySelectorAll('#nav-menu a'); 
-    
-        if (menuToggle && navMenu && closeMenu) {
-            // Abrir menú
-            menuToggle.addEventListener('click', () => {
-                navMenu.classList.remove('translate-x-full');
-                navMenu.classList.add('translate-x-0');
-            });
-    
-            // Cerrar menú
-            closeMenu.addEventListener('click', () => {
-                navMenu.classList.remove('translate-x-0');
-                navMenu.classList.add('translate-x-full');
-            });
-    
-            // Cerrar menú al hacer clic en un enlace
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('translate-x-0');
-                    navMenu.classList.add('translate-x-full');
-                });
-            });
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    //Cambio de idioma
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const navLinks = document.querySelectorAll('#nav-menu a');
 
-            
-        // Cerrar menú al hacer clic fuera del menú
-        document.addEventListener('click', (event) => {
-            const isClickInsideMenu = navMenu.contains(event.target);
-            const isClickOnMenuToggle = menuToggle.contains(event.target);
+    if (menuToggle && navMenu && closeMenu) {
+      // Abrir menú
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // evita que el clic se propague y lo cierre
+        navMenu.classList.remove('translate-x-full');
+        navMenu.classList.add('translate-x-0');
+      });
 
-            if (!isClickInsideMenu && !isClickOnMenuToggle) {
-                navMenu.classList.remove('translate-x-0');
-                navMenu.classList.add('translate-x-full');
-            }
+      // Cerrar menú
+      closeMenu.addEventListener('click', () => {
+        navMenu.classList.remove('translate-x-0');
+        navMenu.classList.add('translate-x-full');
+      });
+
+      // Cerrar menú al hacer clic en un enlace
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('translate-x-0');
+          navMenu.classList.add('translate-x-full');
         });
-        
+      });
+
+      // Evita que el menú se cierre si hacemos clic dentro
+      navMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      // Cerrar menú al hacer clic fuera
+      document.addEventListener('click', () => {
+        navMenu.classList.remove('translate-x-0');
+        navMenu.classList.add('translate-x-full');
+      });
+    }
+
+    /*****************************************************
+     * 2. LÓGICA DE IDIOMAS Y TRADUCCIONES
+     *****************************************************/
+    const languageMenu = document.getElementById('language-dropdown-menu');
+    const currentLanguage = document.getElementById('current-language');
+    const languageToggleButton = document.getElementById('languageToggleButton'); // Botón
+    let translations = {};
+    let lang = 'es'; // Idioma por defecto
+
+    // Cargar JSON de idioma
+    async function loadLanguage(langCode) {
+      const response = await fetch(`/locales/${langCode}.json`);
+      translations = await response.json();
+      applyTranslations();
+    }
+
+    // Aplicar traducciones
+    function applyTranslations() {
+      // data-translate
+      const elements = document.querySelectorAll('[data-translate]');
+      elements.forEach(element => {
+        const translationKey = element.getAttribute('data-translate');
+        element.textContent = getNestedValue(translations, translationKey);
+      });
+
+      // data-translate-experience
+      const experienceElements = document.querySelectorAll('[data-translate-experience]');
+      experienceElements.forEach((element, index) => {
+        const exp = translations.experience?.[index];
+        if (exp) {
+          element.querySelector('.experience-title').textContent = exp.title;
+          element.querySelector('.experience-date').textContent = exp.date;
+          element.querySelectorAll('.experience-description').forEach((descElement, i) => {
+            descElement.textContent = exp.description[i] || '';
+          });
         }
+      });
+
+      // data-translate-project
+      const projectElements = document.querySelectorAll('[data-translate-project]');
+      projectElements.forEach((element, index) => {
+        const proj = translations.project?.[index];
+        if (proj) {
+          element.querySelector('.project-description').textContent = proj.description;
+        }
+      });
+
+      // data-translate-placeholder
+      const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+      placeholderElements.forEach(el => {
+        const translationKey = el.getAttribute('data-translate-placeholder');
+        el.placeholder = getNestedValue(translations, translationKey);
+      });
+
+      // data-translate-title
+      const titleElements = document.querySelectorAll('[data-translate-title]');
+      titleElements.forEach(el => {
+        const translationKey = el.getAttribute('data-translate-title');
+        el.setAttribute('title', getNestedValue(translations, translationKey));
+      });
+
+      // Texto del botón de idioma
+      currentLanguage.textContent = (lang === 'es') ? 'Es Español' : 'En English';
+    }
+
+    // Obtener valor anidado
+    function getNestedValue(obj, key) {
+      return key.split('.').reduce((o, k) => (o || {})[k], obj);
+    }
+
+    // Inicial
+    loadLanguage(lang);
+
+    // Botones con data-lang
+    document.querySelectorAll('[data-lang]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        lang = button.getAttribute('data-lang');
+        loadLanguage(lang);
+        languageMenu.classList.add('hidden');
+      });
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-  const languageMenu = document.getElementById('language-dropdown-menu');
-  const currentLanguage = document.getElementById('current-language');
-  const languageToggle = document.querySelector('[data-dropdown-toggle="language-dropdown-menu"]');
-  let translations = {};
+    // Clic en el botón de idioma
+    if (languageToggleButton && languageMenu) {
+      // Evita que el clic se propague
+      languageToggleButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageMenu.classList.toggle('hidden');
+      });
 
-  // Función para cargar el archivo de idioma
-  async function loadLanguage(lang) {
-    const response = await fetch(`/locales/${lang}.json`);
-    translations = await response.json();
-    applyTranslations();
-  }
+      // Evita que el menú se cierre si hacemos clic dentro
+      languageMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
 
-  // Función para aplicar las traducciones
-  function applyTranslations() {
-    // Selecciona todos los elementos con el atributo data-translate
-    const elements = document.querySelectorAll('[data-translate]');
-    elements.forEach(element => {
-      const translationKey = element.getAttribute('data-translate');
-      element.textContent = getNestedValue(translations, translationKey);
-    });
-
-     // Traducir Experiencia
-  const experienceElements = document.querySelectorAll('[data-translate-experience]');
-  experienceElements.forEach((element, index) => {
-    const experienceData = translations.experience[index];
-    if (experienceData) {
-      element.querySelector('.experience-title').textContent = experienceData.title;
-      element.querySelector('.experience-date').textContent = experienceData.date;
-      element.querySelectorAll('.experience-description').forEach((descElement, i) => {
-        descElement.textContent = experienceData.description[i] || '';
+      // Cerrar menú al hacer clic fuera
+      document.addEventListener('click', () => {
+        languageMenu.classList.add('hidden');
       });
     }
   });
-
-  // Traducir proyectos
-  const projectElements = document.querySelectorAll('[data-translate-project]');
-  projectElements.forEach((element, index) => {
-    const projectData = translations.project[index];
-    if (projectData) {
-      element.querySelector('.project-description').textContent = projectData.description;
-      
-  }
-}
-);
-
-
-    // Selecciona todos los elementos con el atributo data-translate-placeholder
-    const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
-    placeholderElements.forEach(element => {
-      const translationKey = element.getAttribute('data-translate-placeholder');
-      element.placeholder = getNestedValue(translations, translationKey);
-    });
-
-    currentLanguage.textContent = lang === 'es' ? 'Es Español' : 'En English';
-  }
-
-  // Función para obtener valores anidados en un objeto
-  function getNestedValue(obj, key) {
-    return key.split('.').reduce((o, k) => (o || {})[k], obj);
-  }
-
-  // Cargar el idioma por defecto
-  let lang = 'es'; // Idioma por defecto
-  loadLanguage(lang);
-
-  // Cambiar idioma al seleccionar una opción
-  document.querySelectorAll('[data-lang]').forEach(button => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      lang = button.getAttribute('data-lang');
-      loadLanguage(lang);
-
-      // Cerrar el menú desplegable
-      languageMenu.classList.add('hidden');
-    });
-  });
-
-  // Abrir y cerrar el menú desplegable
-  if (languageToggle) {
-    languageToggle.addEventListener('click', (e) => {
-      e.stopPropagation(); // Evita la propagación del evento
-      languageMenu.classList.toggle('hidden');
-    });
-  }
-
-  // Cerrar el menú al hacer clic fuera de él
-  document.addEventListener('click', (e) => {
-    if (!languageMenu.contains(e.target) && !languageToggle.contains(e.target)) {
-      languageMenu.classList.add('hidden');
-    }
-  });
-});
-    </script>
-    
+</script>
