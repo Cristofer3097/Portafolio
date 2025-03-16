@@ -1,8 +1,8 @@
-<div id="side-menu" class="hidden  lg:flex fixed top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-l-lg text-white z-50">
+<div id="side-menu" class="hidden lg:flex fixed top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-l-lg text-white z-50">
   <nav class="w-64 p-6">
     <ul class="space-y-4 flex flex-col items-center p-4 gap-1">
       <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border hover:shadow-gray-800 hover:shadow-lg">
-        <a href="#top" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg " data-translate="header.home">Inicio</a>
+        <a href="#top" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg" data-translate="header.home">Inicio</a>
       </li>
       <li class="w-full hover:bg-violet-900 hover:scale-110 transition-all duration-300 rounded-lg border">
         <a href="#experience" class="w-full flex justify-center text-xl py-2 transition-colors text-color rounded-lg block hover:shadow-gray-800 hover:shadow-lg" data-translate="header.experience">Experiencia</a>
@@ -22,8 +22,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const sideNav = document.getElementById('side-menu'); 
-  const navLinks = sideNav.querySelectorAll('a'); // Solo selecciona los enlaces de este menú
+  const sideNav = document.getElementById('side-menu');
+  const navLinks = sideNav.querySelectorAll('a'); // Selecciona los enlaces del menú lateral
 
   window.addEventListener('scroll', () => {
     let current = '';
@@ -33,15 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+
+      // Verifica si el scrollPosition está dentro de la sección
+      if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
         current = section.getAttribute('id');
       }
     });
 
+    // Asigna "sobremi" a las secciones relacionadas
     if (['skills', 'education', 'certificate'].includes(current)) {
       current = 'sobremi';
     }
 
+    // Aplica el fondo solo al enlace activo
     navLinks.forEach(link => {
       link.classList.remove('bg-violet-950');
       if (link.getAttribute('href').includes(current)) {
