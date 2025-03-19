@@ -1,0 +1,249 @@
+<header class="fixed top-0 left-0 w-full max-w-screen  flex justify-between items-center px-5 py-4 backdrop-blur-[15px] text-white z-50">
+    <h1 class="text-2xl font-bold text-white" id="header-title" data-translate="header.title">Portafolio</h1>
+    <div class="flex items-center space-x-4 md:space-x-6 rtl:space-x-reverse flex-wrap">
+  
+      <!-- Sección derecha: Botón de tema, cambio de idioma y menú lateral -->
+      <div class="flex items-center space-x-4 md:space-x-6 rtl:space-x-reverse flex-wrap">
+        <!-- Botón de cambio de tema -->
+        <button id="theme-toggle" class="p-2 rounded focus:outline-none">
+          <span id="theme-icon">
+            <!-- Con modo oscuro por defecto se muestra el ícono de sol (para cambiar a modo claro) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.36-6.36l-.7.7m-12.02 12.02l-.7.7m12.02.7l-.7-.7M6.34 6.34l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
+            </svg>
+          </span>
+        </button>
+  
+  <!-- Botón de cambio de idioma -->
+      <button type="button" data-dropdown-toggle="language-dropdown-menu"
+        class="inline-flex items-center font-medium justify-center border bg-slate-950/30 border-violet-700/50 px-4 py-2 text-sm text-white-900 dark:text-white rounded-lg cursor-pointer hover:bg-violet-900 dark:hover:bg-gray-700 dark:hover:text-white hover:scale-105 hover:shadow-violet-900 hover:shadow-lg transition-all">
+        <span id="current-language">Spanish</span>
+      </button>
+  
+      <!-- Menú de idiomas -->
+      <div class="z-50 hidden my-4 text-base list-none rounded-full bg-slate-950/70 border border-violet-700/50 divide-y divide-gray-100 rounded-lg shadow-sm " id="language-dropdown-menu">
+        <ul class="py-2 font-medium" role="none">
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-white-700  hover:bg-violet-950 dark:text-gray-400 
+            dark:hover:bg-gray-600 dark:hover:text-whitw" role="menuitem" data-lang="es">
+              <div class="inline-flex items-center hover:underline">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC1ElEQVR4nO2XXVMSURyHz52DelGoN03jgKhjpiMIIgjImy8ou0DZKtr0YRrLZuwjNNXXsKZsymmrK81MBfEiJ1iWt2VZL1J2+TeLmIyCIbJeNP1mntnL53fO2bPnLEL/U0VYn68pgxFm1jWNsxNTWMZFmFmnr0laqXu2g8P9TzhsOsi5pyEzSUBm4h6w41PAjt0FdvQOMCPeAOPwLqSteHvNxBmCaOE8/pcZzM9z2AyUk6dHfJB2eiHt8EDK7smmbPiLjBVrvpSc88yN7ON+msP9UKmcsXuAseHAWDFIWSajjGXCUZ3cOzfD4bMHVcuH3WIBSJjGD5JGF3FB+X1nLeRJkwuSQ+OQMIwexAedtorkrO9B075nNloredIwBonBUUjoHbGI2tzy1wLCl8an/OdGkv90TMMJZIGPDSS/cooP9WT2mPf1JP+uGBnJL8tIYVm2eK4cgkgl7KJsbhdBnlAROwWCRQQKbBexhQCO2Szw/Q+HsIaU5UcfQgsSygE28syfVyAgsVxks/T07yG5EEI5ieUA6ygHG0h+tkAImSSXfyuwjoylXkD8iuTiEztbYBdhVyI/wl16CXauRF5mCTaQXAiinOTyNZSDVXSt9DYMom1J5V/zBUpvQzFCED2SVH7EQ1QuEEBtQgBlJZQfwipSlC0gRlhpWKzkYMnzVkbyb05TR/Kv60j+VYGlE7JLdecfRmLEy2XK4qZKH6lOiOscENfaIaaxQUw9DLE+C9C9ZqB7TBC9bYToLQNQXYNAdeqB6tBBpF0LkbZ+CCvVkb2b3We/gKXCDE/a8zeZWskVml8RhdqKLpKk0UWIN5mayFs1U6iaxPVj9oTeSV1m2i888tMJa63N8X7bc1pty1YqDys12Z8KzbOfNwZq97NCa+0qus/yONpj3i4rV2m3wsr++Wirrg1Jmb1ug5zuNJiorgGMah/AaJVu6Edr73VJpehfzW8mxxZa5nnEGgAAAABJRU5ErkJggg==" 
+                alt="" width="20" height="20"> 
+                <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)"/>
+                <path fill="#fff" d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z" transform="scale(3.9385)"/>
+              </g></svg>
+                ES Español
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-white-700 hover:bg-violet-950   dark:text-gray-400 
+            dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem" data-lang="en">
+              <div class="inline-flex items-center hover:underline ">
+                <img src="data:image/png;base64,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" 
+                alt="" width="20" height="20">
+                En English
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Botón para abrir el menú -->
+      <button id="menu-toggle" class="block lg:hidden text-white focus:outline-none">
+        <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Menú lateral -->
+    <nav id="nav-menu" class="fixed top-0 right-0 w-2/3 h-screen bg-slate-950/90 text-white rounded-lg py-2 w-64 p-6 flex flex-col items-center justify-center p-5 transform translate-x-full transition-transform duration-500 ease-in-out z-50">
+      <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl">&times;</button>
+      <a href="#top" class="px-2 mt-5 block text-lg text-white rounded-lg py-2 hover:underline" data-translate="header.home">Inicio</a>
+      <a href="#experience" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg hover:underline" data-translate="header.experience">Experiencia</a>
+      <a href="#sobremi" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg hover:underline" data-translate="header.about">Sobre mí</a>
+      <a href="#proyectos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg hover:underline" data-translate="header.projects">Proyectos</a>
+      <a href="#contactos" class="py-2 px-2 mt-5 block text-lg text-white rounded-lg hover:underline" data-translate="header.contact">Contacto</a>
+    </nav>
+  </header>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      //Cambio de idioma
+      const menuToggle = document.getElementById('menu-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const closeMenu = document.getElementById('close-menu');
+      const navLinks = document.querySelectorAll('#nav-menu a');
+  
+      if (menuToggle && navMenu && closeMenu) {
+        // Abrir menú
+        menuToggle.addEventListener('click', (e) => {
+          e.stopPropagation(); // evita que el clic se propague y lo cierre
+          navMenu.classList.remove('translate-x-full');
+          navMenu.classList.add('translate-x-0');
+        });
+  
+        // Cerrar menú
+        closeMenu.addEventListener('click', () => {
+          navMenu.classList.remove('translate-x-0');
+          navMenu.classList.add('translate-x-full');
+        });
+  
+        // Cerrar menú al hacer clic en un enlace
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('translate-x-0');
+            navMenu.classList.add('translate-x-full');
+          });
+        });
+  
+        // Evita que el menú se cierre si hacemos clic dentro
+        navMenu.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+  
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', () => {
+          navMenu.classList.remove('translate-x-0');
+          navMenu.classList.add('translate-x-full');
+        });
+      }
+  
+      /*****************************************************
+       * 2. LÓGICA DE IDIOMAS Y TRADUCCIONES
+       *****************************************************/
+      const languageMenu = document.getElementById('language-dropdown-menu');
+      const currentLanguage = document.getElementById('current-language');
+      const languageToggleButton = document.getElementById('languageToggleButton'); // Botón
+      let translations = {};
+      let lang = 'es'; // Idioma por defecto
+  
+      // Cargar JSON de idioma
+      async function loadLanguage(langCode) {
+        const response = await fetch(`/locales/${langCode}.json`);
+        translations = await response.json();
+        applyTranslations();
+      }
+  
+      // Aplicar traducciones
+      function applyTranslations() {
+        // data-translate
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+          const translationKey = element.getAttribute('data-translate');
+          element.textContent = getNestedValue(translations, translationKey);
+        });
+  
+        // data-translate-experience
+        const experienceElements = document.querySelectorAll('[data-translate-experience]');
+        experienceElements.forEach((element, index) => {
+          const exp = translations.experience?.[index];
+          if (exp) {
+            element.querySelector('.experience-title').textContent = exp.title;
+            element.querySelector('.experience-date').textContent = exp.date;
+            element.querySelectorAll('.experience-description').forEach((descElement, i) => {
+              descElement.textContent = exp.description[i] || '';
+            });
+          }
+        });
+  
+        // data-translate-project
+        const projectElements = document.querySelectorAll('[data-translate-project]');
+        projectElements.forEach((element, index) => {
+          const proj = translations.project?.[index];
+          if (proj) {
+            element.querySelector('.project-description').textContent = proj.description;
+          }
+        });
+  
+        // data-translate-placeholder
+        const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+        placeholderElements.forEach(el => {
+          const translationKey = el.getAttribute('data-translate-placeholder');
+          el.placeholder = getNestedValue(translations, translationKey);
+        });
+  
+        // data-translate-title
+        const titleElements = document.querySelectorAll('[data-translate-title]');
+        titleElements.forEach(el => {
+          const translationKey = el.getAttribute('data-translate-title');
+          el.setAttribute('title', getNestedValue(translations, translationKey));
+        });
+  
+        // Texto del botón de idioma
+        currentLanguage.textContent = (lang === 'es') ? 'Es Español' : 'En English';
+      }
+  
+      // Obtener valor anidado
+      function getNestedValue(obj, key) {
+        return key.split('.').reduce((o, k) => (o || {})[k], obj);
+      }
+  
+      // Inicial
+      loadLanguage(lang);
+  
+      // Botones con data-lang
+      document.querySelectorAll('[data-lang]').forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          lang = button.getAttribute('data-lang');
+          loadLanguage(lang);
+          languageMenu.classList.add('hidden');
+        });
+      });
+  
+      // Clic en el botón de idioma
+      if (languageToggleButton && languageMenu) {
+        // Evita que el clic se propague
+        languageToggleButton.addEventListener('click', (e) => {
+          e.stopPropagation();
+          languageMenu.classList.toggle('hidden');
+        });
+  
+        // Evita que el menú se cierre si hacemos clic dentro
+        languageMenu.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+  
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', () => {
+          languageMenu.classList.add('hidden');
+        });
+      }
+     // Lógica del cambio de tema (oscuro/claro)
+     const themeToggle = document.getElementById('theme-toggle');
+          const themeIcon = document.getElementById('theme-icon');
+  
+          function setDarkMode(enabled) {
+            if (enabled) {
+              document.documentElement.classList.add('dark');
+              themeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.36-6.36l-.7.7m-12.02 12.02l-.7.7m12.02.7l-.7-.7M6.34 6.34l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
+              </svg>`;
+            } else {
+              document.documentElement.classList.remove('dark');
+              themeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>`;
+            }
+            localStorage.setItem('theme', enabled ? 'dark' : 'light');
+          }
+  
+          themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            setDarkMode(!isDark);
+          });
+  
+          const storedTheme = localStorage.getItem('theme');
+          if (storedTheme === 'light') {
+            setDarkMode(false);
+          } else {
+            setDarkMode(true);
+          }
+        });
+      </script>
+    </body>
+  </html>
+  </script>
+  
