@@ -12,7 +12,7 @@ const certificados = [
 ---
 
 <section class="overflow-hidden w-full mx-auto py-24 relative">
-  <h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white">
+  <h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800">
     <span data-translate="certificate.title">Certificados</span>
     <CertificateIcon class="size-6" />
   </h2>
@@ -20,11 +20,11 @@ const certificados = [
   <div class="flex gap-x-20 animate-carousel" id="carouselTrack">
     {certificados.map((certificado, index) => (
       <div class="carousel-item" key={`original-${index}`}>
-        <h2 class="text-lg font-semibold text-gray-100 dark:text-white text-center mb-2">
+        <h2 class="text-lg font-semibold text-gray-100 dark:text-neutral-900 text-center mb-2">
           {certificado.name}
         </h2>
         <img
-          class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105 hover:shadow-violet-800 hover:shadow-lg"
+          class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105 hover:shadow-violet-800 dark:shadow-blue-500 hover:shadow-lg"
           alt={certificado.name}
           src={certificado.image}
           onclick="openModal(this)"
@@ -34,11 +34,11 @@ const certificados = [
 
     {certificados.map((certificado, index) => (
       <div class="carousel-item" key={`clone-${index}`}>
-        <h2 class="text-lg font-semibold text-gray-100 dark:text-white text-center mb-2">
+        <h2 class="text-lg font-semibold text-gray-100 dark:text-white dark:text-neutral-900 text-center mb-2">
           {certificado.name}
         </h2>
         <img
-          class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105"
+          class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105 hover:shadow-violet-800 dark:shadow-blue-500 hover:shadow-lg"
           alt={certificado.name}
           src={certificado.image}
           onclick="openModal(this)"
