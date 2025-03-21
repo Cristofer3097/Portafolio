@@ -130,21 +130,21 @@ const PROJECTS = [
                   <div class={`flex gap-x-2 mb-2 py-2 ${!repository || !link || !video ? "justify-center" : ""}`}>
                       {link && (
                           <a href={link} target="_blank" rel="noopener noreferrer" title="Proyecto"
-                             class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 hover:bg-blue-900/50 font-semibold gap-x-1">
+                             class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 dark:bg-purple-900 hover:bg-blue-900/50 dark:hover:bg-purple-900/50 font-semibold gap-x-1">
                               <DeviceIcon class="size-4" />
                               <span data-translate="projectinfo.project">Ver Proyecto</span>
                           </a>
                       )}
                       {repository && (
                           <a href={repository} target="_blank" rel="noopener noreferrer" title="Repositorio"
-                             class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 hover:bg-blue-900/50 font-semibold gap-x-1">
+                             class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 dark:bg-purple-900 hover:bg-blue-900/50 dark:hover:bg-purple-900/50 font-semibold gap-x-1">
                               <ProjectsIcon class="size-4" />
                               <span data-translate="projectinfo.code">Ver Código</span>
                           </a>
                       )}
                       {video && (
                           <button onclick={`openVideoModal('${video}')`}
-                                  class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 hover:bg-blue-900/50 font-semibold gap-x-1">
+                                  class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 dark:bg-purple-900 hover:bg-blue-900/50 dark:hover:bg-purple-900/50 font-semibold gap-x-1">
                               <ProjectsIcon class="size-4" />
                               <span data-translate="projectinfo.video">Ver Video</span>
                           </button>
