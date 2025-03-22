@@ -218,36 +218,38 @@
         });
       }
      // Lógica del cambio de tema (oscuro/claro)
-     const themeToggle = document.getElementById('theme-toggle');
-          const themeIcon = document.getElementById('theme-icon');
-  
-          function setDarkMode(enabled) {
-            if (enabled) {
-              document.documentElement.classList.add('dark');
-              themeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.36-6.36l-.7.7m-12.02 12.02l-.7.7m12.02.7l-.7-.7M6.34 6.34l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
-              </svg>`;
-            } else {
-              document.documentElement.classList.remove('dark');
-              themeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" stroke="none">
-                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-              </svg>`;
-            }
-            localStorage.setItem('theme', enabled ? 'dark' : 'light');
-          }
-  
-          themeToggle.addEventListener('click', () => {
-            const isDark = document.documentElement.classList.contains('dark');
-            setDarkMode(!isDark);
-          });
-  
-          const storedTheme = localStorage.getItem('theme');
-          if (storedTheme === 'light') {
-            setDarkMode(false);
-          } else {
-            setDarkMode(true);
-          }
-        });
+    
+  // Lógica del cambio de tema (oscuro/claro)
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  // Verificar la preferencia del usuario
+  const savedTheme = localStorage.getItem('theme') || 'dark'; // Modo oscuro por defecto
+  document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+  updateThemeIcon(savedTheme);
+
+  // Cambiar de tema al hacer clic en el botón
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    updateThemeIcon(isDark ? 'dark' : 'light');
+  });
+
+  // Función para actualizar el ícono del tema
+  function updateThemeIcon(theme) {
+    if (theme === 'dark') {
+      themeIcon.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12H3m15.36-6.36l-.7.7m-12.02 12.02l-.7.7m12.02.7l-.7-.7M6.34 6.34l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z" />
+        </svg>`;
+    } else {
+      themeIcon.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>`;
+    }
+  }
+});
       </script>
     </body>
   </html>

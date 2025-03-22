@@ -79,12 +79,12 @@ hoverColor: 'hover:text-[#c3c3c3]'
 const firstListEndIndex = 6; 
 ---
 <div class="w-full flex flex-col items-center p-4">
-  <h2 class="text-2xl font-bold mb-4 text-center text-white" data-translate="toolstec.toolstec">Herramientas Tecnicas</h2>
+  <h2 class="text-2xl font-bold mb-4 text-center text-white dark:text-neutral-800" data-translate="toolstec.toolstec">Herramientas Tecnicas</h2>
   <div class="w-full flex flex-wrap">
     <div class="w-full sm:w-1/2 flex flex-col items-center p-4">
       <ul class="grid gap-4 list-inside">
         {languages.slice(0, firstListEndIndex).map(language => (
-          <li class={`flex items-center group mb-2 text-gray-400 ${language.hoverColor}`} key={language.name}>
+          <li class={`flex items-center group mb-2 text-gray-600 ${language.hoverColor}`} key={language.name}>
             {language.icon && <language.icon class="icon transition size-6 duration-300" />}
             <span class="ml-2">{language.name}</span>
           </li>
@@ -95,7 +95,7 @@ const firstListEndIndex = 6;
     <div class="w-full sm:w-1/2 flex flex-col items-center p-4">
       <ul class="grid gap-4 list-inside">
         {languages.slice(firstListEndIndex).map(language => (
-          <li class={`flex items-center group mb-2 text-gray-400 ${language.hoverColor}`} key={language.name}>
+          <li class={`flex items-center group mb-2 text-gray-600 ${language.hoverColor}`} key={language.name}>
             {language.icon && <language.icon class="icon transition size-6 duration-300" />}
             <span class="ml-2">{language.name}</span>
           </li>
