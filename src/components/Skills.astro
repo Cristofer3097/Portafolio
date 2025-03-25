@@ -8,9 +8,9 @@ import ToolsIcon from '../icons/Tools.astro';
 
 <h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800" id="educationTitle" > <span data-translate="skillsmenu.skills">Habilidades </span><ToolsIcon class="size-6" /></h2>
 
-<div class="w-full bg-white border border-violet-200 rounded-lg shadow-sm dark:bg-slate-300 dark:border-blue-700">
+<div class="w-full bg-white border border-violet-200 dark:border-blue-800 rounded-lg shadow-sm dark:bg-slate-300 dark:border-blue-700">
     <ul class="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 rounded-t-lg 
-    bg-violet-950 dark:bg-slate-300 dark:border-gray-700 text-violet-500 dark:text-neutral-800 " id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+    bg-violet-950 dark:bg-violet-700 dark:border-gray-700 text-violet-500 dark:text-neutral-800 " id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
       <li class="me-2">
         <button id="languages-tab" data-tabs-target="#languages" type="button" role="tab" aria-controls="languages" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button " data-translate="skillsmenu.languages">Lenguajes de Programación</button>
       </li>
@@ -60,17 +60,17 @@ import ToolsIcon from '../icons/Tools.astro';
     /* Estilos para modo oscuro */
     .dark .tab-button[aria-selected="true"] {
       color: #1e293b; /* Texto oscuro */
-      background-color: #cbd5e1; /* Fondo claro */
+      background-color: #1b5cac; /* Fondo claro */
     }
     .dark .tab-button[aria-selected="false"] {
-      color: #d8d9db; /* Texto claro */
+      color: #2857b4; /* Texto claro */
       background-color: transparent;
     }
     .dark .tab-button[aria-selected="false"]:hover {
       background-color: #003fec; /* Fondo azul oscuro */
     }
     .dark .tab-button:hover {
-      color: #ffffff; /* Texto blanco */
+      color: #e90a0a; /* Texto blanco */
     }
   </style>
   
