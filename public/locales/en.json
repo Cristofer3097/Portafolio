@@ -119,10 +119,11 @@
       "description": 
       "Browse the facilities of the Faculty of Engineering, get to know the departments and get a feel for the academic environment from the comfort of your screen."
     },
-      { 
+    { 
         "description": 
-  "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."
+  "Simple, intuitive and powerful application to plan, record and track your workouts."
   },
+      
   {
     "description": 
   "Forklift simulator in Unity, aiming to teach operators how to drive a forklift safely, fully functional with steering wheel, pedals, shifter and VR."
@@ -141,6 +142,10 @@
     { 
       "description": 
   "Mobile application created in Android Studios to scan walls and get the color of the wall, with the possibility to save the colors, photo and view them in the gallery."
+  },
+  { 
+        "description": 
+  "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."
   }
   ],
   
