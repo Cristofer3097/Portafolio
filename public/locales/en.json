@@ -123,6 +123,10 @@
         "description": 
   "Simple, intuitive and powerful application to plan, record and track your workouts."
   },
+   { 
+        "description": 
+  "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."
+  },
       
   {
     "description": 
@@ -142,11 +146,9 @@
     { 
       "description": 
   "Mobile application created in Android Studios to scan walls and get the color of the wall, with the possibility to save the colors, photo and view them in the gallery."
-  },
-  { 
-        "description": 
-  "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."
   }
+ 
+  
   ],
   
     "projectinfo":{

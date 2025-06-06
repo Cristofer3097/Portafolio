@@ -114,6 +114,10 @@
 "Aplicacion sencilla, intuitiva y potente para planificar, registrar y realizar un seguimiento de sus entrenamientos."
 },
 {
+    "description": 
+"Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc."
+},
+{
   "description": 
 "Simulador de montacargas en Unity, con el objetivo de enseñar a los operadores a manejar un montacargas de manera segura, completamente funcional con volante, pedales, palanca de cambios y VR."
 },
@@ -128,11 +132,8 @@
 {
   "description": 
 "Aplicacion movil creada en Android Studios para escanear paredes y obtener el color de la misma, con la posibilidad de guardar los colores, foto y verlos en la galeria."
-},
-{
-    "description": 
-"Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc."
 }
+
 ],
 
   "projectinfo":{
