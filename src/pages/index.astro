@@ -22,45 +22,45 @@ import Skills from '../components/Skills.astro';
 
 <Layout title="Abel Cristofer Portafolio - Developer con 2 años de experiencia" description="Desarrollador Web / Realidad Virtual y tecnologías modernas">
 <Menu />
-    <main class="px-4">
-    <Sectionclass  id="top" class="relative py-40 pb-56 flex flex-col lg:flex-row items-center justify-between lg:my-0 lg:w-[800px] ">
-
-        <IntroContent />
+  <main class="px-4">
+    <Sectionclass id="top" class="scroll-spy-section relative py-40 pb-56 flex flex-col lg:flex-row items-center justify-between lg:my-0 lg:w-[800px] ">
+      <IntroContent />
     </Sectionclass>
     
-    <Sectionclass id="experience" class="scroll-mt-24 mt-4  opacity-0 translate-y-10 transition-all duration-700 ease-in-out">
-        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900"><span data-translate="index.experience">Experiencia Laboral</span>
-            <ExperienceIcon class="size-6" />
-        </h2>
-        <Experience />
+    <Sectionclass id="experience" class="scroll-spy-section scroll-mt-24 mt-4 opacity-0 translate-y-10 transition-all duration-700 ease-in-out">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900"><span data-translate="index.experience">Experiencia Laboral</span>
+        <ExperienceIcon class="size-6" />
+      </h2>
+      <Experience />
     </Sectionclass>
 
-    <Sectionclass id="proyectos" class="scroll-mt-24">
-        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900"><span data-translate="index.project">Proyectos</span>
-            <ProjectsIcon class="size-6" />
-        </h2>
-        <Projects />
+    <Sectionclass id="proyectos" class="scroll-spy-section scroll-mt-24">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900"><span data-translate="index.project">Proyectos</span>
+        <ProjectsIcon class="size-6" />
+      </h2>
+      <Projects />
     </Sectionclass>
 
-    <Sectionclass id="sobremi" class="scroll-mt-24">
-        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white  dark:text-neutral-900"><span data-translate="index.about">Sobre mi</span>
-            <AboutmeIcon class="size-6" />
-        </h2>
-        <About />
-        <Education id="education" />
-        <Certificate id="certificate" />
-        <Skills id="skills" />
+    <Sectionclass id="sobremi" class="scroll-spy-section scroll-mt-24">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900"><span data-translate="index.about">Sobre mi</span>
+        <AboutmeIcon class="size-6" />
+      </h2>
+      <About />
+      <Education id="education" class="scroll-spy-section" />
+      <Certificate id="certificate" class="scroll-spy-section" />
+      <Skills id="skills" class="scroll-spy-section" />
     </Sectionclass>
 
-    <Sectionclass id="contactos" class="scroll-mt-20">
-        <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900"><span data-translate="index.contact">Contacto</span>
-            <MailIcon class="size-6" />
-        </h2>
-        <Contact />
+    <Sectionclass id="contactos" class="scroll-spy-section scroll-mt-20">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900"><span data-translate="index.contact">Contacto</span>
+        <MailIcon class="size-6" />
+      </h2>
+      <Contact />
     </Sectionclass>
     <Footer />
-</main>
+  </main>
 </Layout>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Manejo del menú desplegable
