@@ -10,6 +10,7 @@ import JavaIcon from '../icons/Java.astro';
 import CppIcon from '../icons/C++.astro';
 import CSIcon from '../icons/CSharp.astro';
 import CIcon from '../icons/C.astro';
+import TypeScriptIcon from '../icons/TypeScript.astro';
 
 const languages = [
 
@@ -26,21 +27,26 @@ const languages = [
   icon: CssIcon, 
   hoverColor: 'hover:text-blue-600' 
 },
+{
+name: 'TypeScript',
+icon: TypeScriptIcon,
+hoverColor: 'hover:text-[#337bc3]'
+},
 { name: 'HTML', 
   icon: HtmlIcon, 
   hoverColor: 'hover:text-orange-500' 
 },
-{ name: 'Dart', 
-  icon: DartIcon, 
-  hoverColor: 'hover:text-sky-400' 
+{ name: 'Java', 
+  icon: JavaIcon, 
+  hoverColor: 'hover:text-sky-700' 
 },
-  { name: 'Python', 
+{ name: 'Python', 
   icon: PythonIcon, 
   hoverColor: 'hover:text-yellow-300' 
 },
-  { name: 'Java', 
-  icon: JavaIcon, 
-  hoverColor: 'hover:text-sky-700' 
+{ name: 'Dart', 
+  icon: DartIcon, 
+  hoverColor: 'hover:text-sky-400' 
 },
   { name: 'C++', 
   icon: CppIcon, 
@@ -59,7 +65,7 @@ const languages = [
   
 ];
 
-const firstListEndIndex = 5; 
+const firstListEndIndex = 6; 
 ---
 <div class="w-full flex flex-col items-center p-4">
   <h2 class="text-2xl font-bold mb-4 text-center text-white dark:text-neutral-800" data-translate="languages.languages">Lenguajes</h2>
