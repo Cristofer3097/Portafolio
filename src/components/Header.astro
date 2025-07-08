@@ -137,6 +137,28 @@
                     el.textContent = key.split('.').reduce((obj, k) => obj && obj[k], translations) || el.textContent;
                 });
                 currentLanguage.textContent = (lang === 'es') ? 'Español' : 'English';
+
+                // data-translate-experience
+        const experienceElements = document.querySelectorAll('[data-translate-experience]');
+        experienceElements.forEach((element, index) => {
+          const exp = translations.experience?.[index];
+          if (exp) {
+            element.querySelector('.experience-title').textContent = exp.title;
+            element.querySelector('.experience-date').textContent = exp.date;
+            element.querySelectorAll('.experience-description').forEach((descElement, i) => {
+              descElement.textContent = exp.description[i] || '';
+            });
+          }
+        });
+  
+        // data-translate-project
+        const projectElements = document.querySelectorAll('[data-translate-project]');
+        projectElements.forEach((element, index) => {
+          const proj = translations.project?.[index];
+          if (proj) {
+            element.querySelector('.project-description').textContent = proj.description;
+          }
+        });
             }
   
       // Botones con data-lang
