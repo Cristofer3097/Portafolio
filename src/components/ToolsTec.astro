@@ -10,6 +10,9 @@ import MServerIcon from '../icons/MServer.astro';
 import AndroidSIcon from '../icons/AndroidS.astro';
 import AzureIcon from '../icons/Azure.astro';
 import UnrealEIcon from '../icons/UnrealE.astro';
+import NetIcon from '../icons/Net.astro';
+import MysqlIcon from '../icons/Mysql.astro';
+
 
 const languages = [
 {
@@ -26,6 +29,14 @@ hoverColor: 'hover:text-[#d7d7d7]'
 name: 'Visual Studios Code',
 icon: CodeIcon,
 hoverColor: 'hover:text-[#1ca2ec]'
+},
+{ name: '.NET', 
+  icon: NetIcon, 
+  hoverColor: 'hover:text-[#7c1ca4]' 
+},
+{ name: 'MySQL', 
+  icon: MysqlIcon, 
+  hoverColor: 'hover:text-[#02769b]' 
 },
 {
 name: 'Figma',
@@ -70,13 +81,14 @@ hoverColor: 'hover:text-[#c3c3c3]'
 
 
 
+
 ];
 
 
 
 
 
-const firstListEndIndex = 6; 
+const firstListEndIndex = 7; 
 ---
 <div class="w-full flex flex-col items-center p-4">
   <h2 class="text-2xl font-bold mb-4 text-center text-white dark:text-neutral-800" data-translate="toolstec.toolstec">Herramientas Tecnicas</h2>
