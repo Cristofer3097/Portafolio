@@ -116,6 +116,10 @@
         "description": 
   "Simple, intuitive and powerful application to plan, record and track your workouts."
   },
+  {
+    "description":
+"Interactive Pokedex with a retro design that allows you to search and explore information about Pokémon, as well as export data to Excel and send by mail."
+},
    { 
         "description": 
   "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."

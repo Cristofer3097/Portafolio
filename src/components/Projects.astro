@@ -12,6 +12,8 @@ import MySQLIcon from "../icons/Mysql.astro"
 import FlutterIcon from "../icons/Flutter.astro"
 import DartIcon from "../icons/Dart.astro"
 import SQLiteIcon from "../icons/Sqlite.astro"
+import NetIcon from "../icons/Net.astro"
+import BootstrapIcon from "../icons/Bootstrap.astro"
 
 const TAGS = {
     JS: {
@@ -65,6 +67,16 @@ const TAGS = {
         class: "bg-[#ffffff] text-[#003b57]",
         icon: SQLiteIcon,
     },
+    NetIcon: {
+        name: ".NET",
+        class: "bg-[#ffffff] text-[#512bd4]",
+        icon: NetIcon,
+    },
+    BootstrapIcon: {
+        name: "Bootstrap",
+        class: "bg-[#ffffff] text-[#512bd4]",
+        icon: BootstrapIcon,
+    },
 }
 
 const PROJECTS = [
@@ -84,6 +96,15 @@ const PROJECTS = [
         repository: "https://github.com/Cristofer3097/GymTrainingDiary",
         
         tags: [TAGS.FlutterIcon, TAGS.SqLiteIcon],
+    },
+    {
+        title: "Pokedex",
+        description: 
+        "Pokedex interactivo con un diseño retro que permite buscar y explorar información sobre Pokémon, además de exportación de datos a Excel y envío por correo.",
+        image: "assets/pokedex.webp",
+        link: "https://pokedex-retro.netlify.app",
+        repository: "https://github.com/Cristofer3097/PokeApp.Api",
+        tags: [TAGS.NetIcon, TAGS.BootstrapIcon],
     },
     {
         title: "Symtto",
