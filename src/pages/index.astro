@@ -15,6 +15,7 @@ import AboutmeIcon from '../icons/About.astro';
 import Menu from '../components/Menu.astro';
 import About from '../components/About.astro';
 import Skills from '../components/Skills.astro';
+import Chat from '../components/Chat.astro';
 
 
 
@@ -49,6 +50,13 @@ import Skills from '../components/Skills.astro';
       <Education id="education" class="scroll-spy-section" />
       <Certificate id="certificate" class="scroll-spy-section" />
       <Skills id="skills" class="scroll-spy-section" />
+    </Sectionclass>
+
+    <Sectionclass id="chat" class="scroll-spy-section scroll-mt-24">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white dark:text-neutral-900">
+        <span data-translate="index.chat">Chatea conmigo (IA)</span>
+        </h2>
+      <Chat />
     </Sectionclass>
 
     <Sectionclass id="contactos" class="scroll-spy-section scroll-mt-20">
