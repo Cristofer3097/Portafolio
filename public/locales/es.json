@@ -5,8 +5,8 @@
     "experience": "Experiencia",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "contact": "Contacto",
-     "chat": "Chatea conmigo (IA)"
+    "contact": "Contacto"
+     
   },
   "status": {
     "title": "Estatus",
@@ -31,6 +31,13 @@
   "certificate":
   {
     "title":"Certificados"
+  },
+  "chat":{
+    "title":"Chatea conmigo (IA)",
+    "subtitle":"Pregúntame cualquier cosa sobre Abel",
+    "message":"¡Hola! Soy Cris-IA. ¿Cómo puedo ayudarte a conocer a Abel Cristofer?",
+    "send":"Enviar",
+    "placeholdermessage":"Escribe tu mensaje aquí"
   },
   "contact":{
     "email":"Tu correo electrónico",

@@ -141,6 +141,16 @@
                     const key = el.getAttribute('data-translate');
                     el.textContent = key.split('.').reduce((obj, k) => obj && obj[k], translations) || el.textContent;
                 });
+
+                document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-translate-placeholder');
+        const translation = key.split('.').reduce((obj, k) => obj && obj[k], translations);
+        if (translation) {
+            // Aquí, en lugar de cambiar textContent, cambiamos el atributo 'placeholder'
+            el.setAttribute('placeholder', translation);
+        }
+    });
+
                 currentLanguage.textContent = (lang === 'es') ? 'Español' : 'English';
 
                 // data-translate-experience

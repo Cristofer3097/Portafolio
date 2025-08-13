@@ -5,8 +5,7 @@
     "experience": "Experience",
     "about": "About Me",
     "projects": "Projects",
-    "contact": "Contact",
-    "chat": "Chat with me (AI)"
+    "contact": "Contact"
   },
   "status": {
     "title": "Status",
@@ -31,6 +30,13 @@
   "certificate":
   {
     "title":"Certificates"
+  },
+  "chat":{
+    "title":"Chat with me (AI)",
+    "subtitle":"Ask me anything about Abel",
+    "message":"Hello! I'm Cris-IA. How can I help you learn about Abel Cristofer?",
+    "send":"Send",
+    "placeholdermessage":"Write your message here"
   },
   "contact":{
     "email":"Your email address",
