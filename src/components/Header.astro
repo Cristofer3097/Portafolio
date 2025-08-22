@@ -150,6 +150,16 @@
             // Aquí, en lugar de cambiar textContent, cambiamos el atributo 'placeholder'
             el.setAttribute('placeholder', translation);
         }
+
+        // Traduce los imgatittle
+    document.querySelectorAll('[data-translate-title]').forEach(el => {
+        const key = el.getAttribute('data-translate-title');
+        const translation = key.split('.').reduce((obj, k) => obj && obj[k], translations);
+        if (translation) {
+            el.setAttribute('title', translation);
+        }
+    });
+        
     });
 
                 currentLanguage.textContent = (lang === 'es') ? 'Español' : 'English';
