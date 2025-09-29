@@ -56,9 +56,21 @@
   
   
   "experience": [
+    {
+        "title": "trainee consultant",
+        "date": "October- Present",
+        "description": [
+          "-Developing web applications with React and .NET Core.",
+        "-Maintaining and improving existing applications.",
+        "-Collaborating with cross-functional teams to define, design, and ship new features.",
+        "-Participating in code reviews and testing to ensure software quality."
+      
+    ]
+        
+      },
       {
         "title": "Systems Engineer",
-        "date": "March 2025 - Present",
+        "date": "March 2025 - August 2025",
         "description": [
           "-Support DMS to end users and concessionaires nationwide.",
           "-Support to the Systems Department in user creation, permissions modification, assignment.", 

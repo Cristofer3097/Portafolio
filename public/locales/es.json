@@ -55,6 +55,19 @@
   },
 "experience": [
   {
+        "title": "consultor trainee",
+        "date": "Octubre 2025 - Presente",
+        "description": [
+        "-Desarrollo de aplicaciones web con React y .NET Core.",
+        "-Mantenimiento y mejora de aplicaciones existentes.",
+        "-Colaboración con equipos multifuncionales para definir, diseñar y enviar nuevas características.",
+        "-Participación en revisiones de código y pruebas para garantizar la calidad del software."
+      
+    ]
+        
+    },
+  
+  {
     "title": "Ingeniero en Sistemas",
     "date": "Marzo 2025 - Presente",
     "description": [
