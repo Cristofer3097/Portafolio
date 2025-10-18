@@ -55,13 +55,13 @@
   },
 "experience": [
   {
-        "title": "Consultor trainee",
+        "title": "Consultor Trainee",
         "date": "Octubre 2025 - Presente",
         "description": [
-        "-Desarrollo de aplicaciones web con React y .NET Core.",
-        "-Mantenimiento y mejora de aplicaciones existentes.",
-        "-Colaboración con equipos multifuncionales para definir, diseñar y enviar nuevas características.",
-        "-Participación en revisiones de código y pruebas para garantizar la calidad del software."
+        "- Desarrollo de clases, interfaces, controladores, métodos y lógica de programación en C#.",
+        "- Modificaciones en cubos OLAP, vistas, dimensiones, relaciones de tablas.",
+        "- Participación en revisiones de código y pruebas para garantizar la calidad del software.",
+        "- Control de versiones y colaboración en equipo utilizando GitHub." 
       
     ]
         
@@ -69,19 +69,25 @@
   
   {
     "title": "Ingeniero en Sistemas",
-    "date": "Marzo 2025 - Presente",
+    "date": "Marzo 2025 - Agosto 2025",
     "description": [
-      "-Soporte DMS a usuarios finales y concesionarias a nivel nacional.",
-"-Apoyo al Departamento de Sistemas en creación de usuarios, modificación de permisos, asignación.",
-"-Seguimiento de tickets"
+      "- Soporte DMS en la gestión y resolución de incidencias técnicas.",
+      "- Apoyo al Departamento de Sistemas en la creación de usuarios y modificación de permisos.",
+      "- Mantenimiento de servidores LAN y WAN.",
+      "- Realización de actualizaciones de software y monitoreo de rendimiento en servidores.",
+      "- Colaboración con equipos internos para mejorar la eficiencia del sistema."
+
     ]
   },
     {
       "title": "Desarrollador / Gestión de Proyectos",
       "date": "Diciembre 2022 - Marzo 2025",
       "description": [
-        "- Creación de entornos en Realidad Virtual(Unity) (Simulador de Montacargas, Python Horror, Recorrido FIME Unity/Web).",
-        "- Administración de proyectos basados en metodologías ágiles (especializado en Scrum)."
+        "- Mejoré la gestión de proyectos usando metodologías ágiles, lo que hizo que la producción fuera más eficiente.",
+        "- Colaboración de proyectos que se presentan en su entrada principal y en su Web oficial.",
+        "- Lideré la creación de entornos de Realidad Virtual con Unity.",
+        "- Gestión de proyectos basada en metodologías ágiles (especializándome en Scrum).",
+        "- Instalación de servidores, hardware y software en estaciones de trabajo."
       ]
     },
     {

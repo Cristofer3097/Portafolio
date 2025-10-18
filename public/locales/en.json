@@ -60,10 +60,11 @@
         "title": "Trainee consultant",
         "date": "October- Present",
         "description": [
-          "-Developing web applications with React and .NET Core.",
-        "-Maintaining and improving existing applications.",
-        "-Collaborating with cross-functional teams to define, design, and ship new features.",
-        "-Participating in code reviews and testing to ensure software quality."
+          "- Development of classes, interfaces, controllers, methods, and programming logic in C#.",
+        "- Modifications to OLAP cubes, views, dimensions, and table relationships.",
+        "- Participation in code reviews and testing to ensure software quality.",
+        "- Version control and team collaboration using GitHub."
+
       
     ]
         
@@ -72,17 +73,22 @@
         "title": "Systems Engineer",
         "date": "March 2025 - August 2025",
         "description": [
-          "-Support DMS to end users and concessionaires nationwide.",
-          "-Support to the Systems Department in user creation, permissions modification, assignment.", 
-          "-Ticket tracking."
+          "- DMS support in the management and resolution of technical incidents.",
+      "- Support for the Systems Department in creating users and modifying permissions.",
+      "- Maintenance of LAN and WAN servers.",
+      "- Performing software updates and monitoring server performance.",
+      "- Collaboration with internal teams to improve system efficiency."
         ]
       },
       {
         "title": "Developer / Project Management",
         "date": "December 2022 - March 2025",
         "description": [
-          "- Creation of Virtual Reality(Unity) environments (Forklift Simulator, Python Horror, FIME Unity/Web Walkthrough).",
-          "- Project management based on agile methodologies (specializing in Scrum)."
+          "- I improved project management using agile methodologies, which made production more efficient.",
+        "- Collaboration on projects presented in their main entry and on their official website.",
+        "- I led the creation of Virtual Reality environments with Unity.",
+        "- Project management based on agile methodologies (specializing in Scrum).",
+        "- Installation of servers, hardware, and software on workstations."
         ]
       },
     
