@@ -48,8 +48,8 @@
   },
   "education":{
     "title":"Education",
-    "fimedatedip":"January - March 2024",
-    "fimetitledip": "DIPLOMA IN PYTHON IN GRAPHICAL INTERFACES AND ANALYSIS",
+    "fimedatedip":"October 2025 - Present",
+    "fimetitledip": "MASTER'S DEGREE IN SOFTWARE ENGINEERING AND COMPUTER SYSTEMS",
     "fimetitle":"SOFTWARE THE TECHNOLOGY IN ENGINEER (TITLED)",
     "eiao": "TECHNICAL BACHELOR IN WEB PROGRAMMING"
   },
@@ -58,7 +58,7 @@
   "experience": [
     {
         "title": "Trainee consultant",
-        "date": "October- Present",
+        "date": "October 2025 - Present",
         "description": [
           "- Development of classes, interfaces, controllers, methods, and programming logic in C#.",
         "- Modifications to OLAP cubes, views, dimensions, and table relationships.",
