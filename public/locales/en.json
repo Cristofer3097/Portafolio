@@ -20,7 +20,7 @@
   "intro":{
       "imageTitle": "If I must fall, I will rise each time a better man.",
   "developer":"Developer",
-  "part1":" With over 2 years of experience.",
+  "part1":" With over 3 years of experience.",
   "part2":" Full-Stack Developer, Backend and Augmented Reality Apps.",
   "part3":" I enjoy facing new challenges, working on multidisciplinary projects to add value through technology and provide creative solutions that not only solve problems efficiently but also generate strategic value in the long term."
   },
@@ -60,8 +60,8 @@
         "title": "Trainee consultant",
         "date": "October 2025 - Present",
         "description": [
-          "- Development of classes, interfaces, controllers, methods, and programming logic in C#.",
-          "- Development of components in Angular.",
+        "- Development of classes, interfaces, controllers, methods, and programming logic in C#.",
+        "- Development of components in Angular.",
         "- Modifications to OLAP cubes, views, dimensions, and table relationships.",
         "- Participation in code reviews and testing to ensure software quality.",
         "- Version control and team collaboration using GitHub."
@@ -74,7 +74,7 @@
         "title": "Systems Engineer",
         "date": "March 2025 - August 2025",
         "description": [
-          "- DMS support in the management and resolution of technical incidents.",
+      "- DMS support in the management and resolution of technical incidents.",
       "- Support for the Systems Department in creating users and modifying permissions.",
       "- Maintenance of LAN and WAN servers.",
       "- Performing software updates and monitoring server performance.",
@@ -85,7 +85,7 @@
         "title": "Developer / Project Management",
         "date": "December 2022 - March 2025",
         "description": [
-          "- I improved project management using agile methodologies, which made production more efficient.",
+        "- I improved project management using agile methodologies, which made production more efficient.",
         "- Collaboration on projects presented in their main entry and on their official website.",
         "- I led the creation of Virtual Reality environments with Unity.",
         "- Project management based on agile methodologies (specializing in Scrum).",
