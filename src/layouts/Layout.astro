@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import '@fontsource-variable/onest';
+import TransitionTop from "../components/TransitionTop.astro";
 
 interface Props {
 	title: string
@@ -38,7 +39,7 @@ const { description, title} = Astro.props
 
   gtag('config', 'G-7G3N71WQXS');
 </script>
-
+<TransitionTop />
 </body>
 </html>
 

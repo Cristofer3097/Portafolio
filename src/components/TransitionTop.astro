@@ -1,0 +1,46 @@
+---
+import TransitionIcon from '../icons/TopIcon.astro';
+---
+<button
+  id="back-to-top"
+  aria-label="Volver arriba"
+  class="fixed z-50 p-3 rounded-full shadow-lg transition-all duration-500 ease-in-out transform translate-y-20 opacity-0 overflow-hidden
+         bg-violet-600 text-white hover:bg-violet-900  
+         dark:bg-blue-700  dark:text-gray-100 dark:hover:bg-blue-900 dark:hover:border-gray-300 dark:hover:shadow-sky-800 
+         bottom-5 right-5 lg:bottom-10 lg:right-10"
+>
+  <TransitionIcon class="size-6 lg:size-8" />
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    if (backToTopBtn) {
+      // detectar el scroll
+      window.addEventListener('scroll', () => {
+        // Detectamos si el usuario ha llegado casi al final de la página
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const bodyHeight = document.body.offsetHeight;
+
+        // mostramos el botón
+        if (scrollPosition >= bodyHeight - 200) {
+          backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
+          backToTopBtn.classList.add('translate-y-0', 'opacity-100');
+        } else {
+          // Si subimos, lo ocultamos
+          backToTopBtn.classList.remove('translate-y-0', 'opacity-100');
+          backToTopBtn.classList.add('translate-y-20', 'opacity-0');
+        }
+      });
+
+      // 2. Función para subir suavemente al hacer click
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>
