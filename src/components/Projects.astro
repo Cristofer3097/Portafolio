@@ -83,7 +83,7 @@ const PROJECTS = [
     {
         title: "FIME Virtual Tour",
         description: 
-        "Navega por las instalaciones de la Facultad de Ingeniería, conoce los departamentos y hazte una idea del ambiente académico desde la comodidad de tu pantalla.",
+        "",
         image: "assets/RecorridoWeb.webp",
         link: "https://recorridovirtual.congresointernacionalpiv.com",
         repository: "https://github.com/user/fime-virtual-tour",
@@ -91,7 +91,7 @@ const PROJECTS = [
     },
     {
         title: "Gym Diary",
-        description: "Aplicacion sencilla, intuitiva y potente para planificar, registrar y realizar un seguimiento de sus entrenamientos con chat IA integrado para generar rutinas.",
+        description: "",
         image: "assets/gym.webp",
         repository: "https://github.com/Cristofer3097/GymTrainingDiary",
         
@@ -100,7 +100,7 @@ const PROJECTS = [
     {
         title: "Pokedex",
         description: 
-        "Pokedex web interactivo con un diseño retro que permite buscar, filtrar y explorar información sobre Pokémon, además de exportación de datos a Excel y envío por correo.",
+        "",
         image: "assets/pokedex.webp",
         link: "https://pokedex-retro.netlify.app",
         repository: "https://github.com/Cristofer3097/PokeApp.Api",
@@ -108,7 +108,7 @@ const PROJECTS = [
     },
     {
         title: "Symtto",
-        description: "Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc.",
+        description: "",
         image: "assets/symtto.webp",
         link: "https://symtto.com",
         
@@ -116,7 +116,7 @@ const PROJECTS = [
     },
     {
         title: "Forklift Simulator",
-        description: "Simulador de montacargas en Unity, con el objetivo de enseñar a los operadores a manejar un montacargas de manera segura, completamente funcional con volante, pedales, palanca de cambios y VR.",
+        description: "",
         image: "assets/forklift.gif",
         repository: "",
         video: "assets/forklift.mp4",
@@ -124,14 +124,14 @@ const PROJECTS = [
     },
     {
         title: "Gestion Nomina",
-        description: "Sistema de gestion de nomina, controlar los empleados por medio de una base de datos, crear, borrar, sus asistencias, con calculo de horas extras, bonos, descuentos, etc y al final del mes generar sus nominas.",
+        description: "",
         image: "assets/Nomina.webp",
         repository: "https://github.com/Cristofer3097/Gestion-Nomina",
         tags: [TAGS.PhpIcon, TAGS.MySQLIcon],
     },
     {
         title: "Ultimate Invasion",
-        description: "Juego de naves en 2D, inspírado en el videojuego Space Invaders con la posibilidad de elegir entre 4 niveles de dificultad, con Score y vidas.",
+        description: "",
         image: "assets/Invasion.gif",
         repository: "https://github.com/Cristofer3097/Ultimate-Invasion",
         video: "assets/Invasion.mp4",
@@ -139,7 +139,7 @@ const PROJECTS = [
     },
     {
         title: "Tonos de pared",
-        description: "Aplicacion movil creada en Android Studios para escanear paredes y obtener el color de la misma, con la posibilidad de guardar los colores, foto y verlos en la galeria.",
+        description: "",
         image: "assets/Tonos.webp",
         repository: "https://github.com/Jair-Rodriguez007/PIADispMoviles",
         video: "assets/Tonos.mp4",
@@ -167,21 +167,21 @@ const PROJECTS = [
                           <a href={link} target="_blank" rel="noopener noreferrer" title="Proyecto"
                              class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 dark:bg-purple-900 hover:bg-blue-900/50 dark:hover:bg-purple-900/50 font-semibold gap-x-1">
                               <DeviceIcon class="size-4" />
-                              <span data-translate="projectinfo.project">Ver Proyecto</span>
+                              <span data-translate="projectinfo.project"></span>
                           </a>
                       )}
                       {repository && (
                           <a href={repository} target="_blank" rel="noopener noreferrer" title="Repositorio"
                              class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 dark:bg-purple-900 hover:bg-blue-900/50 dark:hover:bg-purple-900/50 font-semibold gap-x-1">
                               <ProjectsIcon class="size-4" />
-                              <span data-translate="projectinfo.code">Ver Código</span>
+                              <span data-translate="projectinfo.code"></span>
                           </a>
                       )}
                       {video && (
                           <button onclick={`openVideoModal('${video}')`}
                                   class="flex text-sm text-blue-100 hover:underline mt-1 p-2 rounded-lg bg-blue-900 dark:bg-purple-900 hover:bg-blue-900/50 dark:hover:bg-purple-900/50 font-semibold gap-x-1">
                               <ProjectsIcon class="size-4" />
-                              <span data-translate="projectinfo.video">Ver Video</span>
+                              <span data-translate="projectinfo.video"></span>
                           </button>
                       )}
                   </div>

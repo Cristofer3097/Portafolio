@@ -55,12 +55,12 @@
   },
 "experience": [
   {
-        "title": "Consultor Trainee",
+        "title": "Desarrollador Full Stack Jr",
         "date": "Octubre 2025 - Presente",
         "description": [
-        "- Desarrollo de clases, interfaces, controladores, métodos y lógica de programación en C#.",
+        "- Uso de SQL para consultas, modificaciones de cubos OLAP, vistas, dimensiones y relaciones.",
         "- Desarrollo de componentes en Angular.",
-        "- Modificaciones en cubos OLAP, vistas, dimensiones, relaciones de tablas.",
+        "- Configuración y mantenimiento de máquinas virtuales Linux para entornos de desarrollo.",
         "- Participación en revisiones de código y pruebas para garantizar la calidad del software.",
         "- Control de versiones y colaboración en equipo utilizando GitHub." 
       

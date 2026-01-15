@@ -6,35 +6,35 @@ import PersonalSkillsContent from "./PersonalSkills.astro"
 import ToolsIcon from '../icons/Tools.astro';
 ---
 
-<h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800" id="educationTitle" > <span data-translate="skillsmenu.skills">Habilidades </span><ToolsIcon class="size-6" /></h2>
+<h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800" id="educationTitle" > <span data-translate="skillsmenu.skills"></span><ToolsIcon class="size-6" /></h2>
 
-<div class="w-full bg-white border border-violet-200 dark:border-blue-400 rounded-lg shadow-sm dark:bg-slate-300 dark:border-blue-700">
+<div class="w-full bg-white border border-violet-200 dark:border-blue-400 rounded-lg shadow-sm dark:bg-slate-300">
     <ul class="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 rounded-t-lg 
     bg-violet-950 dark:bg-violet-700 dark:border-gray-700 text-violet-500 dark:text-neutral-800 " id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
       <li class="me-2">
-        <button id="languages-tab" data-tabs-target="#languages" type="button" role="tab" aria-controls="languages" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button " data-translate="skillsmenu.languages">Lenguajes de Programación</button>
+        <button id="languages-tab" data-tabs-target="#languages" type="button" role="tab" aria-controls="languages" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button " data-translate="skillsmenu.languages"></button>
       </li>
       <li class="me-2">
         <button id="frameworks-tab" data-tabs-target="#frameworks" type="button" role="tab" aria-controls="frameworks" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button">Frameworks</button>
       </li>
       <li class="me-2">
-        <button id="toolsTec-tab" data-tabs-target="#toolstec" type="button" role="tab" aria-controls="toolstec" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button" data-translate="skillsmenu.toolstec">Herramientas Tecnicas</button>
+        <button id="toolsTec-tab" data-tabs-target="#toolstec" type="button" role="tab" aria-controls="toolstec" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button" data-translate="skillsmenu.toolstec"></button>
       </li>
       <li class="me-2">
-        <button id="personalskills-tab" data-tabs-target="#personalskills" type="button" role="tab" aria-controls="personalskills" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button" data-translate="skillsmenu.pskills">Habilidades personales</button>
+        <button id="personalskills-tab" data-tabs-target="#personalskills" type="button" role="tab" aria-controls="personalskills" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button" data-translate="skillsmenu.pskills"></button>
       </li>
     </ul>
     <div id="defaultTabContent">
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 dark:bg-gray-800" id="languages" role="tabpanel" aria-labelledby="languages-tab">
+      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="languages" role="tabpanel" aria-labelledby="languages-tab">
         <p class=" text-white-500 dark:text-stone-900"><LanguagesContent /></p>
       </div>
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 dark:bg-gray-800" id="frameworks" role="tabpanel" aria-labelledby="frameworks-tab">
+      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="frameworks" role="tabpanel" aria-labelledby="frameworks-tab">
         <p class=" text-white-500 dark:text-stone-900"><FrameworksContent /></p>
       </div>
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 dark:bg-gray-800" id="toolstec" role="tabpanel" aria-labelledby="toolstec-tab">
+      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="toolstec" role="tabpanel" aria-labelledby="toolstec-tab">
             <p class="text-white-500 dark:text-stone-900"><ToolsTecContent /></p>
       </div>
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 dark:bg-gray-800" id="personalskills" role="tabpanel" aria-labelledby="personalskills-tab">
+      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="personalskills" role="tabpanel" aria-labelledby="personalskills-tab">
         <p class="text-white-500 dark:text-stone-900"><PersonalSkillsContent /></p>
   </div>
     </div>
