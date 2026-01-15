@@ -185,6 +185,9 @@
       "education": "Education",
       "about": "About Me",
       "contact": "Contact"
+    },
+    "transitionTop":{
+      "buttonTitle":"Back to top"
     }
 
 }

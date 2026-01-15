@@ -179,6 +179,9 @@
     "education":"Educación",
     "about":"Sobre mí",
     "contact":"Contacto"
+  },
+  "transitionTop":{
+    "buttonTitle":"Volver arriba"
   }
 }
 
