@@ -1,7 +1,7 @@
 ---
 import CertificateIcon from '../icons/Certificate.astro';
 
-
+// Movemos los datos aquí para usarlos tanto en el HTML como pasarlos al script si fuera necesario
 const certificados = [
   { name: 'IA', image: '/assets/ia.webp' },
   { name: 'Python', image: '/assets/python.webp' },
@@ -12,13 +12,14 @@ const certificados = [
 ];
 ---
 
-<section class="overflow-hidden w-full mx-auto py-24 relative">
+<section class="overflow-hidden w-full mx-auto py-24 relative" id="certificate-section" data-certificates={JSON.stringify(certificados)}>
   <h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800">
     <span data-translate="certificate.title"></span>
     <CertificateIcon class="size-6" />
   </h2>
 
-  <div class="flex gap-x-20 animate-carousel" id="carouselTrack">
+  <div class="flex gap-x-20 pr-20 animate-carousel" id="carouselTrack">
+    {/* Bucle Original */}
     {certificados.map((certificado, index) => (
       <div class="carousel-item" key={`original-${index}`}>
         <h2 class="text-lg font-semibold text-gray-100 dark:text-neutral-900 text-center mb-2">
@@ -28,84 +29,159 @@ const certificados = [
           class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105 hover:shadow-violet-800 dark:shadow-blue-500 hover:shadow-lg"
           alt={certificado.name}
           src={certificado.image}
-          onclick="openModal(this)"
+          data-index={index} 
+          onclick={`openModal(${index})`} 
         />
       </div>
     ))}
 
+    {/* Bucle Clon (para el efecto infinito) */}
     {certificados.map((certificado, index) => (
       <div class="carousel-item" key={`clone-${index}`}>
-        <h2 class="text-lg font-semibold text-gray-100  dark:text-neutral-900 text-center mb-2">
+        <h2 class="text-lg font-semibold text-gray-100 dark:text-neutral-900 text-center mb-2">
           {certificado.name}
         </h2>
         <img
           class="carousel-image cursor-pointer transform transition duration-300 md:hover:scale-105 hover:shadow-violet-800 dark:shadow-blue-500 hover:shadow-lg"
           alt={certificado.name}
           src={certificado.image}
-          onclick="openModal(this)"
+          data-index={index}
+          onclick={`openModal(${index})`}
         />
       </div>
     ))}
   </div>
 </section>
 
-
-<div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-50" onclick="closeModal()">
-  <div class="relative max-w-[90vw] max-h-[90vh]" onclick="event.stopPropagation()">
-    <button onclick="closeModal()" class="absolute -top-4 -right-4 bg-black bg-opacity-80 text-white text-3xl font-bold cursor-pointer p-2 rounded-full z-50">
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-90 hidden flex flex-col justify-center items-center z-50" onclick="closeModal()">
+    
+    <button onclick="closeModal()" class="absolute top-5 right-5 text-white text-4xl font-bold cursor-pointer z-50 hover:text-gray-300 transition-colors">
       &times;
     </button>
-    <img id="modalImage" class="rounded-lg shadow-lg transform scale-75 opacity-0 transition-all duration-300 ">
-  </div>
+
+    <div class="relative w-full max-w-4xl flex flex-col items-center justify-center p-4" onclick="event.stopPropagation()">
+
+      <h3 id="modalTitle" class="text-white text-xl mt-4 py-4 font-semibold"></h3>
+        <img id="modalImage" class="max-h-[70vh] max-w-full rounded-lg shadow-2xl transform scale-75 opacity-0 transition-all duration-300 object-contain"> 
+
+        <div class="flex justify-between items-center w-full max-w-md mt-6 px-4">
+            <button id="prevBtn" class="bg-gray-800/80 hover:bg-violet-800  text-white p-3 rounded-full transition-all duration-300 border border-gray-600 backdrop-blur-sm group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-8 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
+            <span id="imageCounter" class="text-gray-400 font-mono text-sm"></span>
+
+            <button id="nextBtn" class="bg-gray-800/80 hover:bg-violet-800 dark:hover:bg-blue-800 text-white p-3 rounded-full transition-all duration-300 border border-gray-600 backdrop-blur-sm group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-8 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
 </div>
 
 <style>
   @keyframes scroll {
-  0% {
-    transform: translateX(0);
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+    transform: translateX(-50%);
+    }
   }
-  100% {
-    transform: translateX(-100%);
+
+  .animate-carousel {
+    display: flex;
+    width: max-content; 
+    animation: scroll 25s linear infinite;
   }
-}
+  
+  /* Pausar animacion al abrir cualquier imagen */
+  body.modal-open .animate-carousel {
+    animation-play-state: paused;
+  }
 
-.animate-carousel {
-  display: flex;
-  width: 200%; /* 2 sets de items = 200% */
-  animation: scroll 30s linear infinite; /* Ajusta la duración a tu gusto */
-}
-
-.carousel-item {
-  flex-shrink: 0;
-}
-
-.carousel-image {
-  width: 150px;
-  height: 120px;
-  max-width: 100%;
-}
-
+  .carousel-item { flex-shrink: 0; }
+  
+  .carousel-image {
+    width: 150px;
+    height: 120px;
+    max-width: 100%;
+  }
 </style>
 
 <script>
+  let currentIndex = 0;
+  let certificadosData = [];
+
   document.addEventListener('DOMContentLoaded', () => {
+    const section = document.getElementById('certificate-section');
+    if(section) {
+        certificadosData = JSON.parse(section.getAttribute('data-certificates'));
+    }
+
     const carouselTrack = document.getElementById("carouselTrack");
     let isPaused = false;
 
-    function openModal(imgElement) {
+    window.openModal = function(index) {
+      currentIndex = index;
+      updateModalContent();
+
       const modal = document.getElementById("modal");
       const modalImage = document.getElementById("modalImage");
-
-      modalImage.src = imgElement.src;
+      
       modal.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden"); 
 
+      // Animación de entrada
       setTimeout(() => {
         modalImage.classList.remove("scale-75", "opacity-0");
         modalImage.classList.add("scale-100", "opacity-100");
       }, 50);
     }
 
-    function closeModal() {
+    // Función para actualizar la imagen y textos según el índice actual
+    function updateModalContent() {
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        
+        const item = certificadosData[currentIndex];
+        
+        modalImage.src = item.image;
+        modalTitle.textContent = item.name;
+        // imageCounter.textContent = `${currentIndex + 1} / ${certificadosData.length}`;
+    }
+
+    // Función Siguiente 
+    window.nextImage = function() {
+        // Si es el último, vuelve al 0 (bucle)
+        currentIndex = (currentIndex + 1) % certificadosData.length;
+        changeImageAnimation();
+    }
+
+    // Función Anterior 
+    window.prevImage = function() {
+        // Si es el 0, va al último (bucle)
+        currentIndex = (currentIndex - 1 + certificadosData.length) % certificadosData.length;
+        changeImageAnimation();
+    }
+
+    // Pequeña transición al cambiar imagen dentro del modal
+    function changeImageAnimation() {
+        const modalImage = document.getElementById("modalImage");
+        // Ocultar levemente
+        modalImage.classList.add("opacity-50", "scale-95");
+        
+        setTimeout(() => {
+            updateModalContent();
+            // Mostrar de nuevo
+            modalImage.classList.remove("opacity-50", "scale-95");
+        }, 150);
+    }
+
+    window.closeModal = function() {
       const modal = document.getElementById("modal");
       const modalImage = document.getElementById("modalImage");
 
@@ -114,9 +190,30 @@ const certificados = [
 
       setTimeout(() => {
         modal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
       }, 300);
     }
 
+    // Botones Siguiente y Anterior
+    document.getElementById('prevBtn')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        window.prevImage();
+    });
+
+    document.getElementById('nextBtn')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        window.nextImage();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!document.getElementById("modal").classList.contains("hidden")) {
+            if (e.key === "ArrowRight") window.nextImage();
+            if (e.key === "ArrowLeft") window.prevImage();
+            if (e.key === "Escape") window.closeModal();
+        }
+    });
+
+    // Pausar y reanudar la animación del carrusel al interactuar con las imágenes
     function pauseCarousel() {
       if (!isPaused) {
         carouselTrack.style.animationPlayState = "paused";
@@ -135,8 +232,5 @@ const certificados = [
       img.addEventListener("mouseenter", pauseCarousel);
       img.addEventListener("mouseleave", resumeCarousel);
     });
-
-    window.openModal = openModal;
-    window.closeModal = closeModal;
   });
 </script>
