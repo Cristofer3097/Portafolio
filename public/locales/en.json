@@ -135,40 +135,48 @@
         "description": 
   "Simple, intuitive and powerful app for planning, recording, and tracking your workouts with built-in AI chat to generate routines."
   },
+   {
+    "description":
+"Video game sales website with Login, product search, shopping cart and order return, developed React.js for the frontend and Spring Boot for the backend."
+  },
   {
     "description":
 "Interactive web Pokedex with a retro design that allows you to search, filter and explore information about Pokémon, as well as export data to Excel and send by mail."
-},
-   { 
-        "description": 
-  "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."
-  },
-      
+},  
   {
     "description": 
   "Forklift simulator in Unity, aiming to teach operators how to drive a forklift safely, fully functional with steering wheel, pedals, shifter and VR."
   },
-
+  {
+    "description":
+"E-commerce for clothing with search, filtering, shopping cart features developed with Angular for the frontend and using the Fake Store API for the backend."
+  },
+    { 
+      "description": 
+  "Mobile application created in Android Studios to scan walls and get the color of the wall, with the possibility to save the colors, photo and view them in the gallery."
+  },
+   { 
+      "description": 
+  "2D spaceship game, inspired by the Space Invaders video game with the possibility to choose between 4 levels of difficulty, with Score and lives."
+  },
     { 
       "description": 
   "Payroll management system, control the employees through a database, create, delete, their attendances, with overtime calculation, bonuses, discounts, etc and at the end of the month generate their payrolls."
   },
-    { 
-      "description": 
-  "2D spaceship game, inspired by the Space Invaders video game with the possibility to choose between 4 levels of difficulty, with Score and lives."
-  },
- 
-    { 
-      "description": 
-  "Mobile application created in Android Studios to scan walls and get the color of the wall, with the possibility to save the colors, photo and view them in the gallery."
+  { 
+        "description": 
+  "Website offering electrical services and electrical installations with integrated stripe payment gateway, product details etc."
   }
+ 
 
   ],
   
     "projectinfo":{
       "project":"View project",
       "code":"View code",
-      "video":"View video"
+      "video":"View video",
+      "btn_next": "Next",
+      "btn_prev": "Previous"
     },
     "skillsmenu":{
       "skills":"Skills",

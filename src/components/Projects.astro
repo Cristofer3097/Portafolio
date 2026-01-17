@@ -14,6 +14,10 @@ import DartIcon from "../icons/Dart.astro"
 import SQLiteIcon from "../icons/Sqlite.astro"
 import NetIcon from "../icons/Net.astro"
 import BootstrapIcon from "../icons/Bootstrap.astro"
+import ReactIcon from "../icons/React.astro"
+import SpringIcon from "../icons/SpringBoot.astro"
+import AngularIcon from "../icons/Angular.astro"
+import Pagination from "./Pagination.astro"
 
 const TAGS = {
     JS: {
@@ -77,6 +81,22 @@ const TAGS = {
         class: "bg-[#ffffff] text-[#512bd4]",
         icon: BootstrapIcon,
     },
+    ReactIcon: {
+        name: "React.js",
+        class: "bg-[#20232a] text-[#61dafb]",
+        icon: ReactIcon,
+    },
+    SpringIcon: {
+        name: "Spring Boot",
+        class: "bg-[#ffffff] text-[#68bd45]",
+        icon: SpringIcon,
+    },
+    AngularIcon : {
+        name: "Angular",
+        class: "bg-[#ffffff] text-[#8812f9]",
+        icon: AngularIcon,
+    },
+    
 }
 
 const PROJECTS = [
@@ -98,6 +118,14 @@ const PROJECTS = [
         tags: [TAGS.FlutterIcon, TAGS.SqLiteIcon],
     },
     {
+        title: "Game Store",
+        description: "",
+        image: "assets/GameStore.webp",
+        link: "https://gamestore-has4clh68-cristofer3097s-projects.vercel.app",
+        repository: "https://github.com/Cristofer3097/gamestore",
+        tags: [TAGS.ReactIcon, TAGS.SpringIcon],
+    },
+    {
         title: "Pokedex",
         description: 
         "",
@@ -107,14 +135,6 @@ const PROJECTS = [
         tags: [TAGS.NetIcon, TAGS.BootstrapIcon],
     },
     {
-        title: "Symtto",
-        description: "",
-        image: "assets/symtto.webp",
-        link: "https://symtto.com",
-        
-        tags: [TAGS.JS, TAGS.Wordpress],
-    },
-    {
         title: "Forklift Simulator",
         description: "",
         image: "assets/forklift.gif",
@@ -122,12 +142,21 @@ const PROJECTS = [
         video: "assets/forklift.mp4",
         tags: [TAGS.CIcon, TAGS.Unity],
     },
-    {
-        title: "Gestion Nomina",
+     {
+        title: "E-commerce",
         description: "",
-        image: "assets/Nomina.webp",
-        repository: "https://github.com/Cristofer3097/Gestion-Nomina",
-        tags: [TAGS.PhpIcon, TAGS.MySQLIcon],
+        image: "assets/E-commerce.webp",
+        link: "https://store-gilt-eight.vercel.app",
+        repository: "https://github.com/Cristofer3097/Store",
+        tags: [TAGS.AngularIcon, TAGS.JS],
+    },
+    {
+        title: "Tonos de pared",
+        description: "",
+        image: "assets/Tonos.webp",
+        repository: "https://github.com/Jair-Rodriguez007/PIADispMoviles",
+        video: "assets/Tonos.mp4",
+        tags: [TAGS.FlutterIcon, TAGS.DartIcon],
     },
     {
         title: "Ultimate Invasion",
@@ -138,20 +167,27 @@ const PROJECTS = [
         tags: [TAGS.CIcon, TAGS.Unity],
     },
     {
-        title: "Tonos de pared",
+        title: "Gestion Nomina",
         description: "",
-        image: "assets/Tonos.webp",
-        repository: "https://github.com/Jair-Rodriguez007/PIADispMoviles",
-        video: "assets/Tonos.mp4",
-        tags: [TAGS.FlutterIcon, TAGS.DartIcon],
+        image: "assets/Nomina.webp",
+        repository: "https://github.com/Cristofer3097/Gestion-Nomina",
+        tags: [TAGS.PhpIcon, TAGS.MySQLIcon],
     },
+    {
+        title: "Symtto",
+        description: "",
+        image: "assets/symtto.webp",
+        link: "https://symtto.com",
+        
+        tags: [TAGS.JS, TAGS.Wordpress],
+    }
 ]
 ---
 
 <article class="max-w-screen-xl mx-auto px-1 sm:px-1 lg:px-2 py-6">
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 ">
       {PROJECTS.map(({ title, description, image, link, repository, tags, video }) => (
-          <div class="relative group overflow-hidden rounded-lg shadow-lg bg-gray-800 hidden-on-scroll " data-translate-project="0">
+          <div class="project-card relative group overflow-hidden rounded-lg shadow-lg bg-gray-800 hidden-on-scroll " data-translate-project="0">
               <img
                   src={image}
                   alt={`Captura de ${title}`}
@@ -204,6 +240,7 @@ const PROJECTS = [
           </div>
       ))}
   </div>
+  <Pagination />
 </article>
 
 
