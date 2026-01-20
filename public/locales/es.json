@@ -155,15 +155,16 @@
 },
 {
     "description": 
-"Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc."
+    "Juego de naves en 2D, inspírado en el videojuego Space Invaders con la posibilidad de elegir entre 4 niveles de dificultad, con Score y vidas."
+
 },
 {
   "description": 
-"Sistema de gestion de nomina, controlar los empleados por medio de una base de datos, crear, borrar, sus asistencias, con calculo de horas extras, bonos, descuentos, etc y al final del mes generar sus nominas."
+  "Sistema de gestion de nomina, controlar los empleados por medio de una base de datos, crear, borrar, sus asistencias, con calculo de horas extras, bonos, descuentos, etc y al final del mes generar sus nominas."
 },
 {
   "description": 
-"Juego de naves en 2D, inspírado en el videojuego Space Invaders con la posibilidad de elegir entre 4 niveles de dificultad, con Score y vidas."
+  "Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc."
 }
 ],
 
