@@ -55,8 +55,14 @@ const certificados = [
 
 <div id="modal" class="fixed inset-0 bg-black bg-opacity-90 hidden flex flex-col justify-center items-center z-50" onclick="closeModal()">
     
-    <button onclick="closeModal()" class="absolute top-5 right-5 text-white text-4xl font-bold cursor-pointer z-50 hover:text-gray-300 transition-colors">
-      &times;
+    <button 
+      onclick="closeModal()" 
+      class="absolute top-10 right-10 z-50 
+             w-10 h-10 flex items-center justify-center 
+             text-white border-2 border-white rounded-full 
+             hover:bg-white hover:text-black transition-all duration-300"
+    >
+      <span class="text-2xl font-bold leading-none">&times;</span>
     </button>
 
     <div class="relative w-full h-full flex flex-col items-center justify-center p-4 pb-24">
