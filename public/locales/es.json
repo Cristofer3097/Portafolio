@@ -127,44 +127,45 @@
 "project": [
   {
     "description": 
-    "Navega por las instalaciones de la Facultad de Ingeniería, conoce los departamentos y hazte una idea del ambiente académico desde la comodidad de tu pantalla."
+    "Aportación y mejora continua de una plataforma de visitas virtuales inmersivas para FIME, integrando Unity con tecnologías web para ofrecer una experiencia interactiva basada en navegador (Aportación también para la versión Web y Móvil)"
   },
   {
     "description": 
-"Aplicacion sencilla, intuitiva y potente para planificar, registrar y realizar un seguimiento de sus entrenamientos con chat IA integrado para generar rutinas."
+"Desarrollo de aplicación para planificar, registrar y realizar un seguimiento de sus entrenamientos con chat IA integrado para generar rutinas. El usuario puede crear plantillas, registrar nuevos ejercicios, importar o exportar datos y un calendario."
 },
 {
   "description": 
-"Pagina web de venta de videojuegos con Inicio de sesion, busqueda de productos, carrito de compras y devolucion de pedidos, desarrollado React.js para el frontend y Spring Boot para el backend."
+  "Desarrollado en colaboración con Banorte, la aplicación cuenta con un portal de asistencia, editar o agregar empleados (fotos, horarios, salarios), una interfaz de administración para agregar o eliminar empleados y generar informes mensuales de nómina."
 },
+
  {
     "description": 
-"Pokedex web interactivo con un diseño retro que permite buscar, filtrar y explorar información sobre Pokémon, además de exportación de datos a Excel y envío por correo."
+"Pokedex web interactivo usando PokéAPI con un diseño retro que permite buscar, filtrar y explorar información sobre todos los Pokémon, además de exportación de datos a Excel y enviar por correo."
 },
 {
   "description": 
-"Simulador de montacargas en Unity, con el objetivo de enseñar a los operadores a manejar un montacargas de manera segura, completamente funcional con volante, pedales, palanca de cambios y VR."
-},
-{
-  "description":
-"E-commerce de ropa con funcionalidades de busqueda, filtrado, carrito de compras desarrollado con Angular para el frontend y usando la API de Fake Store para el backend."
+  "Desarrollo de pagina Web en colaboración de Symtto donde se ofrecen servicios eléctricos e instalaciones, tienda que ofrece productos eléctricos con pasarela de pagos integrada y destalles de los producto."
 },
 {
   "description": 
-"Aplicacion movil creada en Android Studios para escanear paredes y obtener el color de la misma, con la posibilidad de guardar los colores, foto y verlos en la galeria."
+"Aportación en conjunto con escuela de Polonia, con el objetivo de instruir a los operadores en el uso seguro de un montacargas y familiarizarlos con las horquillas, totalmente operativo con volante, pedales, palanca de cambios y realidad virtual."
+},
+{
+  "description": 
+"Desarrollo de un simulación de pagina web. El sitio simula una tienda de videojuegos en línea con listados de productos, funciones de búsqueda/filtro, carrito de compras, vizualizacion de pedidos y con devolución. "
+},
+{
+  "description": 
+"Aportacion de aplicacion movil creada en Android Studios para escanear paredes y obtener el color exacto de la misma, con la posibilidad de guardar los colores, foto y verlos en la galeria."
 },
 {
     "description": 
-    "Juego de naves en 2D, inspírado en el videojuego Space Invaders con la posibilidad de elegir entre 4 niveles de dificultad, con Score y vidas."
+    "Desarrollo de juego arcade inspirado en Space Invaders con la posibilidad de elegir entre 4 niveles de dificultad, con Score y vidas.  Diseñé la progresión de los niveles y la programacion con una dificultad creciente a lo largo de cuatro niveles."
 
 },
 {
-  "description": 
-  "Sistema de gestion de nomina, controlar los empleados por medio de una base de datos, crear, borrar, sus asistencias, con calculo de horas extras, bonos, descuentos, etc y al final del mes generar sus nominas."
-},
-{
-  "description": 
-  "Pagina Web donde se ofrecen servicios electricos e instalaciones electricas con pasarela de pagos stripe integrada, destalles de el product etc."
+  "description":
+"Desarrollé una simulación de tienda en línea con funcion de busqueda, filtrado, carrito de compras desarrollado con Angular para el frontend y usando la API de Fake Store para el backend."
 }
 ],
 
