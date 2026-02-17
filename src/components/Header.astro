@@ -185,13 +185,31 @@
         experienceElements.forEach((element, index) => {
           const exp = translations.experience?.[index];
           if (exp) {
-            element.querySelector('.experience-title').textContent = exp.title;
-            element.querySelector('.experience-date').textContent = exp.date;
-            element.querySelectorAll('.experience-description').forEach((descElement, i) => {
-              descElement.textContent = exp.description[i] || '';
-            });
+              const titleEl = element.querySelector('.experience-title');
+              if(titleEl) titleEl.textContent = exp.title;
+              
+              const dateEl = element.querySelector('.experience-date');
+              if(dateEl) dateEl.textContent = exp.date;
+
+              const listItems = element.querySelectorAll('li'); 
+              
+              if (exp.description && Array.isArray(exp.description)) {
+                  listItems.forEach((li, i) => {
+                      if (exp.description[i] && exp.description[i].trim() !== "") {
+                          li.innerHTML = exp.description[i]; 
+                          li.style.display = 'list-item'; 
+                      } else {
+                          li.style.display = 'none'; 
+                      }
+                  });
+              } else if (typeof exp.description === 'string') {
+                  if(listItems[0]) {
+                      listItems[0].innerHTML = exp.description;
+                      listItems[0].style.display = 'list-item';
+                  }
+              }
           }
-        });
+      });
   
         // data-translate-project
         const projectElements = document.querySelectorAll('[data-translate-project]');
