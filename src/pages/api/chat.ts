@@ -1,14 +1,21 @@
-// src/pages/api/chat.ts
 import type { APIRoute } from 'astro';
 
 const personalInfo = `
   Eres un asistente de IA amigable y servicial en el portafolio de Abel Cristofer.
   Tu nombre es "Cris-IA".
+
+  *** REGLA ESTRICTA DE IDIOMA ***
+  1. Detecta el idioma en el que el usuario te está hablando.
+  2. Si el usuario te escribe en Inglés, DEBES responder, saludar o dar la información en Inglés.
+  3. Si el usuario te escribe en Español, DEBES responder en Español.
+  4. NUNCA mezcles los idiomas a menos que sea un nombre propio.
+
   Tu propósito es responder preguntas sobre Abel Cristofer basándote en la siguiente información.
-  Si te preguntan algo que no está en la información, responde amablemente que no tienes ese dato.
-  Información sobre Abel Cristofer:
+  Si te preguntan algo que no está en la información, responde amablemente (en el idioma correcto) que no tienes ese dato.
+
+  Información sobre Abel Cristofer
   - Cumpleaños: 30 de julio.
-  - Age: July 30th
+  - Nombre Completo: Abel Cristofer Hernández Bustos.
   - Edad: 28 años (nacido en 1997).
   - Signo Zodiacal: Leo.
   - Lugar de residencia: Nuevo León, México.
@@ -26,21 +33,21 @@ const personalInfo = `
   - Sueños: Estudiar la Maestria, crear su propio videojuego y Competir en Fisiculturismo.
   - Valores: La honestidad, la responsabilidad, el respeto y la perseverancia.
   - Motivaciones: Le motiva el aprendizaje, la superación personal y el deseo de dejar una huella positiva en el mundo.
-  - Inspiraciones: Se inspira en personas como Eric Barone, Mike Mentzery su familia.
+  - Inspiraciones: Se inspira en personas como Eric Barone, Mike Mentzer y su familia.
   - Profesión: Ingeniero en Tecnología de Software.
-  - Habilidades Técnicas: Tiene experiencia con JavaScript, TypeScript, Python y C#. También ha trabajado con frameworks y librerías como React, Node.js, Express, Astro, Next.js, Vue.js, Three.js, A-Frame y Unity. Tiene conocimientos en bases de datos SQL y NoSQL, control de versiones con Git, y metodologías ágiles como Scrum.
+  - Habilidades Técnicas: Tiene experiencia con JavaScript, TypeScript, Python y C#. También ha trabajado con frameworks y librerías como React, Node.js, Angular, Next.js y Unity. Tiene conocimientos en bases de datos SQL y NoSQL, control de versiones con Git, y metodologías ágiles como Scrum.
   - Experiencia Laboral: Tiene más de 2 años de experiencia. Ha trabajado como Desarrollador Full-Stack, Backend y en aplicaciones de Realidad Aumentada. También ha sido Ingeniero de Sistemas y ha gestionado proyectos con metodologías ágiles como Scrum.
-  - Educación: Es Ingeniero en Tecnología de Software (Titulado) por la UANL. También tiene un Bachiller Técnico en Programación Web y un diplomado en Python.
+  - Educación: Es Ingeniero en Tecnología de Software (Titulado) por la UANL. También tiene un Bachiller Técnico en Programación Web y actualmente está cursando una Maestría en Ingeniería en Sistemas y Software.
   - Habilidades Personales: Es bueno en la gestión del tiempo, trabajo en equipo, resolución de problemas, comunicación, proactividad y empatía.
   - Contacto: Se le puede contactar a través del correo electrónico cristofer3097@gmail.com.
   Responde de forma breve y amigable. No inventes información.
 `;
 
-const apiKey = import.meta.env.GOOGLE_API_KEY;
+const apiKey = import.meta.env.API_KEY;
 
 export const POST: APIRoute = async ({ request }) => {
   if (!apiKey) {
-    console.error("Error: La variable de entorno GOOGLE_API_KEY no está definida.");
+    console.error("Error: La variable de entorno API_KEY no está definida.");
     return new Response(JSON.stringify({ error: "Configuración del servidor incompleta." }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
@@ -51,46 +58,54 @@ export const POST: APIRoute = async ({ request }) => {
     const body = await request.json();
     const userMessage = body.message;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    // --- CONEXIÓN A OPENROUTER
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "HTTP-Referer": "https://abel-cristofer.com", // Tu dominio para validación
+        "X-Title": "Portafolio Abel Cristofer",       // Nombre de tu sitio
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
-        contents: [{
-          parts: [
-            { text: personalInfo },
-            { text: `Usuario: ${userMessage}` },
-            { text: "Cris-IA:" }
-          ]
-        }]
+        "model": "deepseek/deepseek-chat-v3.1",
+        "messages": [
+          {
+            "role": "system",
+            "content": personalInfo
+          },
+          {
+            "role": "user",
+            "content": userMessage
+          }
+        ]
       })
     });
 
     if (!response.ok) {
         const errorData = await response.json();
-        console.error("--- ERROR RECIBIDO DE LA API DE GOOGLE ---");
+        console.error("--- ERROR RECIBIDO DE OPENROUTER ---");
         console.error("Status:", response.status);
         console.error("Respuesta:", JSON.stringify(errorData, null, 2));
-        console.error("-----------------------------------------");
-        throw new Error(`Error de la API de Google: ${errorData.error?.message || 'Error desconocido'}`);
+        throw new Error(`Error de la API: ${errorData.error?.message || 'Error desconocido'}`);
     }
 
     const data = await response.json();
 
-    if (!data.candidates || data.candidates.length === 0) {
-        let errorMessage = "La IA no generó una respuesta. Intenta con otra pregunta.";
-        if (data.promptFeedback && data.promptFeedback.blockReason) {
-            errorMessage = `Tu pregunta fue bloqueada por la IA. Razón: ${data.promptFeedback.blockReason}.`;
-        }
-        return new Response(JSON.stringify({ reply: errorMessage }), { status: 200 });
+    // Verificamos que la respuesta tenga el formato esperado
+    if (!data.choices || data.choices.length === 0 || !data.choices[0].message) {
+        return new Response(JSON.stringify({ reply: "La IA no generó una respuesta. Inténtalo de nuevo." }), { status: 200 });
     }
     
-    const aiResponse = data.candidates[0].content.parts[0].text;
+    // Extraemos el texto de la respuesta de DeepSeek
+    const aiResponse = data.choices[0].message.content;
+    
+    // Lo enviamos de vuelta a tu Chat.astro
     return new Response(JSON.stringify({ reply: aiResponse.trim() }), { status: 200 });
 
   } catch (error) {
-    console.error("--- ERROR CAPTURADO EN EL BLOQUE CATCH DE /api/chat ---");
+    console.error("--- ERROR EN EL SERVIDOR ---");
     console.error(error);
-    console.error("-------------------------------------------------------");
     
     return new Response(JSON.stringify({ error: 'Hubo un problema al contactar a la IA.' }), {
       status: 500,
