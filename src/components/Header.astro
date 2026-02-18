@@ -129,6 +129,7 @@
       try {
           // Ajusta la ruta si es necesario
           const response = await fetch(`/locales/${langCode}.json`); 
+          
           if (!response.ok) throw new Error(`Failed to fetch translations`);
           
           translations = await response.json();
@@ -219,7 +220,26 @@
             element.querySelector('.project-description').textContent = proj.description;
           }
         });
-            }
+        // 1. Traducir primer mensaje 
+      const chatFirstMessage = document.getElementById('chat-first-message');
+      if (chatFirstMessage && translations.chat?.firstMessage) {
+          chatFirstMessage.textContent = translations.chat.firstMessage;
+      }
+
+      // 2. placeholder
+      const chatInput = document.getElementById('chat-input');
+      if (chatInput && translations.chat?.placeholder) {
+          chatInput.placeholder = translations.chat.placeholder;
+      }
+
+      // 3.  texto del botón
+      const chatButtonText = document.getElementById('chat-send-text');
+      if (chatButtonText && translations.chat?.button) {
+          chatButtonText.textContent = translations.chat.button;
+      }
+
+      
+      }
   
       // Botones con data-lang
       if (languageButton && languageMenu) {

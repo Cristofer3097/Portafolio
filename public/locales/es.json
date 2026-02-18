@@ -197,6 +197,14 @@
   },
   "transitionTop":{
     "buttonTitle":"Volver arriba"
+  },
+
+  "chat": {
+    "title": "Chatea conmigo (IA)",
+    "subtitle": "Pregúntame cualquier cosa sobre Abel",
+    "placeholder": "Escribe tu pregunta aquí...",
+    "button": "Enviar",
+    "firstMessage": "¡Hola! Soy Cris-IA. ¿En qué puedo ayudarte a conocer más sobre Abel?"
   }
 }
 

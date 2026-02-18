@@ -197,9 +197,17 @@
     },
     "transitionTop":{
       "buttonTitle":"Back to top"
-    }
+    },
 
+  "chat": {
+    "title": "Chat with me (AI)",
+    "subtitle": "Ask me anything about Abel",
+    "placeholder": "Type your question here...",
+    "button": "Send",
+    "firstMessage": "Hello! I'm Cris-IA. How can I help you learn more about Abel?"
+  }
 }
+
 
 
 
