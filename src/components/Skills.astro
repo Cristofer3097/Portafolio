@@ -6,93 +6,90 @@ import PersonalSkillsContent from "./PersonalSkills.astro"
 import ToolsIcon from '../icons/Tools.astro';
 ---
 
-<h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800" id="educationTitle" > <span data-translate="skillsmenu.skills"></span><ToolsIcon class="size-6" /></h2>
+<h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800" id="educationTitle" > 
+    <span data-translate="skillsmenu.skills"></span><ToolsIcon class="size-6" />
+</h2>
 
-<div class="w-full bg-white border border-violet-200 dark:border-blue-400 rounded-lg shadow-sm dark:bg-slate-300">
-    <ul class="flex flex-wrap text-sm font-medium text-center border-b border-gray-200 rounded-t-lg 
-    bg-violet-950 dark:bg-violet-700 dark:border-gray-700 text-violet-500 dark:text-neutral-800 " id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+<div class="w-full bg-slate-900/50 border border-violet-700/50 rounded-lg shadow-sm dark:bg-gray-200 dark:border-blue-700/50">
+    
+    <ul class="flex flex-wrap text-sm font-medium text-center border-b border-violet-700/50 rounded-t-lg bg-slate-950/50 dark:bg-gray-300 dark:border-blue-700/50" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
       <li class="me-2">
-        <button id="languages-tab" data-tabs-target="#languages" type="button" role="tab" aria-controls="languages" aria-selected="true" class="inline-block p-4 hover:text-violet-400 rounded-ss-lg hover:bg-gray-700 dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button " data-translate="skillsmenu.languages"></button>
+        <button id="languages-tab" data-tabs-target="#languages" type="button" role="tab" aria-controls="languages" aria-selected="true" class="tab-button inline-block p-4 rounded-ss-lg transition-all duration-300">
+            <span data-translate="skillsmenu.languages"></span>
+        </button>
       </li>
       <li class="me-2">
-        <button id="frameworks-tab" data-tabs-target="#frameworks" type="button" role="tab" aria-controls="frameworks" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button">Frameworks</button>
+        <button id="frameworks-tab" data-tabs-target="#frameworks" type="button" role="tab" aria-controls="frameworks" aria-selected="false" class="tab-button inline-block p-4 transition-all duration-300">
+            Frameworks
+        </button>
       </li>
       <li class="me-2">
-        <button id="toolsTec-tab" data-tabs-target="#toolstec" type="button" role="tab" aria-controls="toolstec" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button" data-translate="skillsmenu.toolstec"></button>
+        <button id="tools-tab" data-tabs-target="#tools" type="button" role="tab" aria-controls="tools" aria-selected="false" class="tab-button inline-block p-4 transition-all duration-300">
+            <span data-translate="skillsmenu.toolstec"></span>
+        </button>
       </li>
       <li class="me-2">
-        <button id="personalskills-tab" data-tabs-target="#personalskills" type="button" role="tab" aria-controls="personalskills" aria-selected="false" class="inline-block p-4 hover:text-violet-400 hover:bg-gray-700  dark:hover:bg-blue-900/80 dark:hover:text-white dark:text-stone-900 tab-button" data-translate="skillsmenu.pskills"></button>
+        <button id="personal-tab" data-tabs-target="#personal" type="button" role="tab" aria-controls="personal" aria-selected="false" class="tab-button inline-block p-4 rounded-se-lg transition-all duration-300">
+            <span data-translate="skillsmenu.pskills"></span>
+        </button>
       </li>
     </ul>
+    
     <div id="defaultTabContent">
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="languages" role="tabpanel" aria-labelledby="languages-tab">
-        <p class=" text-white-500 dark:text-stone-900"><LanguagesContent /></p>
-      </div>
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="frameworks" role="tabpanel" aria-labelledby="frameworks-tab">
-        <p class=" text-white-500 dark:text-stone-900"><FrameworksContent /></p>
-      </div>
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="toolstec" role="tabpanel" aria-labelledby="toolstec-tab">
-            <p class="text-white-500 dark:text-stone-900"><ToolsTecContent /></p>
-      </div>
-      <div class="hidden p-4 bg-gray-900 dark:bg-slate-300 rounded-lg md:p-8 " id="personalskills" role="tabpanel" aria-labelledby="personalskills-tab">
-        <p class="text-white-500 dark:text-stone-900"><PersonalSkillsContent /></p>
-  </div>
+        <div class="hidden p-4 rounded-b-lg bg-transparent" id="languages" role="tabpanel" aria-labelledby="languages-tab">
+            <LanguagesContent />
+        </div>
+        <div class="hidden p-4 rounded-b-lg bg-transparent" id="frameworks" role="tabpanel" aria-labelledby="frameworks-tab">
+            <FrameworksContent />
+        </div>
+        <div class="hidden p-4 rounded-b-lg bg-transparent" id="tools" role="tabpanel" aria-labelledby="tools-tab">
+            <ToolsTecContent />
+        </div>
+        <div class="hidden p-4 rounded-b-lg bg-transparent" id="personal" role="tabpanel" aria-labelledby="personal-tab">
+            <PersonalSkillsContent />
+        </div>
     </div>
-  </div>
-  
-  <style>
-    /* Estilos para modo claro */
-    .tab-button[aria-selected="true"] {
-      color: #ffffff;
-      background-color: #1f2535;
-    }
-    .tab-button[aria-selected="false"] {
-      color: #d8d9db;
-      background-color: transparent;
-    }
-    .tab-button[aria-selected="false"]:hover {
-      background-color: #4c1d95;
-    }
-    .tab-button:hover {
-      color: #ffffff;
-    }
-  
-    /* Estilos para modo oscuro */
-    .dark .tab-button[aria-selected="true"] {
-      color: #1e293b; /* Texto oscuro */
-      background-color: #1b5cac; /* Fondo claro */
-    }
-    .dark .tab-button[aria-selected="false"] {
-      color: #2857b4; /* Texto claro */
-      background-color: transparent;
-    }
-    .dark .tab-button[aria-selected="false"]:hover {
-      background-color: #003fec; /* Fondo azul oscuro */
-    }
-    .dark .tab-button:hover {
-      color: #e90a0a; /* Texto blanco */
-    }
-  </style>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const tabButtons = document.querySelectorAll('[role="tab"]');
-      const tabContents = document.querySelectorAll('[role="tabpanel"]');
-  
-      tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          tabButtons.forEach(btn => {
-            btn.setAttribute('aria-selected', 'false');
-            btn.classList.remove('active-tab');
-          });
-          button.setAttribute('aria-selected', 'true');
-          button.classList.add('active-tab');
-  
-          tabContents.forEach(content => content.classList.add('hidden'));
-          const target = document.querySelector(button.getAttribute('data-tabs-target'));
-          target.classList.remove('hidden');
-        });
+</div>
+
+<style>
+  /* MODO OSCURO  */
+  .tab-button[aria-selected="true"] {
+    color: #ffffff;
+    background-color: #4c1d95; 
+  }
+  .tab-button[aria-selected="false"] {
+    color: #a78bfa; 
+    background-color: transparent;
+  }
+  .tab-button[aria-selected="false"]:hover {
+    background-color: #5b21b6;
+    color: #ffffff;
+  }
+
+  /* MODO CLARO  */
+  :global(.dark) .tab-button[aria-selected="true"] {
+    color: #000000;
+    background-color: #bfdbfe; 
+  }
+  :global(.dark) .tab-button[aria-selected="false"] {
+    color: #475569; 
+    background-color: transparent;
+  }
+  :global(.dark) .tab-button[aria-selected="false"]:hover {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+  }
+</style>
+
+<script>
+  // Agrega el evento para manejar el cambio de pestañas
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.setAttribute('aria-selected', 'false'));
+        button.setAttribute('aria-selected', 'true');
       });
     });
-  </script>
-  
+  });
+</script>
