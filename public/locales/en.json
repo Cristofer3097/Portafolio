@@ -200,7 +200,8 @@
     },
 
   "chat": {
-    "title": "Chat with me (AI)",
+    "title": "Chat with me",
+    "tit1le2": "AI",
     "subtitle": "Ask me anything about Abel",
     "placeholder": "Type your question here...",
     "button": "Send",

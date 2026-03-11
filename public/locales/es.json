@@ -200,7 +200,8 @@
   },
 
   "chat": {
-    "title": "Chatea conmigo (IA)",
+    "title": "Chatea conmigo",
+    "tit1le2": "IA",
     "subtitle": "Pregúntame cualquier cosa sobre Abel",
     "placeholder": "Escribe tu pregunta aquí...",
     "button": "Enviar",
