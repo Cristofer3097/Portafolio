@@ -2,7 +2,7 @@
 import ChatIcon from '../icons/chat.astro'; 
 import BotIcon from '../icons/Bot.astro';
 ---
-<section class="overflow-hidden w-full mx-auto py-24 relative">
+<section class="overflow-hidden w-full mx-auto px-4 py-24 relative">
   <h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800">
 <span data-translate="chat.title"></span>
     <ChatIcon class="size-6" />
@@ -35,13 +35,11 @@ border-violet-700/50 rounded-lg bg-slate-900/50 dark:bg-gray-200 dark:border-blu
       focus:ring-violet-500 dark:text-stone-700 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 
       dark:focus:ring-blue-500 dark:focus:border-blue-500"
     />
-    <button type="submit" id="send-button" class="bg-violet-700  
-    dark:bg-blue-800 hover:bg-violet-600 dark:hover:bg-blue-800/80
-    text-white font-bold py-3 px-5 rounded-lg transition-colors duration-300 flex items-center">
-        <span data-translate="chat.button"></span>
-      <BotIcon id="send-icon" class="ml-2 size-5" />
-      <div id="loading-spinner" class="hidden animate-spin rounded-full h-5 w-5 border-b-2 border-white ml-2"></div>
-    </button>
+    <button type="submit" id="send-button" class="bg-violet-700 dark:bg-blue-800 hover:bg-violet-600 dark:hover:bg-blue-800/80 text-white font-bold p-3 sm:py-3 sm:px-5 rounded-lg transition-colors duration-300 flex items-center justify-center min-w-[48px]">
+          <span data-translate="chat.button" ></span>
+          <BotIcon id="send-icon" class="sm:ml-2 size-5" class="hidden sm:inline" />
+          <div id="loading-spinner" class="hidden animate-spin rounded-full h-5 w-5 border-b-2 border-white sm:ml-2"></div>
+      </button>
   </form>
 </div>
 
