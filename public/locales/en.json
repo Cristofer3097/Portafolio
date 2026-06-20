@@ -60,11 +60,12 @@
         "title": "Full Stack Developer",
         "date": "October 2025 - Present",
         "description": [
-        "- Using SQL for queries, modifications to OLAP cubes, views, dimensions, and relationships.",
-        "- Development of components in Angular.",
+        "- Use of SQL for queries, joins, Stored Procedures, Indexes, and relationships through ORMs (Entity Framework / Hibernate).",
+        "- Development and optimization of web applications using Angular, TypeScript, and JavaScript",
+        "- Built and integrated backend services and RESTful APIs using .NET and Spring.",
         "- Configuration and maintenance of Linux virtual machines for development environments.",
-        "- Participation in code reviews and testing to ensure software quality.",
-        "- Version control and team collaboration using GitHub."
+        "- Deployed and administered applications in Linux environments using Docker containers, project build tools like Maven, and Shell Scripting (Bash)",
+        "- Version control management in Git, GitHub, and GitLab"
 
       
     ]
@@ -74,11 +75,11 @@
         "title": "Systems Engineer",
         "date": "March 2025 - August 2025",
         "description": [
-      "- DMS support in the management and resolution of technical incidents.",
-      "- Support for the Systems Department in creating users and modifying permissions.",
-      "- Maintenance of LAN and WAN servers.",
-      "- Performing software updates and monitoring server performance.",
-      "- Collaboration with internal teams to improve system efficiency."
+      "- Provided DMS support in the management and resolution of technical incidents related to hardware, software, and networks, ensuring the operational continuity of systems.",
+      "- Supported the IT Department in creating users and assigning permissions.",
+      "- Administered and maintained Linux servers and equipment across LAN and WAN networks, implementing monitoring tools to ensure system availability.",
+      "- Managed SQL Server, developing ETL processes and stored procedures for data automation, integration, and optimization.",
+      "- Achieved national recognition by ranking among the top 3 in my position due to process optimization and performance in task resolution"
         ]
       },
       {

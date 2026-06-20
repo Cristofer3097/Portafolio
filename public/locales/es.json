@@ -58,11 +58,12 @@
         "title": "Desarrollador Full Stack",
         "date": "Octubre 2025 - Presente",
         "description": [
-        "- Uso de SQL para consultas, modificaciones de cubos OLAP, vistas, dimensiones y relaciones.",
-        "- Desarrollo de componentes en Angular.",
+        "- Uso de SQL para consultas, relacione, Stored Procedures, Index y relaciones a través de ORMs (Entity Framework / Hibernate).",
+        "- Desarrollo de aplicaciones web y optimización utilizando Angular, TypeScript y JavaScript",
+        "- Construí e integré servicios backend y APIs RESTful  mediante el uso de .NET y Spring.",
         "- Configuración y mantenimiento de máquinas virtuales Linux para entornos de desarrollo.",
-        "- Participación en revisiones de código y pruebas para garantizar la calidad del software.",
-        "- Control de versiones y colaboración en equipo utilizando GitHub." 
+        "- Desplegué y administré aplicaciones en entornos Linux utilizando contenedores Docker, construcción de proyectos como Maven y Shell Scripting (Bash)",
+        "- Gestion de control de versiones en Git, Github y Gitlab" 
       
     ]
         
@@ -72,11 +73,11 @@
     "title": "Ingeniero en Sistemas",
     "date": "Marzo 2025 - Agosto 2025",
     "description": [
-      "- Soporte DMS en la gestión y resolución de incidencias técnicas.",
-      "- Apoyo al Departamento de Sistemas en la creación de usuarios y modificación de permisos.",
-      "- Mantenimiento de servidores LAN y WAN.",
-      "- Realización de actualizaciones de software y monitoreo de rendimiento en servidores.",
-      "- Colaboración con equipos internos para mejorar la eficiencia del sistema."
+      "- Soporte DMS en la gestión y resolución de incidencias técnicas relacionadas con hardware, software y redes, asegurando la continuidad operativa de los sistemas.",
+      "- Apoyo al Departamento de Sistemas en la creación de usuarios y permisos.",
+      "- Administré y di mantenimiento a servidores Linux y equipos en redes LAN y WAN e implementando Herramientas de Monitoreo para asegurar la disponibilidad del sistema.",
+      "- Gestion en SQL Server, desarrollando procesos ETL y Stored Procedures para la automatización, integración y optimización de datos.",
+      "- Obtuve reconocimiento nacional al posicionarme entre los 3 mejores de mi puesto gracias a la optimización de procesos y el desempeño en la resolución de tareas"
 
     ]
   },
