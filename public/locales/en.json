@@ -29,7 +29,8 @@
   },
   "certificate":
   {
-    "title":"Certificates"
+    "title":"Certificates",
+    "scroll": "Hold to slide"
   },
   "contact":{
     "email":"Your email address",
@@ -57,8 +58,19 @@
   
   "experience": [
     {
+      "title": "Programmer IT",
+      "date": "June 2026 - Present",
+      "description": [
+        "-Development of applications using .NET, programming in C# and C++.",
+        "-Mobile Development: Creation of efficient mobile applications using Flutter and Dart, integrating solutions and processes with Python.",
+        "-Planning and execution of update and migration processes for relational databases in SQL Server.",
+        "-Technical support and issue resolution through ticket management.",
+        "-Management and optimization of workflows using ERP applications."
+      ]
+    },
+    {
         "title": "Full Stack Developer",
-        "date": "October 2025 - Present",
+        "date": "October 2025 - January 2026",
         "description": [
         "- Use of SQL for queries, joins, Stored Procedures, Indexes, and relationships through ORMs (Entity Framework / Hibernate).",
         "- Development and optimization of web applications using Angular, TypeScript, and JavaScript",
@@ -92,16 +104,7 @@
         "- Project management based on agile methodologies (specializing in Scrum).",
         "- Installation of servers, hardware, and software on workstations."
         ]
-      },
-    
-      {
-        "title": "General Assistant",
-        "date":"December 2014 - July 2015",
-        "description": [
-          "- IT maintenance, ensuring systems run smoothly and minimizing user downtime. ",
-          "- Report generation with SAP and manipulation of pivot tables."
-        ]
-      }    
+      }  
     ],
 
   "footer": {

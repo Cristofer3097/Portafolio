@@ -29,7 +29,8 @@
   },
   "certificate":
   {
-    "title":"Certificados"
+    "title":"Certificados",
+    "scroll": "Mantén presionado para deslizar"
   },
   "contact":{
     "email":"Tu correo electrónico",
@@ -54,6 +55,17 @@
     "eiao": "BACHILLER TÉCNICO EN PROGRAMACIÓN WEB"
   },
 "experience": [
+  {
+    "title": "Programador IT",
+    "date": "Junio 2026 - Presente",
+    "description": [
+      "-Desarrollo de aplicaciones utilizando .NET, con programación en C# y C++.",
+      "-Desarrollo Móvil : Creación de aplicaciones móviles y eficientes en Flutter y Dart, integrando soluciones y procesos con Python.",
+      "-Planificación y ejecución de procesos de actualización y migración de base de datos relacionales en SQL Server.",
+      "-Soporte y Resolución de Incidencias mediante la gestión de tickets.",
+      "-Manejo y optimización de flujos de trabajo a través de aplicaciones ERP."
+    ]
+  },
   {
         "title": "Desarrollador Full Stack",
         "date": "Octubre 2025 - Presente",
@@ -90,14 +102,6 @@
         "- Lideré la creación de entornos de Realidad Virtual con Unity.",
         "- Gestión de proyectos basada en metodologías ágiles (especializándome en Scrum).",
         "- Instalación de servidores, hardware y software en estaciones de trabajo."
-      ]
-    },
-    {
-      "title": "Ayudante General",
-      "date":"Diciembre 2014 - Julio 2015",
-      "description": [
-         "- Mantenimiento informático, garantizando el buen funcionamiento de los sistemas y minimizando el tiempo de inactividad de los usuarios. ",
-         "- Generación de informes con SAP y manipulación de tablas dinámicas.  "
       ]
     }
   ],

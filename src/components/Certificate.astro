@@ -1,6 +1,7 @@
 ---
 import CertificateIcon from '../icons/Certificate.astro';
 
+
 // Movemos los datos aquí para usarlos tanto en el HTML como pasarlos al script si fuera necesario
 const certificados = [
   { name: 'IA', image: '/assets/ia.webp' },
@@ -17,12 +18,13 @@ const certificados = [
 ---
 
 <section class="overflow-hidden w-full mx-auto py-24 relative" id="certificate-section" data-certificates={JSON.stringify(certificados)}>
+  
   <h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800">
     <span data-translate="certificate.title"></span>
     <CertificateIcon class="size-6" />
   </h2>
-
-  <div class="flex gap-x-20 pr-20 animate-carousel" id="carouselTrack">
+  
+  <div class="flex gap-x-20 pr-20 animate-carousel" id="carouselTrack" title="" data-translate-title="certificate.scroll">
     {/* Bucle Original */}
     {certificados.map((certificado, index) => (
       <div class="carousel-item" key={`original-${index}`}>
@@ -109,13 +111,13 @@ const certificados = [
   .animate-carousel {
     display: flex;
     width: max-content; 
-    animation: scroll 25s linear infinite;
+    will-change: transform;
+    cursor: grab;
+  }
+  .animate-carousel:active {
+    cursor: grabbing; 
   }
   
-  /* Pausar animacion al abrir cualquier imagen */
-  body.modal-open .animate-carousel {
-    animation-play-state: paused;
-  }
 
   .carousel-item { flex-shrink: 0; }
   
@@ -123,128 +125,7 @@ const certificados = [
     width: 150px;
     height: 120px;
     max-width: 100%;
+    user-select: none;
   }
 </style>
-
-<script>
-  let currentIndex = 0;
-  let certificadosData = [];
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const section = document.getElementById('certificate-section');
-    if(section) {
-        certificadosData = JSON.parse(section.getAttribute('data-certificates'));
-    }
-
-    const carouselTrack = document.getElementById("carouselTrack");
-    let isPaused = false;
-
-    window.openModal = function(index) {
-      currentIndex = index;
-      updateModalContent();
-
-      const modal = document.getElementById("modal");
-      const modalImage = document.getElementById("modalImage");
-      
-      modal.classList.remove("hidden");
-      document.body.classList.add("overflow-hidden"); 
-
-      // Animación de entrada
-      setTimeout(() => {
-        modalImage.classList.remove("scale-75", "opacity-0");
-        modalImage.classList.add("scale-100", "opacity-100");
-      }, 50);
-    }
-
-    // Función para actualizar la imagen y textos según el índice actual
-    function updateModalContent() {
-        const modalImage = document.getElementById("modalImage");
-        const modalTitle = document.getElementById("modalTitle");
-        
-        const item = certificadosData[currentIndex];
-        
-        modalImage.src = item.image;
-        modalTitle.textContent = item.name;
-        // imageCounter.textContent = `${currentIndex + 1} / ${certificadosData.length}`;
-    }
-
-    // Función Siguiente 
-    window.nextImage = function() {
-        // Si es el último, vuelve al 0 (bucle)
-        currentIndex = (currentIndex + 1) % certificadosData.length;
-        changeImageAnimation();
-    }
-
-    // Función Anterior 
-    window.prevImage = function() {
-        // Si es el 0, va al último (bucle)
-        currentIndex = (currentIndex - 1 + certificadosData.length) % certificadosData.length;
-        changeImageAnimation();
-    }
-
-    // Pequeña transición al cambiar imagen dentro del modal
-    function changeImageAnimation() {
-        const modalImage = document.getElementById("modalImage");
-        // Ocultar levemente
-        modalImage.classList.add("opacity-50", "scale-95");
-        
-        setTimeout(() => {
-            updateModalContent();
-            // Mostrar de nuevo
-            modalImage.classList.remove("opacity-50", "scale-95");
-        }, 150);
-    }
-
-    window.closeModal = function() {
-      const modal = document.getElementById("modal");
-      const modalImage = document.getElementById("modalImage");
-
-      modalImage.classList.remove("scale-100", "opacity-100");
-      modalImage.classList.add("scale-75", "opacity-0");
-
-      setTimeout(() => {
-        modal.classList.add("hidden");
-        document.body.classList.remove("overflow-hidden");
-      }, 300);
-    }
-
-    // Botones Siguiente y Anterior
-    document.getElementById('prevBtn')?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        window.prevImage();
-    });
-
-    document.getElementById('nextBtn')?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        window.nextImage();
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (!document.getElementById("modal").classList.contains("hidden")) {
-            if (e.key === "ArrowRight") window.nextImage();
-            if (e.key === "ArrowLeft") window.prevImage();
-            if (e.key === "Escape") window.closeModal();
-        }
-    });
-
-    // Pausar y reanudar la animación del carrusel al interactuar con las imágenes
-    function pauseCarousel() {
-      if (!isPaused) {
-        carouselTrack.style.animationPlayState = "paused";
-        isPaused = true;
-      }
-    }
-
-    function resumeCarousel() {
-      if (isPaused) {
-        carouselTrack.style.animationPlayState = "running";
-        isPaused = false;
-      }
-    }
-
-    document.querySelectorAll(".carousel-image").forEach(img => {
-      img.addEventListener("mouseenter", pauseCarousel);
-      img.addEventListener("mouseleave", resumeCarousel);
-    });
-  });
-</script>
+<script src="../scripts/certificates.js"></script>
