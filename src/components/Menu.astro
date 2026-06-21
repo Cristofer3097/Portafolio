@@ -20,57 +20,5 @@
   </nav>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sideNav = document.getElementById('side-menu');
-    
-    if (!sideNav) return; 
-    
-    const navLinks = sideNav.querySelectorAll('a'); 
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      const sections = document.querySelectorAll('.scroll-spy-section');
-      const scrollPosition = window.pageYOffset + (window.innerHeight / 2.5);
-
-      sections.forEach(section => {
-        if (section.offsetHeight > 0) {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        }
-      });
-      
-      if (['skills', 'education', 'certificate'].includes(current)) {
-        current = 'sobremi';
-      }
-
-      navLinks.forEach(link => {
-        const listItem = link.parentElement;
-
-        // --- INICIO DE LA CORRECCIÓN DIRECTA ---
-
-        // 1. Limpiamos los estilos de "activo" de todos los elementos
-        listItem.classList.remove('bg-violet-900', 'dark:bg-blue-900');
-        
-        // [CAMBIO 1]: Reseteamos el estilo en línea para que el enlace vuelva a su color por defecto
-        link.style.color = ''; 
-
-        // 2. Aplicamos los estilos de "activo" SOLO al elemento correcto
-        if (current && link.getAttribute('href').includes(current)) {
-          listItem.classList.add('bg-violet-900', 'dark:bg-blue-900');
-          
-          // [CAMBIO 2]: Forzamos el color del texto a blanco con un estilo en línea.
-          // Esto tiene la máxima prioridad y resolverá el conflicto.
-          link.style.color = 'white';
-        }
-
-        // --- FIN DE LA CORRECCIÓN DIRECTA ---
-      });
-      
-    }, { passive: true });
-  });
+<script src="../scripts/Menu.js">
 </script>

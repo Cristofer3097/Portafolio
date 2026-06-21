@@ -1,10 +1,7 @@
-// src/scripts/header.js
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ==========================================
-    // 1. LÓGICA DEL MENÚ LATERAL (MÓVIL)
-    // ==========================================
+    // LÓGICA DEL MENÚ LATERAL (MÓVIL)
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     const closeMenu = document.getElementById('close-menu');
@@ -44,9 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================
     // 2. LÓGICA DE IDIOMAS Y TRADUCCIONES
-    // ==========================================
     const languageMenu = document.getElementById('language-dropdown-menu');
     const currentLanguage = document.getElementById('current-language');
     const languageButton = document.getElementById('language-toggle-button');
@@ -192,9 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================
-    // 3. LÓGICA DEL TEMA OSCURO/CLARO
-    // ==========================================
+    // TEMA OSCURO/CLARO
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const savedTheme = localStorage.getItem('theme') || 'dark';

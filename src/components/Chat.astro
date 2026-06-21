@@ -12,7 +12,7 @@ border-violet-700/50 rounded-lg bg-slate-900/50 dark:bg-gray-200 dark:border-blu
     
   <div class="flex items-center mb-4">
       <div>
-        <h3 class="text-xl font-bold text-white dark:text-black" data-translate="chat.tit1le2"></h3>
+        <h3 class="text-xl font-bold text-white dark:text-black" data-translate="chat.tit1le2"> </h3>
         <p class="text-gray-400 dark:text-gray-600" data-translate="chat.subtitle"></p>
       </div>
   </div>
@@ -43,55 +43,5 @@ border-violet-700/50 rounded-lg bg-slate-900/50 dark:bg-gray-200 dark:border-blu
   </form>
 </div>
 
-<script>
-  const chatForm = document.getElementById('chat-form') as HTMLFormElement;
-  const chatInput = document.getElementById('chat-input') as HTMLInputElement;
-  const chatBox = document.getElementById('chat-box') as HTMLDivElement;
-  const sendButton = document.getElementById('send-button') as HTMLButtonElement;
-  const sendIcon = document.getElementById('send-icon') as HTMLElement;
-  const loadingSpinner = document.getElementById('loading-spinner') as HTMLDivElement;
-
-  chatForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const message = chatInput.value.trim();
-    if (!message) return;
-
-    chatInput.disabled = true;
-    sendButton.disabled = true;
-    sendIcon.classList.add('hidden');
-    loadingSpinner.classList.remove('hidden');
-
-    const userMessageDiv = document.createElement('div');
-    userMessageDiv.className = 'flex justify-end mb-4';
-    userMessageDiv.innerHTML = `<div class="bg-violet-700  
-    dark:bg-blue-800 text-white rounded-lg p-3 max-w-xs"><p>${message}</p></div>`;
-    chatBox.appendChild(userMessageDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-    chatInput.value = '';
-
-    try {
-      const response = await fetch('/chat.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
-      });
-
-      const data = await response.json();
-      
-      const aiMessageDiv = document.createElement('div');
-      aiMessageDiv.className = 'flex justify-start mb-4';
-      aiMessageDiv.innerHTML = `<div class="bg-gray-800 dark:bg-gray-600 text-white rounded-lg p-3 max-w-xs"><p>${data.reply || data.error}</p></div>`;
-      chatBox.appendChild(aiMessageDiv);
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-    } catch (error) {
-      console.error('Error:', error);
-    } finally {
-      chatInput.disabled = false;
-      sendButton.disabled = false;
-      sendIcon.classList.remove('hidden');
-      loadingSpinner.classList.add('hidden');
-      chatInput.focus();
-    }
-  });
+<script src="../scripts/Chat.js">
 </script>
