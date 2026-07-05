@@ -1,47 +1,62 @@
 ---
 import ChatIcon from '../icons/chat.astro'; 
 import BotIcon from '../icons/Bot.astro';
+import SendIcon from '../icons/Send.astro';
 ---
-<section class="overflow-hidden w-full mx-auto px-4 py-24 relative">
-  <h2 class="flex gap-x-2 text-2xl font-bold mb-7 text-white dark:text-neutral-800">
-<span data-translate="chat.title"></span>
-    <ChatIcon class="size-6" />
-  </h2>
-<div id="chat-container" class="w-full max-w-2xl mx-auto p-4 border 
-border-violet-700/50 rounded-lg bg-slate-900/50 dark:bg-gray-200 dark:border-blue-700 dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+<div id="chat-widget" class="fixed bottom-5 right-5 
+lg:bottom-10 lg:right-10 z-[100] flex flex-col items-end pointer-events-none">
     
-  <div class="flex items-center mb-4">
-      <div>
-        <h3 class="text-xl font-bold text-white dark:text-black" data-translate="chat.tit1le2"> </h3>
-        <p class="text-gray-400 dark:text-gray-600" data-translate="chat.subtitle"></p>
-      </div>
-  </div>
-  
-  <div id="chat-box" class="h-80 overflow-y-auto p-4 bg-slate-950 dark:bg-gray-100 rounded-lg mb-4 border border-slate-700">
-    <div class="flex justify-start mb-4">
-        <div class="bg-gray-800 dark:bg-gray-600 text-white rounded-lg p-3 max-w-xs">
-          <p data-translate="chat.firstMessage"></p>
+    <div id="chat-container" class="hidden w-[90vw] sm:w-80 md:w-96 bg-slate-900 dark:bg-gray-100 border border-violet-700/50 dark:border-blue-700/50 rounded-2xl shadow-2xl mb-4 overflow-hidden transition-all duration-300 origin-bottom-right transform scale-0 opacity-0 pointer-events-auto flex flex-col h-[28rem]">
+      
+      <div class="bg-violet-900 dark:bg-blue-800 p-3 lg:p-4 flex justify-between items-center text-white shadow-md z-10">            <div class="flex items-center gap-x-3">
+                <div class="bg-slate-800 dark:bg-gray-100 p-1.5 rounded-full">
+                    <BotIcon class="size-5 lg:size-6 text-violet-400 dark:text-blue-600" />
+                </div>
+                <div>
+                    <h3 class="font-bold text-sm lg:text-base leading-tight" data-translate="chat.tit1le2"></h3>
+                    <p class="text-[10px] lg:text-xs text-violet-200 dark:text-blue-200" data-translate="chat.subtitle"></p>
+                </div>
+            </div>
+            <button id="close-chat-btn" class="text-white hover:text-gray-300 transition-colors focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
-    </div>
-  </div>
+        
+        <div id="chat-box" class="flex-grow overflow-y-auto p-4 bg-slate-950/80 dark:bg-gray-50 flex flex-col space-y-4">
+            <div class="flex justify-start">
+                <div class="bg-gray-800 dark:bg-gray-300 dark:text-black text-white rounded-2xl rounded-tl-sm p-3 max-w-[85%] text-sm shadow-sm">
+                    <p data-translate="chat.firstMessage"></p>
+                </div>
+            </div>
+        </div>
 
-  <form id="chat-form" class="flex items-center gap-3 ">
-    <input 
-      type="text" 
-      id="chat-input" 
-      placeholder="Escribe tu pregunta aquí..."
-      data-translate-placeholder="chat.placeholdermessage"
-      class="flex-grow bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 
-      focus:ring-violet-500 dark:text-stone-700 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-400 
-      dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    />
-    <button type="submit" id="send-button" class="bg-violet-700 dark:bg-blue-800 hover:bg-violet-600 dark:hover:bg-blue-800/80 text-white font-bold p-3 sm:py-3 sm:px-5 rounded-lg transition-colors duration-300 flex items-center justify-center min-w-[48px]">
-          <span data-translate="chat.button" ></span>
-          <BotIcon id="send-icon" class="sm:ml-2 size-5" class="hidden sm:inline" />
-          <div id="loading-spinner" class="hidden animate-spin rounded-full h-5 w-5 border-b-2 border-white sm:ml-2"></div>
-      </button>
-  </form>
+        <form id="chat-form" class="p-3 bg-slate-900 dark:bg-gray-200 border-t border-slate-700/50 dark:border-gray-300 flex items-center gap-2">
+            <input 
+                type="text" 
+                id="chat-input" 
+                placeholder="Escribe tu pregunta aquí..."
+                data-translate-placeholder="chat.placeholdermessage"
+                class="flex-grow bg-slate-800 dark:bg-white border border-slate-600 dark:border-gray-300 rounded-full px-4 py-2 text-sm text-white dark:text-stone-700 focus:outline-none focus:ring-2 focus:ring-violet-500 dark:focus:ring-blue-500"
+                autocomplete="off"
+            />
+            <button type="submit" id="send-button" class="bg-violet-700 dark:bg-blue-800 hover:bg-violet-600 dark:hover:bg-blue-700 text-white p-2 rounded-full transition-colors flex items-center justify-center size-9 lg:size-10 flex-shrink-0 focus:outline-none">
+                <SendIcon id="send-icon" class="size-5" />
+                <div id="loading-spinner" class="hidden animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+            </button>
+        </form>
+    </div>
+    <!-- Burbuja -->
+    <button id="chat-bubble" class="relative pointer-events-auto bg-violet-700 dark:bg-blue-800 hover:bg-violet-600 dark:hover:bg-blue-700 text-white rounded-full p-4 lg:p-3 shadow-lg shadow-violet-900/50 dark:shadow-blue-900/50 transition-transform hover:scale-110 active:scale-95 flex items-center justify-center focus:outline-none">
+      <ChatIcon class="size-7 lg:size-8" />
+        
+        <!-- Notificación-->
+        <span id="chat-notification" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold w-6 h-6 flex items-center justify-center rounded-full border-2 border-slate-950 dark:border-gray-200 transition-opacity">
+            1
+        </span>
+    </button>
+    </button>
 </div>
 
-<script src="../scripts/Chat.js">
-</script>
+<script src="../scripts/Chat.js"></script>
