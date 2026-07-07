@@ -58,6 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
     chatBubble.addEventListener('click', toggleChat);
     closeChatBtn.addEventListener('click', toggleChat);
+
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth < 640) {
+            if (isChatOpen && !chatContainer.contains(e.target) && !chatBubble.contains(e.target)) {
+                toggleChat(null); 
+            }
+        }
+    });
   
     chatForm.addEventListener('submit', async (e) => {
       e.preventDefault();

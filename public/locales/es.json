@@ -57,7 +57,7 @@
 "experience": [
   {
     "title": "Programador IT",
-    "date": "Junio 2026 - Presente",
+    "date": "2026 - Presente",
     "description": [
       "-Desarrollo de aplicaciones utilizando .NET, con programación en C# y C++.",
       "-Desarrollo Móvil : Creación de aplicaciones móviles y eficientes en Flutter y Dart, integrando soluciones y procesos con Python.",
@@ -68,7 +68,7 @@
   },
   {
         "title": "Desarrollador Full Stack",
-        "date": "Octubre 2025 - Presente",
+        "date": "2025 - 2026",
         "description": [
         "- Uso de SQL para consultas, relacione, Stored Procedures, Index y relaciones a través de ORMs (Entity Framework / Hibernate).",
         "- Desarrollo de aplicaciones web y optimización utilizando Angular, TypeScript y JavaScript",
@@ -83,7 +83,7 @@
   
   {
     "title": "Ingeniero en Sistemas",
-    "date": "Marzo 2025 - Agosto 2025",
+    "date": "2025",
     "description": [
       "- Soporte DMS en la gestión y resolución de incidencias técnicas relacionadas con hardware, software y redes, asegurando la continuidad operativa de los sistemas.",
       "- Apoyo al Departamento de Sistemas en la creación de usuarios y permisos.",
@@ -95,7 +95,7 @@
   },
     {
       "title": "Desarrollador / Gestión de Proyectos",
-      "date": "Diciembre 2022 - Marzo 2025",
+      "date": "2022 - 2025",
       "description": [
         "- Mejoré la gestión de proyectos usando metodologías ágiles, lo que hizo que la producción fuera más eficiente.",
         "- Colaboración de proyectos que se presentan en su entrada principal y en su Web oficial.",
