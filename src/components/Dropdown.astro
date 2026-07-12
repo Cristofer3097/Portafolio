@@ -32,19 +32,4 @@ xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
   </li>
 </ul>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const dropdownButton = document.getElementById("dropdownDefaultButton");
-            const dropdownMenu = document.getElementById("dropdowndelay");
-            const arrowIcon = dropdownButton.querySelector(".arrow-icon");
-    
-            dropdownButton.addEventListener("click", () => {
-
-                dropdownMenu.classList.toggle("hidden");
-    
-
-                arrowIcon.classList.toggle("rotate-180");
-            });
-        });
-    </script>
-    
+    <script src="../scripts/Dropdown.js"></script>
