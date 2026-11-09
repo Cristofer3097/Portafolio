@@ -86,7 +86,7 @@ if (!$userMessage) {
 }
 
 $data = [
-    "model" => "deepseek/deepseek-chat-v3.1",
+    "model" => "deepseek/deepseek-chat",
     "messages" => [
         ["role" => "system", "content" => $personalInfo],
         ["role" => "user", "content" => $userMessage]
@@ -112,7 +112,11 @@ curl_close($ch);
 // MODO DIAGNÓSTICO: Si falla, el bot imprimirá el error real en la pantalla
 if ($httpCode !== 200 || !$response) {
     $responseData = json_decode($response, true);
-    $apiErrorMsg = $responseData['error']['message'] ?? "Error desconocido de OpenRouter";
+    $apiErrorMsg = $responseData['error']['message'] ?? ($curlError ? "Error cURL: $curlError" : "Error desconocido de OpenRouter");
+    if (!empty($responseData['error']['metadata']['raw'])) {
+        $raw = $responseData['error']['metadata']['raw'];
+        $apiErrorMsg .= " (" . (is_string($raw) ? $raw : json_encode($raw)) . ")";
+    }
     echo json_encode(['reply' => "⚠️ Fallo API (Código $httpCode): " . $apiErrorMsg]);
     exit;
 }
