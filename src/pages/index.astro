@@ -64,32 +64,6 @@ import ChatAI from '../components/Chat.astro';
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Manejo del menú desplegable
-        const menuToggle = document.getElementById("menu-toggle");
-        const navMenu = document.getElementById("nav-menu");
-        const closeMenu = document.getElementById("close-menu");
-        const navLinks = document.querySelectorAll("#nav-menu a");
-    
-        if (menuToggle && navMenu && closeMenu) {
-            menuToggle.addEventListener("click", () => {
-                navMenu.classList.remove("translate-x-full");
-                navMenu.classList.add("translate-x-0");
-            });
-    
-            closeMenu.addEventListener("click", () => {
-                navMenu.classList.remove("translate-x-0");
-                navMenu.classList.add("translate-x-full");
-            });
-    
-            // Cerrar menú al hacer clic en un enlace
-            navLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    navMenu.classList.remove("translate-x-0");
-                    navMenu.classList.add("translate-x-full");
-                });
-            });
-        }
-    
         // Animación para la sección de experiencia
         const experienceSection = document.getElementById("experience");
     
@@ -108,5 +82,5 @@ import ChatAI from '../components/Chat.astro';
             observer.observe(experienceSection);
         }
     });
-    </script>
+</script>
     
